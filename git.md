@@ -166,7 +166,7 @@ EN EL SITIO DE GITHUB:
 7) git add . | añadimos todos los archivos
 8) git rm --cached index.html | retiramos el archivo
 9) git commit -m "comentario" | agregar comentario
-10) git log permite revisar todas las versiones de un proyecto
+10) git log permite revisar todas las versiones de un proyecto  
     git log --oneline | estructura de comentarios y ramas
 11) git branch -m main | cambiar nombre
 12) git branch -m nombreRama nombreNuevo | 
@@ -180,7 +180,7 @@ EN EL SITIO DE GITHUB:
 19) git remote -v | visualizar repositorios remotos
 20) git remote show | visualizar nombre repositorio
 21) 
-    git config = Establece el nombre  del autor, el correo y demas parametros que git utiliza por defecto
+    git config = Establece el nombre  del autor, el correo y demas parametros que git utiliza por defecto  
     git config --global init.defaultBranch nombreRama | nombre rama default
 22) git remote rm nombreRepositorio | eliminar repositorio
 23) git branch | en que rama estamos ubicados
