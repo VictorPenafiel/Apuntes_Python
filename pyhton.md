@@ -93,38 +93,62 @@ La forma de llamar un metodo se llama notacion de punto
 
     count
         "Contar" Cuenta el numero de veces que aparece un caracter
-    upper "Mayusculas" Transforma el string a mayusculas
-    lower "Minusculas" Transforma el string a minusculas
-    title "Titulo" Mayusculas solo a la primera letra de cada palabra
-    capitalize Poner la primera letra en mayusculas
-    length "largo" Contar el numero de caracteres de un string
-    join "Unir" Unir muchos elementos separados de un string
-    f "formato" Interpolacion al trabajar con un string
-    :.xf indica el numero de decimales
+    upper
+        
+            "Mayusculas" Transforma el string a mayusculas
+    lower 
+        "Minusculas" Transforma el string a minusculas
+    title 
+        "Titulo" Mayusculas solo a la primera letra de cada palabra
+    capitalize 
+        Poner la primera letra en mayusculas
+    length 
+        "largo" Contar el numero de caracteres de un string
+    join 
+        "Unir" Unir muchos elementos separados de un string
+    f 
+        "formato" Interpolacion al trabajar con un string
+    :.xf 
+        indica el numero de decimales
 
 ## Metodos basicos de lista
 
-    append(x) Agrega elementos al final de la lista
-    insert(i,x) Agrega el elemento x en la posicion i especificada
-    pop() Elimina elultimo elemento de la lista y lo imprime
-    remove() Elimina un elemento especifico
-    reverse() Invertir el orden de los elementos
-    sort() Ordenar los elementos de forma ascendente
-    sorted() Ordenar los elementos de forma ascendente
+    append(x) 
+        Agrega elementos al final de la lista
+    insert(i,x) 
+        Agrega el elemento x en la posicion i especificada
+    pop() 
+        Elimina elultimo elemento de la lista y lo imprime
+    remove() 
+        Elimina un elemento especifico
+    reverse() 
+        Invertir el orden de los elementos
+    sort() 
+        Ordenar los elementos de forma ascendente
+    sorted() 
+        Ordenar los elementos de forma ascendente
     	reverse=true Ordena de manera descendente
-    index() Retorna indice
+    index() 
+        Retorna indice
 
 ## Metodos basicos de diccionarios
 Para definir diccionarios {}
 Para acceder a uno []
 
-    pop Eliminar una llave junto a su valor, obteniendo el valor determinado
-    del Eliminar una llave junto a su valor
-    update Unir 2 diccionarios
-    keys Entregara una lista con todos las claves de un diccioanrio
-    valves Entregara una lista con todos los valores de un diccioanrio
-    items Entregara una lista con los pares clave-valor de un diccionario
-    get Permite entregar un mensaje en caso de no encontrar una clave valor predeterminado none
+    pop 
+        Eliminar una llave junto a su valor, obteniendo el valor determinado
+    del 
+        Eliminar una llave junto a su valor
+    update 
+        Unir 2 diccionarios
+    keys 
+        Entregara una lista con todos las claves de un diccioanrio
+    valves 
+        Entregara una lista con todos los valores de un diccioanrio
+    items 
+        Entregara una lista con los pares clave-valor de un diccionario
+    get 
+        Permite entregar un mensaje en caso de no encontrar una clave valor predeterminado none
 
 ## Ver que tipo de librerias posee Python
     pip freeze
