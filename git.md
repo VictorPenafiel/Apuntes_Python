@@ -173,15 +173,15 @@ EN EL SITIO DE GITHUB:
 13) git checkout numeroComentario | llevarnos al comentario
 14) git checkout nombreRama | llevarnos hacia la rama
 15) git reset = Descompone el archivo, pero conserva el contenido del mismo
-    git reset --soft HEAD~ | regresar el último comentario
+        git reset --soft HEAD~ | regresar el último comentario
 16) git remote add origin https://github.com/{usuario}/{repo}.git
 17) git remote set-url origin git@github.com:adrianedutecno/iguanapage.git
 18) git remote rename nombreActual nombreNuevo | renombrar repositorio
 19) git remote -v | visualizar repositorios remotos
 20) git remote show | visualizar nombre repositorio
 21) 
-git config = Establece el nombre  del autor, el correo y demas parametros que git utiliza por defecto
-git config --global init.defaultBranch nombreRama | nombre rama default
+    git config = Establece el nombre  del autor, el correo y demas parametros que git utiliza por defecto
+    git config --global init.defaultBranch nombreRama | nombre rama default
 22) git remote rm nombreRepositorio | eliminar repositorio
 23) git branch | en que rama estamos ubicados
 24) git branch nombreRama | crea una rama
@@ -209,12 +209,12 @@ git config --global init.defaultBranch nombreRama | nombre rama default
 ---------------------------------------------------------------------------------------------------------------
 
 
-git add .
-git branch -M main
-git remote add origin git@github.com:VictorPenafiel/-----------------.git
-git push -u origin main
+    git add .
+    git branch -M main
+    git remote add origin git@github.com:VictorPenafiel/-----------------.git
+    git push -u origin main
 
-/* para resolver problema de origin"
+## /* para resolver problema de origin"
 
 git add .
 git remote rm origin
@@ -223,7 +223,7 @@ git remote add origin
 ------------------------------------------------------------------------------------------------
 ## Para crear pagina en pages
 
- git branch gh-pages
- git checkout 'gh-pages'
- git merge master (cuidado aca)
- git push origin gh-pages
+    git branch gh-pages
+    git checkout 'gh-pages'
+    git merge master (cuidado aca)
+    git push origin gh-pages
