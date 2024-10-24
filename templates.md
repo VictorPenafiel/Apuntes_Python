@@ -24,14 +24,13 @@ from string import Template
 
 ## Inyectar los valores anteriores al template
 
-document_template_nuevo = document_template.substitute(seccion = sec, nombre = nom, fecha = fecha)
-
-### Debe crearse nueva variable que reciba el resultado de la inyección.
-### Al inyectar las variables respectivas dentro del substitute, debe respetarse el siguiente formato:
+    document_template_nuevo = document_template.substitute(seccion = sec, nombre = nom, fecha = fecha)  
+Debe crearse nueva variable que reciba el resultado de la inyección.  
+Al inyectar las variables respectivas dentro del substitute, debe respetarse el siguiente formato:  
     nombre_var_html = nombre_var_python.  
 Si hay mas de 1 variable, separar por comas.
 
 ## Ahora, generamos el archivo de salida:
 
-with open('salida.html','w') as outfile:
-    outfile.write(document_template_nuevo)
+    with open('salida.html','w') as outfile:
+        outfile.write(document_template_nuevo)
