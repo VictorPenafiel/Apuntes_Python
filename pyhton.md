@@ -94,8 +94,7 @@ La forma de llamar un metodo se llama notacion de punto
     count
         "Contar" Cuenta el numero de veces que aparece un caracter
     upper
-        
-            "Mayusculas" Transforma el string a mayusculas
+        "Mayusculas" Transforma el string a mayusculas
     lower 
         "Minusculas" Transforma el string a minusculas
     title 
@@ -109,7 +108,7 @@ La forma de llamar un metodo se llama notacion de punto
     f 
         "formato" Interpolacion al trabajar con un string
     :.xf 
-        indica el numero de decimales
+        x indica el numero de decimales
 
 ## Metodos basicos de lista
 
@@ -158,10 +157,13 @@ Para acceder a uno []
     pip install --upgrade pip setuptools wheel
 ## Para intalar librerias por medio de pip
     pip install"nombre  de libreria"
-  
+
+## Modos de apertura
     open("archivo.txt", "r")
     
-    r – Lectura únicamente.
-    w – Escritura únicamente, reemplazando el contenido actual del archivo o bien creándolo si es inexistente.
-    a – Escritura únicamente, manteniendo el contenido actual y añadiendo los datos al final del archivo.
-    w+, r+ o a+ – Lectura y escritura.
+    El segundo argumento en open() especifica cómo se va a usar el archivo:
+
+    r - Lectura únicamente.
+    w - Escritura únicamente, reemplazando el contenido existente o creando el archivo si no existe.
+    a - Escritura únicamente, agregando contenido al final del archivo sin sobrescribir lo existente.
+    w+, r+, o a+ - Lectura y escritura simultáneas.
