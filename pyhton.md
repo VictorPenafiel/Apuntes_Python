@@ -163,7 +163,11 @@ Para acceder a uno []
     
     El segundo argumento en open() especifica cómo se va a usar el archivo:
 
-    r - Lectura únicamente.
-    w - Escritura únicamente, reemplazando el contenido existente o creando el archivo si no existe.
-    a - Escritura únicamente, agregando contenido al final del archivo sin sobrescribir lo existente.
-    w+, r+, o a+ - Lectura y escritura simultáneas.
+    r
+        Lectura únicamente.
+    w
+        Escritura únicamente, reemplazando el contenido existente o creando el archivo si no existe.
+    a
+        Escritura únicamente, agregando contenido al final del archivo sin sobrescribir lo existente.
+    w+, r+, o a+
+        Lectura y escritura simultáneas.
