@@ -1,22 +1,22 @@
 
---cmd
-# Crear entorno virtual
-> py -m venv nombre_entorno
+## cmd
+### Crear entorno virtual
+    py -m venv nombre_entorno
 
-# Activar entorno virtual
-> .\nombre_entorno\Scripts\activate
+### Activar entorno virtual
+    .\nombre_entorno\Scripts\activate
 
 -----------------------------------------------------------------------------------------------------------------
 
 ## Activando el entorno virtual
 
---powershell
+### powershell
 .\django_env\Scripts\activate.ps1
 
---cmd
+### cmd
 django_env\Scripts\activate.ps1
 
---Unix
+### Unix
 source entorno/Scripts/activate
 django_env/bin/activate
 
@@ -24,8 +24,8 @@ django_env/bin/activate
 ## Desactivar entorno virtual
 deactivate
 
--- Para obtener la ruta(PATH) DEL EJECUTABLE PY
-where py
+### Para obtener la ruta(PATH) DEL EJECUTABLE PY
+    where py
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -44,6 +44,7 @@ where py
 	> .\nombre_entorno\Scripts\activate
 
 4) Para verificar que está activo, deberá notar el nombre del ambiente que activó como prefijo del prompt de la cónsola.
+
 ### Verificar cuál intérprete de python se está ejecutando (si el del entorno virtual o el global)
 	> py -c "import sys; print(sys.executable)"
 	
@@ -55,7 +56,7 @@ where py
 ##  Instalacion de virtualenvwrapper
 pip install virtualenvwrapper
 
-## Configurar variables de entorno(Unix/Linux) 
+### Configurar variables de entorno(Unix/Linux) 
 
     pip install virtualenvwrapper
 
@@ -77,10 +78,10 @@ pip install virtualenvwrapper
 	virtualenv django_env
 
 ## Configurar variables de entorno (Windows)
-En inicio buscar editar variables de entorno
-Opciones avanzadas -> Variables de entorno -> Nuevo
-	Nombre de la -> WORKON_HOME
-	VAlor de la -> %USERPROFILE%\Envs
+En inicio buscar editar variables de entorno  
+Opciones avanzadas -> Variables de entorno -> Nuevo  
+	Nombre de la -> WORKON_HOME  
+	VAlor de la -> %USERPROFILE%\Envs  
 * Asegurarse que la subcarpeta Scripts de Python este en tu variable de entorno. Variable de usuario ->PATH
 	
 -----------------------------------------------------------------------------------------------------------------
@@ -96,19 +97,19 @@ At line:1 char:1
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess
 
---obtener poliza de seguridad
+### obtener poliza de seguridad
 Get-ExecutionPolicy
 
---desactivar la poliza de seguridad
+### desactivar la poliza de seguridad
 Set-ExecutionPolicy RemoteSigned
 
 -----------------------------------------------------------------------------------------------------------------
 
 ## Comandos
-deactivate — Salir del entorno virtual Python actual
-workon — Listar los entornos virtuales disponibles
-workon name_of_environment — Activar el entorno virtual Python especificado
-rmvirtualenv name_of_environment — Borrar el entorno especificado.
+deactivate — Salir del entorno virtual Python actual  
+workon — Listar los entornos virtuales disponibles  
+workon name_of_environment — Activar el entorno virtual Python especificado  
+rmvirtualenv name_of_environment — Borrar el entorno especificado.  
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -126,13 +127,13 @@ Ver entornos virtuales disponibles
 -----------------------------------------------------------------------------------------------------------------
 
 ## Gestión de dependencias
-● Revisar dependencias instaladas (para comparar entornos)
++ Revisar dependencias instaladas (para comparar entornos)
 	> py -m pip list
-● Desinstalar dependencia
++ Desinstalar dependencia
 	pip uninstall nombre
 	> py -m pip uninstall Django==5.1.1
-● pip install -r requirements.txt -> para instalar las dependencias desde un archivo
-● pip freeze > requirements.txt -> para generar un respaldo de los paquetes instalados creando un
++ pip install -r requirements.txt -> para instalar las dependencias desde un archivo
++ pip freeze > requirements.txt -> para generar un respaldo de los paquetes instalados creando un
 archivo requirements.txt
-● pip install astral==2.2 -> para instalar una versión específica de un paquete que necesitemos, en
++ pip install astral==2.2 -> para instalar una versión específica de un paquete que necesitemos, en
 este ejemplo astral 2.2
