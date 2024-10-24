@@ -172,7 +172,7 @@ EN EL SITIO DE GITHUB:
 12) git branch -m nombreRama nombreNuevo | 
 13) git checkout numeroComentario | llevarnos al comentario
 14) git checkout nombreRama | llevarnos hacia la rama
-15) git reset = Descompone el archivo, pero conserva el contenido del mismo
+15) git reset = Descompone el archivo, pero conserva el contenido del mismo  
         git reset --soft HEAD~ | regresar el último comentario
 16) git remote add origin https://github.com/{usuario}/{repo}.git
 17) git remote set-url origin git@github.com:adrianedutecno/iguanapage.git
@@ -216,9 +216,9 @@ EN EL SITIO DE GITHUB:
 
 ## /* para resolver problema de origin"
 
-git add .
-git remote rm origin
-git remote add origin 
+    git add .
+    git remote rm origin
+    git remote add origin 
 
 ------------------------------------------------------------------------------------------------
 ## Para crear pagina en pages
