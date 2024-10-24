@@ -3,23 +3,23 @@
 1) pwd | mostrar directorio donde estamos
 2) cd/nombre directorio | cambiar directorio
 3) cd .. | ir al directorio anterior
-4) ls -la | listar carpetas, permisos y archivos ocultos
-ls - lah  | Tamaño de los archivos
-ls -rlh   | ver directorios con permisos y tamaños
-ls -Rh  | ver directorios y subdirectorios
-ls -Rlh   | ver directorios con permisos y tamaños y sus subdirectorios
-ls - l     | Ver permisos y rutas
-	d = directory
-	r = read
-	w = write
-	x = executable
-d[usuario{r|w|x}]
-[grupo{r|w|x}]
-[otro{r|w|x}]
-./: directorio actual
-../: directorio padre
-./: directorio actual
-./archivoOculto o directorio 
+4) ls -la | listar carpetas, permisos y archivos ocultos  
+ls - lah  | Tamaño de los archivos  
+ls -rlh   | ver directorios con permisos y tamaños  
+ls -Rh  | ver directorios y subdirectorios  
+ls -Rlh   | ver directorios con permisos y tamaños y sus subdirectorios  
+ls - l     | Ver permisos y rutas  
+	d = directory  
+	r = read  
+	w = write  
+	x = executable  
+d[usuario{r|w|x}]  
+[grupo{r|w|x}]  
+[otro{r|w|x}]  
+./: directorio actual  
+../: directorio padre  
+./: directorio actual  
+./archivoOculto o directorio  
 
 5) ls | listar carpetas y archivos
 6) mkdir nombreCarpeta | crear una carpeta o directorio
@@ -117,27 +117,27 @@ Requisitos:
 Procedimiento:
 EN GIT BASH:
 1) Abrir Git Bash.
-2) Ejecutar: ls -al ~/.ssh
+2) Ejecutar: ls -al ~/.ssh  
 	Es para saber si ya hay alguna llave creada previamente. (si es así, salte al paso 5)
 	Las llaves usualmente se identifican como: id_rsa o nombres similares.
 	Si no existe la carpeta, se observará un error como: ~/.ssh doesn't exist
 	
-3) Generar la nueva llave. Ejecutar: ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+3) Generar la nueva llave. Ejecutar: ssh-keygen -t rsa -b 4096 -C "your_email@example.com"  
 	Coloque el mismo email que utilizó para registrarse en Github
 	Se le solicitará un passphrase. Dejar en blanco.
 
-4) Verifique que se han creado las llaves. Ejecute: ls -al ~/.ssh
+4) Verifique que se han creado las llaves. Ejecute: ls -al ~/.ssh  
 	Ahora deben aparecer los archivos:  id_rsa  y  id_rsa.pub
 	
 5) Active el SSH-Agent.  Ejecute:  eval "$(ssh-agent -s)"
 
 6) Agregue la llave privada al agente. Ejecute: ssh-add ~/.ssh/id_rsa
 
-7) Copiar el contenido de la llave PÚBLICA en el portapapeles. Para ello, ejecute:  cat ~/.ssh/id_rsa.pub
-	Podrá observar en el terminal el contenido de la llave. 
+7) Copiar el contenido de la llave PÚBLICA en el portapapeles. Para ello, ejecute:  cat ~/.ssh/id_rsa.pub  
+	Podrá observar en el terminal el contenido de la llave.  
 	Debe seleccionar cuidadosamente (con el cursor) el texto que se observa --> clic Botón derecho --> Copiar
 
-EN EL SITIO DE GITHUB:
+EN EL SITIO DE GITHUB:  
 8) Ingresar con su usuario GitHub al sitio.
 9) Hacer clic en su avatar (esquina superior derecha) y seleccionar "Settings" (o configuración).
 10) En el menú lateral izquierdo, seleccionar "SSH and GPG keys".
@@ -173,7 +173,7 @@ EN EL SITIO DE GITHUB:
 13) git checkout numeroComentario | llevarnos al comentario
 14) git checkout nombreRama | llevarnos hacia la rama
 15) git reset = Descompone el archivo, pero conserva el contenido del mismo  
-        git reset --soft HEAD~ | regresar el último comentario
+    git reset --soft HEAD~ | regresar el último comentario
 16) git remote add origin https://github.com/{usuario}/{repo}.git
 17) git remote set-url origin git@github.com:adrianedutecno/iguanapage.git
 18) git remote rename nombreActual nombreNuevo | renombrar repositorio
