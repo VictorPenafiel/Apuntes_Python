@@ -61,8 +61,7 @@ Propiedades Display
 ## Spacing
 https://getbootstrap.com/docs/5.0/utilities/spacing/
 
-Margenes: 
-Espacio entre los contenedores, cajas, divisiones
+Margenes: Espacio entre los contenedores, cajas, divisiones
 
     ms-1: Margin Start (margin-left)
     me-2: Margin End (margin-right)
@@ -71,7 +70,6 @@ Espacio entre los contenedores, cajas, divisiones
     my-5: Margin Y (vertical)
     mx-5: Margin X (horizontal)
 
-Padding
 Padding: Espacio interno entre el margen y el contenido
 
     ps-1: Padding Start (padding-left)
@@ -82,12 +80,8 @@ Padding: Espacio interno entre el margen y el contenido
     px-5: Padding X (horizontal)
 
 Estructuras Flexibles
-
     row: Filas
     col: Columnas
-
-Tamaño de Ancho y Alto
-Anchura
 
 Anchura: Controla el ancho de un elemento
 
@@ -95,8 +89,6 @@ Anchura: Controla el ancho de un elemento
     w-50: Ancho del 50%
     w-75: Ancho del 75%
     w-100: Ancho del 100%
-
-Altura
 
 Altura: Controla la altura de un elemento
 
