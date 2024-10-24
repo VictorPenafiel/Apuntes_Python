@@ -137,7 +137,8 @@ EN GIT BASH:
 	Podrá observar en el terminal el contenido de la llave.  
 	Debe seleccionar cuidadosamente (con el cursor) el texto que se observa --> clic Botón derecho --> Copiar
 
-EN EL SITIO DE GITHUB:  
+# EN EL SITIO DE GITHUB:  
+
 8) Ingresar con su usuario GitHub al sitio.
 9) Hacer clic en su avatar (esquina superior derecha) y seleccionar "Settings" (o configuración).
 10) En el menú lateral izquierdo, seleccionar "SSH and GPG keys".
