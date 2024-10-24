@@ -1,80 +1,68 @@
-Validación de CSS, HTML y JavaScript
+CSS Validation
+  https://jigsaw.w3.org/css-validator/validator.html.es
+HTML Validation
+  https://validator.w3.org/nu/
+JS Validation
+  https://codepen.io/pen/
 
-    CSS Validation: https://jigsaw.w3.org/css-validator/validator.html.es
-    HTML Validation: https://validator.w3.org/nu/
-    JS Validation: https://codepen.io/pen/
+Integracion bootstrap
+  https://getbootstrap.com/docs/5.2/getting-started/introduction/
+Integracion JQuery
+  https://releases.jquery.com/
+Otra manera es, a traves, de las librerias alojadas en google
+  https://developers.google.com/speed/libraries
+ 
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 
-Integración de Bootstrap
+## Rescursos de Bootstrap
+  Sistema de grillas de Bootstrap
+    https://www.tutorialesprogramacionya.com/cssya/bootstrapya/detalleconcepto.php?codigo=117
+    https://getbootstrap.com/docs/4.0/layout/grid/
+  Color
+    https://getbootstrap.com/docs/5.2/customize/color/
+  Navbar
+    https://getbootstrap.com/docs/5.2/components/navbar/
+    https://ajgallego.gitbook.io/bootstrap-4/componentes-responsive/barra-de-navegacion
+  Containers
+    https://getbootstrap.com/docs/5.2/layout/containers/
+    ● col-N se refiere a dispositivos extra small (< 576px).
+    ● col-sm-N se refiere a dispositivos small (≥ 576px).
+    ● col-md-N se refiere a dispositivos medium (≥ 768px).
+    ● col-lg-N se refiere a dispositivos large (≥ 992px).
+    ● col-xl-N se refiere a dispositivos extra large (≥ 1200px).
+    ● col-xxl-N se refiere a dispositivos extra extra large (≥ 1400px).
 
-    Documentación oficial: https://getbootstrap.com/docs/5.2/getting-started/introduction/
-    Descargas: https://releases.jquery.com/
 
-Alternativa: Utilizar las bibliotecas alojadas en Google
-
-    https://developers.google.com/speed/libraries
-
-Recursos de Bootstrap
-Sistema de Grillas
-
-    Tutorial: https://www.tutorialesprogramacionya.com/cssya/bootstrapya/detalleconcepto.php?codigo=117
-    Documentación oficial: https://getbootstrap.com/docs/4.0/layout/grid/
-
-Colores
-
-    Personalización: https://getbootstrap.com/docs/5.2/customize/color/
-
-Navbar
-
-    Documentación: https://getbootstrap.com/docs/5.2/components/navbar/
-    Ejemplo: https://ajgallego.gitbook.io/bootstrap-4/componentes-responsive/barra-de-navegacion
-
-Contenedores
-
-    Documentación: https://getbootstrap.com/docs/5.2/layout/containers/
-
-Componentes Interactivos
+## Componentes interactivos
 Buttons
+  https://getbootstrap.com/docs/5.2/components/buttons/
+Modal- Agregar cuadros de diálogo a su sitio para lightboxes, notificaciones de usuario o contenido completamente personalizado
+  https://getbootstrap.com/docs/5.2/components/modal/
+Carousel-Presentacion de diapositivas
+  https://getbootstrap.com/docs/4.5/components/carousel/
+Popover-Para mostrar un mensaje emergente
+  https://getbootstrap.com/docs/5.2/components/popovers/
+Tooltip-ayuda al pasar el puntero sobre la palabra o boton
+  https://getbootstrap.com/docs/5.2/components/tooltips/
+Dropdown-Muestra un listado despegable con opciones o link
+  https://getbootstrap.com/docs/5.2/components/dropdowns/
 
-    Documentación: https://getbootstrap.com/docs/5.2/components/buttons/
-
-Modal
-
-    Documentación: https://getbootstrap.com/docs/5.2/components/modal/
-
-Carousel
-
-    Documentación: https://getbootstrap.com/docs/4.5/components/carousel/
-
-Popover
-
-    Documentación: https://getbootstrap.com/docs/5.2/components/popovers/
-
-Tooltip
-
-    Documentación: https://getbootstrap.com/docs/5.2/components/tooltips/
-
-Dropdown
-
-    Documentación: https://getbootstrap.com/docs/5.2/components/dropdowns/
-
-Utilidades de Estilo
-Clases de Posición
-
-    Documentación: https://getbootstrap.com/docs/4.0/utilities/position/
-
-Espaciado
-
-    Documentación: https://getbootstrap.com/docs/5.2/utilities/spacing/
-
+## Utilidades de estilo
+Clases de posición
+  https://getbootstrap.com/docs/4.0/utilities/position/
+Espaciado  
+  https://getbootstrap.com/docs/5.2/utilities/spacing/
 Propiedades Display
+  https://getbootstrap.com/docs/5.2/utilities/display/
 
-    Documentación: https://getbootstrap.com/docs/5.2/utilities/display/
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+## Spacing
+https://getbootstrap.com/docs/5.0/utilities/spacing/
 
-Spacing
-
-    Documentación: https://getbootstrap.com/docs/5.0/utilities/spacing/
-
-Margenes
+Margenes: 
+Espacio entre los contenedores, cajas, divisiones
 
     ms-1: Margin Start (margin-left)
     me-2: Margin End (margin-right)
@@ -84,6 +72,7 @@ Margenes
     mx-5: Margin X (horizontal)
 
 Padding
+Padding: Espacio interno entre el margen y el contenido
 
     ps-1: Padding Start (padding-left)
     pe-2: Padding End (padding-right)
@@ -100,6 +89,8 @@ Estructuras Flexibles
 Tamaño de Ancho y Alto
 Anchura
 
+Anchura: Controla el ancho de un elemento
+
     w-25: Ancho del 25%
     w-50: Ancho del 50%
     w-75: Ancho del 75%
@@ -107,14 +98,21 @@ Anchura
 
 Altura
 
+Altura: Controla la altura de un elemento
+
     h-25: Altura del 25%
     h-50: Altura del 50%
     h-75: Altura del 75%
     h-100: Altura del 100%
 
-Temas y Plantillas Populares de Bootstrap
+Estos valores pueden usarse individualmente o combinados para controlar tanto el ancho como la altura de elementos flexibles en sistemas de diseño responsivos. 
 
-    https://startbootstrap.com/themes
-    https://bootsnipp.com/
-    https://gooyaabitemplates.com/
-    https://www.protemplateslab.com/
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+## Temas y plantillas populares de Bootstrap
+  https://startbootstrap.com/themes
+  https://bootsnipp.com/
+  https://gooyaabitemplates.com/
+  https://www.protemplateslab.com/
