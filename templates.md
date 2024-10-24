@@ -10,17 +10,17 @@ from string import Template
 
 ## Cargar el archivo html (como lectura de archivo de texto plano). Coloque el nombre deseado
 
-with open('prueba01.html','r') as infile:
-    entrada = infile.read()
+    with open('prueba01.html','r') as infile:
+        entrada = infile.read()
 
 ## Crear objeto Template con la variable recién recibida (entrada)
 
 document_template = Template(entrada)
 
 ## Definir los valores de las variable que se aspiran insertar en el template.
-sec = "0008"
-nom = "Carlos"
-fecha = "28/01/2022"
+    sec = "0008"  
+    nom = "Victor"  
+    fecha = "28/01/2024"  
 
 ## Inyectar los valores anteriores al template
 
