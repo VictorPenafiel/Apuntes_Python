@@ -53,14 +53,14 @@ Tipos de datos
 		complex: Parte real y parte imaginaria, la cual se nombra con una j
 -----------------------------------------------------------------------------------------------------------------
 ## Secuencias
-### Secuencias Inmutables:
+#### Secuencias Inmutables:
 	Strings
 		str " ": Cadena de texto
 	Tuples
 		tuple (): Puede contener objetos de diferentes tipos
 	Bytes
 		bytes
-### Secuencias Mutables:
+#### Secuencias Mutables:
 	Listas 
 		list []: Puede contener objetos de diferentes tipos, separados por coma. Todo elemento de una lista posee un indice interno que parte en subcero [0]
 	Byte arrays
@@ -91,7 +91,8 @@ La forma de llamar un metodo se llama notacion de punto
 
 ## Metodos basicos de string
 
-    count "Contar" Cuenta el numero de veces que aparece un caracter
+    count
+        "Contar" Cuenta el numero de veces que aparece un caracter
     upper "Mayusculas" Transforma el string a mayusculas
     lower "Minusculas" Transforma el string a minusculas
     title "Titulo" Mayusculas solo a la primera letra de cada palabra
