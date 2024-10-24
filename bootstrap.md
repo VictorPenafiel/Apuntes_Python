@@ -1,17 +1,17 @@
-CSS Validation  
-  https://jigsaw.w3.org/css-validator/validator.html.es
-HTML Validation  
-  https://validator.w3.org/nu/
-JS Validation  
-  https://codepen.io/pen/
+    CSS Validation  
+        https://jigsaw.w3.org/css-validator/validator.html.es
+    HTML Validation  
+        https://validator.w3.org/nu/
+    JS Validation  
+      https://codepen.io/pen/
 
-Integracion bootstrap  
-  https://getbootstrap.com/docs/5.2/getting-started/introduction/
-Integracion JQuery  
-  https://releases.jquery.com/
-Otra manera es, a traves, de las librerias alojadas en google  
-  https://developers.google.com/speed/libraries
- 
+    Integracion bootstrap  
+        https://getbootstrap.com/docs/5.2/getting-started/introduction/
+    Integracion JQuery  
+        https://releases.jquery.com/
+    Otra manera es, a traves, de las librerias alojadas en google  
+        https://developers.google.com/speed/libraries
+
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
 
@@ -35,18 +35,18 @@ Otra manera es, a traves, de las librerias alojadas en google
 
 
 ## Componentes interactivos
-Buttons  
-    https://getbootstrap.com/docs/5.2/components/buttons/
-Modal- Agregar cuadros de diálogo a su sitio para lightboxes, notificaciones de usuario o contenido completamente personalizado  
-    https://getbootstrap.com/docs/5.2/components/modal/
-Carousel-Presentacion de diapositivas  
-    https://getbootstrap.com/docs/4.5/components/carousel/
-Popover-Para mostrar un mensaje emergente  
-    https://getbootstrap.com/docs/5.2/components/popovers/
-Tooltip-ayuda al pasar el puntero sobre la palabra o boton  
-    https://getbootstrap.com/docs/5.2/components/tooltips/
-Dropdown-Muestra un listado despegable con opciones o link  
-    https://getbootstrap.com/docs/5.2/components/dropdowns/
+    Buttons  
+        https://getbootstrap.com/docs/5.2/components/buttons/
+    Modal- Agregar cuadros de diálogo a su sitio para lightboxes, notificaciones de usuario o contenido completamente personalizado  
+        https://getbootstrap.com/docs/5.2/components/modal/
+    Carousel-Presentacion de diapositivas  
+        https://getbootstrap.com/docs/4.5/components/carousel/
+    Popover-Para mostrar un mensaje emergente  
+        https://getbootstrap.com/docs/5.2/components/popovers/
+    Tooltip-ayuda al pasar el puntero sobre la palabra o boton  
+        https://getbootstrap.com/docs/5.2/components/tooltips/
+    Dropdown-Muestra un listado despegable con opciones o link  
+        https://getbootstrap.com/docs/5.2/components/dropdowns/
 
 ## Utilidades de estilo
 Clases de posición  
