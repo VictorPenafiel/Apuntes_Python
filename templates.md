@@ -15,7 +15,7 @@ from string import Template
 
 ## Crear objeto Template con la variable recién recibida (entrada)
 
-document_template = Template(entrada)
+    document_template = Template(entrada)
 
 ## Definir los valores de las variable que se aspiran insertar en el template.
     sec = "0008"  
@@ -26,9 +26,10 @@ document_template = Template(entrada)
 
 document_template_nuevo = document_template.substitute(seccion = sec, nombre = nom, fecha = fecha)
 
-### ojo 1: debe crearse nueva variable que reciba el resultado de la inyección.
-### ojo 2: Al inyectar las variables respectivas dentro del substitute, debe respetarse el siguiente formato:
-### nombre_var_html = nombre_var_python.  Si hay mas de 1 variable, separar por comas.
+### Debe crearse nueva variable que reciba el resultado de la inyección.
+### Al inyectar las variables respectivas dentro del substitute, debe respetarse el siguiente formato:
+    nombre_var_html = nombre_var_python.  
+Si hay mas de 1 variable, separar por comas.
 
 ## Ahora, generamos el archivo de salida:
 
