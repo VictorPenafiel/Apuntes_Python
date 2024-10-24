@@ -19,12 +19,12 @@ Operador aritmetico
 % Modulo: Resto del numero entero
 
 ## Operador Booleano (Comparar valores)
-== Igual a
-!= Distinto a
-< Menor que
-> Mayor que
-<= Menor o igual que
->= Mayor o igual que
+    == Igual a
+    != Distinto a
+    < Menor que
+    > Mayor que
+    <= Menor o igual que
+    >= Mayor o igual que
 
 Operador Binario
 & and
