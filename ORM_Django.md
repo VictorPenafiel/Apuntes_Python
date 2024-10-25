@@ -91,11 +91,11 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 
 ### Creación de Vistas y Plantillas
 
-1. Crea las vistas para listar y agregar productos en `producto/views.py`.
+#### Crea las vistas para listar y agregar productos en `producto/views.py`.
 
-2. Crea una carpeta `templates` dentro de la aplicación `producto/templates`.
+####  Crea una carpeta `templates` dentro de la aplicación `producto/templates`.
 
-3. Crea archivos HTML para listar, agregar, editar y eliminar productos. Crear una plantilla base, se debe crear un archivo llamado base.html en la carpeta web/templates que contenga la estructura general de la web a mostrar, usando blocks y marcando con fondos de colores (background) cada sección para mostrar de manera más explícita la separación entre éstas (opcional).
+####  Crea archivos HTML para listar, agregar, editar y eliminar productos. Crear una plantilla base, se debe crear un archivo llamado base.html en la carpeta web/templates que contenga la estructura general de la web a mostrar, usando blocks y marcando con fondos de colores (background) cada sección para mostrar de manera más explícita la separación entre éstas (opcional).
     
 	base.html -> estructura base  
 		include: navbar.html -> barra de navegación
@@ -115,11 +115,11 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 	editar_libro.html -> página de edición  
 		extends: layout.html -> template a reutilizar
 
-4. Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuestas HTTP
+####  Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuestas HTTP
     def recetas(request):
     return render(request, 'recetas.html', {})
 
-### Configurar urls.py en la aplicación creada y asociarlas a las vistas correspondientes:  
+#### Configurar urls.py en la aplicación creada y asociarlas a las vistas correspondientes:  
 
 	    config/urls.py  
 	    from django.urls import path, include  
