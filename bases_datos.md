@@ -253,7 +253,6 @@ Las transacciones en PostgreSQL garantizan la integridad y consistencia de la ba
         Una transacción se considera atómica, lo que significa que todas las operaciones dentro de una transacción se realizan como una unidad indivisible. Si alguna operación dentro de la transacción falla, todas las operaciones se deshacen (rollback), y si todas las operaciones tienen éxito, se confirman (commit).
     Consistencia
         Las transacciones en PostgreSQL deben mantener la consistencia de la base de datos. Esto significa que las transacciones deben llevar la base de datos desde un estado válido a otro estado válido, sin violar las restricciones de integridad definidas en la base de datos.
-
     Aislamiento
         La propiedad de aislamiento garantiza que cada transacción se ejecute de manera aislada de otras transacciones concurrentes. Esto evita que las transacciones interfieran entre sí y garantiza la coherencia de los datos.
     Durabilidad
@@ -284,6 +283,5 @@ El TCL se utiliza en PostgreSQL para controlar las transacciones y los cambios e
 - `RIGHT JOIN`: Combina filas de la tabla derecha con las filas coincidentes de la tabla izquierda.
 - `FULL JOIN`: Combina todas las filas de ambas tablas, incluyendo las filas sin coincidencias.
 
-#### Es importante tener en cuenta que los operadores OUTER JOIN (LEFT OUTER JOIN, RIGHT OUTER JOIN y FULL OUTER JOIN) 
-#### Son compatibles en PostgreSQL y se pueden utilizar para realizar consultas que involucren combinaciones externas izquierdas, derechas o completas. 
-##   El operador OUTER es opcional y se puede omitir en las cláusulas JOIN. Por ejemplo, LEFT JOIN y LEFT OUTER JOIN son equivalentes en PostgreSQL.
+#### Es importante tener en cuenta que los operadores OUTER JOIN (LEFT OUTER JOIN, RIGHT OUTER JOIN y FULL OUTER JOIN) son compatibles en PostgreSQL y se pueden utilizar para realizar consultas que involucren combinaciones externas izquierdas, derechas o completas. 
+####   El operador OUTER es opcional y se puede omitir en las cláusulas JOIN. Por ejemplo, LEFT JOIN y LEFT OUTER JOIN son equivalentes en PostgreSQL.
