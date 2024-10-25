@@ -38,7 +38,7 @@ Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir 
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
-Tipos de datos
+# Tipos de datos
 
 ## Números
 	Entero
@@ -51,7 +51,7 @@ Tipos de datos
 
 	Complejos
 		complex: Parte real y parte imaginaria, la cual se nombra con una j
------------------------------------------------------------------------------------------------------------------
+
 ## Secuencias
 #### Secuencias Inmutables:
 	Strings
@@ -65,26 +65,24 @@ Tipos de datos
 		list []: Puede contener objetos de diferentes tipos, separados por coma. Todo elemento de una lista posee un indice interno que parte en subcero [0]
 	Byte arrays
 		bytearray
------------------------------------------------------------------------------------------------------------------
+
 ## Conjunto
 	Sets:
 		set {}: mutable, sin duplicados, sin orden
 	Frozen set:
-		frozenset: inmutable, sin duplicados, sin orden
------------------------------------------------------------------------------------------------------------------
+
 ## Mappings
 	Diccionarios:
 		dict {}: Grupo clave:valor, se acceden solo por clave, son delimitados por {}
 	“Matriz asociativa”
------------------------------------------------------------------------------------------------------------------
+
 ## Callable "invocable"
 	Funciones
 	Métodos
 	Clases
------------------------------------------------------------------------------------------------------------------
+
 ## Modulos
 
------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 La forma de llamar un metodo se llama notacion de punto
 	objeto.metodo(argumentos)
@@ -92,7 +90,7 @@ La forma de llamar un metodo se llama notacion de punto
 ## Metodos basicos de string
 
     count
-        "Contar" Cuenta el numero de veces que aparece un caracter
+    "Contar" Cuenta el numero de veces que aparece un caracter
     upper
         "Mayusculas" Transforma el string a mayusculas
     lower 
