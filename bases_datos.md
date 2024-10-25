@@ -78,6 +78,7 @@ Una vez creados los usuarios, se pueden cambiar los permisos con los siguientes 
 ## Normalización y Formas Normales
 
 ### Primera Forma Normal (1FN)
+
 La 1FN establece que cada columna de una tabla debe contener un solo valor y no debe haber duplicación de datos.
 
     producto_id, nombre, categoria_id, nombre, precio
@@ -114,11 +115,11 @@ La 3FN establece que una tabla debe cumplir con la 2FN y que no debe haber depen
 
 ### Desformalizacación
 
-tabla categorias
-PK categoria_id, nombre
+    tabla categorias
+    PK categoria_id, nombre
 
-tabla productos
-PK producto_id, nombre, precio, FK categoria_id
+    tabla productos
+    PK producto_id, nombre, precio, FK categoria_id
 
 -----------------------------------------------------------------------------------------------------------
 
