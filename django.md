@@ -127,7 +127,7 @@ este ejemplo astral 2.2
 
 #### Generar archivos de migracion. 
     python manage.py makemigrations
-Este comando es utilizado para crear archivos de migración en Django. Las migraciones son archivos que contienen cambios en el esquema de la base de datos, como la creación de nuevas tablas o la modificación de las existentes. El comando makemigrations analiza los modelos definidos en tu proyecto y genera los archivos de migración correspondientes que luego podrán ser aplicados a la base de datos.
+Las migraciones son archivos que contienen cambios en el esquema de la base de datos. El comando makemigrations analiza los modelos definidos en tu proyecto y genera los archivos de migración correspondientes que luego podrán ser aplicados a la base de datos.
 
 #### Mostrar el estado de las migraciones en tu proyecto. 
 	python manage.py showmigrations
@@ -135,7 +135,7 @@ Indica qué migraciones han sido aplicadas y cuáles están pendientes de aplica
 
 #### Aplicar los cambios creados por makemigrations
 	python manage.py migrate
-El comando migrate se encarga de aplicar las migraciones a la base de datos. Ejecuta los archivos de migración pendientes en el orden adecuado para asegurar que la estructura de la base de datos esté sincronizada con los modelos definidos en tu proyecto.
+Ejecuta los archivos de migración pendientes en el orden adecuado para asegurar que la estructura de la base de datos esté sincronizada con los modelos definidos en tu proyecto.
 
 #### Crear super usuario
 	python manage.py createsuperuser
@@ -167,10 +167,10 @@ Te permite acceder directamente a la línea de comandos de tu base de datos, lo 
 	python manage.py dumpdata 
 Puedes especificar qué modelos o aplicaciones deseas incluir en la exportación. Es útil para realizar copias de seguridad de los datos o para transferirlos entre diferentes entornos.
 
-#### Ejecuta las pruebas unitarias en tu proyecto. Ejecuta todas las pruebas definidas en los archivos tests.py de tus aplicaciones y muestra los resultados en la consola.
+#### Ejecuta todas las pruebas definidas en los archivos tests.py de tus aplicaciones y muestra los resultados en la consola.
 	 python manage.py test 
 	 
-#### Inicia un servidor de desarrollo con una copia de la base de datos en memoria y cargando datos de prueba. Es útil para ejecutar pruebas que requieren acceso a una base de datos y datos específicos.
+#### Inicia un servidor de desarrollo con una copia de la base de datos en memoria y cargando datos de prueba.
 	python manage.py testserver 
 	
 #### Muestra las diferencias entre los archivos de configuración de Django (settings.py) y la configuración actual de tu proyecto. 
