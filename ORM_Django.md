@@ -84,9 +84,9 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 2. Aplica las migraciones:
 
    ```bash
-   python manage.py migrate
+    python manage.py migrate
     python manage.py sqlmigrate aplicacion 0001
-    "nombre_aplicacion" "numero de migracion" en Snake case(Las migraciones en Django suelen numerarse secuencialmente (0001, 0002, etc.))
+    "nombre_aplicacion" "numero de migracion" en snake case(Las migraciones en Django suelen numerarse secuencialmente (0001, 0002, etc.))
    ```
 
 ### Creación de Vistas y Plantillas
@@ -97,36 +97,36 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 
 3. Crea archivos HTML para listar, agregar, editar y eliminar productos. Crear una plantilla base, se debe crear un archivo llamado base.html en la carpeta web/templates que contenga la estructura general de la web a mostrar, usando blocks y marcando con fondos de colores (background) cada sección para mostrar de manera más explícita la separación entre éstas (opcional).
     
-	base.html -> estructura base
+	base.html -> estructura base  
 		include: navbar.html -> barra de navegación
 
-	layout.html -> template a reutilizar
+	layout.html -> template a reutilizar  
 		extends: base.html -> estructura base
 
-	index.html -> página principal
+	index.html -> página principal  
 		extends: layout.html -> template a reutilizar
 
-	lista_libros.html -> página para listar libros
+	lista_libros.html -> página para listar libros  
 		extends: layout.html -> template a reutilizar
 
-	crear_libro.html -> página de creación
+	crear_libro.html -> página de creación  
 		extends: layout.html -> template a reutilizar
 
-	editar_libro.html -> página de edición
+	editar_libro.html -> página de edición  
 		extends: layout.html -> template a reutilizar
 
 4. Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuestas HTTP
     def recetas(request):
     return render(request, 'recetas.html', {})
 
-5. Configurar urls.py en la aplicación creada y asociarlas a las vistas correspondientes:
-	    config/urls.py
-	    from django.urls import path, include
-    urlpatterns = [
-        path('admin/', admin.site.urls),
-        path('producto/', include('producto.urls')),
-    ]
-    producto/views.py
+5. Configurar urls.py en la aplicación creada y asociarlas a las vistas correspondientes:  
+	    config/urls.py  
+	    from django.urls import path, include  
+    urlpatterns = [  
+        path('admin/', admin.site.urls),  
+        path('producto/', include('producto.urls')),  
+    ]  
+    producto/views.py  
 
 ### Creación de Formularios
 
@@ -156,7 +156,7 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 	CRISPY_TEMPLATE_PACK = 'bootstrap5'
 	
 ### Para poder mostrar un contenido estático (como imágenes, videos,etc) se debe crear la carpeta web/static
-    	Agregar  class=“container” a todos los templates de tu proyecto, para que Bootstrap pueda funcionar.
+    Agregar  class=“container” a todos los templates de tu proyecto, para que Bootstrap pueda funcionar.
 
     Manejo de contenido estático
     static
