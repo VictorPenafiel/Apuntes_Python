@@ -95,8 +95,9 @@ def: Se ocupa para definir funciones, seguida del nombre de la función y la lis
 
 
 # Metodos
-La forma de llamar un metodo se llama notacion de punto  
-	objeto.metodo(argumentos)
+
+    La forma de llamar un metodo se llama notacion de punto  
+	    objeto.metodo(argumentos)
 
 ## Metodos basicos de string
 
