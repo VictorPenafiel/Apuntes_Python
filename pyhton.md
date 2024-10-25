@@ -169,5 +169,5 @@ Para acceder a uno []
         Escritura únicamente, reemplazando el contenido existente o creando el archivo si no existe.
     a
         Escritura únicamente, agregando contenido al final del archivo sin sobrescribir lo existente.
-    w+, r+, o a+
+    r+, w+, o a+
         Lectura y escritura simultáneas.
