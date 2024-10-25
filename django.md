@@ -26,8 +26,8 @@ index.html, about.html y welcome.html
 
 ###  Para habilitar las tres URLs distintas, se deben crear tres vistas en el archivo views.py dentro de la carpeta web. Cada vista debe retornar un render con los datos necesarios para desplegar cada uno de los archivos HTML creados anteriormente.
 
-Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuestas HTTP:
-	Crear las vistas en forma de Funcion o Clases
+#### Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuestas HTTP:
+Crear las vistas en forma de Funcion o Clases
     def recetas(request):
     return render(request, 'recetas.html', {})
 	
@@ -39,9 +39,7 @@ Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuest
         path('producto/', include('producto.urls')),
     ]
 
-###  Crear una plantilla base, se debe crear un archivo llamado base.html en la carpeta web/templates que contenga la estructura
-general de la web a mostrar, usando blocks y marcando con fondos de colores (background) cada sección para mostrar de manera más
-explícita la separación entre éstas (opcional).
+###  Crear una plantilla base, se debe crear un archivo llamado base.html en la carpeta web/templates que contenga la estructura general de la web a mostrar, usando blocks y marcando con fondos de colores (background) cada sección para mostrar de manera más explícita la separación entre éstas (opcional).
 
 ###  Una vez creado el archivo base.html, debes reemplazar el contenido de tus archivos index.html, about.html y welcome.html para que, extiendan la plantilla base utilizando. 
 	{% extends 'base.html' %}
@@ -76,15 +74,15 @@ explícita la separación entre éstas (opcional).
 	CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 ### Para poder mostrar un contenido estático (como imágenes, videos,etc) se debe crear la carpeta web/static
-	9.1 Agregar  class=“container” a todos los templates de tu proyecto, para que Bootstrap pueda funcionar.
+	Agregar  class=“container” a todos los templates de tu proyecto, para que Bootstrap pueda funcionar.
 
-Manejo de contenido estático
-static
-Para agregar contenido desde un archivo colocar al inicio del html:
-    {% load static %}
- 
-Despues se modifica cada ruta de los archivos que se quiere agregar, colocando:
-    {% static "más nombre del archivo con extension" %} 
+#### Manejo de contenido estático
+    static
+    Para agregar contenido desde un archivo colocar al inicio del html:
+        {% load static %}
+    
+    Despues se modifica cada ruta de los archivos que se quiere agregar, colocando:
+        {% static "más nombre del archivo con extension" %} 
 
 ### Levantar el proyecto.
       python manage.py runserver
@@ -130,9 +128,10 @@ este ejemplo astral 2.2
     python manage.py makemigrations
 Este comando es utilizado para crear archivos de migración en Django. Las migraciones son archivos que contienen cambios en el esquema de la base de datos, como la creación de nuevas tablas o la modificación de las existentes. El comando makemigrations analiza los modelos definidos en tu proyecto y genera los archivos de migración correspondientes que luego podrán ser aplicados a la base de datos.
 
-#### Este comando muestra el estado de las migraciones en tu proyecto. Indica qué migraciones han sido aplicadas y cuáles están pendientes de aplicación. Puedes utilizarlo para verificar el estado de las migraciones y asegurarte de que todo esté sincronizado correctamente.
+#### Mostrar el estado de las migraciones en tu proyecto. 
 	python manage.py showmigrations
-	
+Indica qué migraciones han sido aplicadas y cuáles están pendientes de aplicación. Puedes utilizarlo para verificar el estado de las migraciones y asegurarte de que todo esté sincronizado correctamente.
+
 #### Aplicar los cambios creados por makemigrations
 	python manage.py migrate
 El comando migrate se encarga de aplicar las migraciones a la base de datos. Ejecuta los archivos de migración pendientes en el orden adecuado para asegurar que la estructura de la base de datos esté sincronizada con los modelos definidos en tu proyecto.
