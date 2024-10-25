@@ -103,6 +103,9 @@ Las transacciones en PostgreSQL garantizan la integridad y consistencia de la ba
         Una vez que una transacción ha sido confirmada (commit), sus cambios se vuelven permanentes y se mantendrán incluso en caso de fallos del sistema o reinicios posteriores.
 
 -----------------------------------------------------------------------------------------------------------------------
+Structured Query Language: Es el lenguaje estándar para la administración de bases de datos relacionales.
+SQL = DDL + DCL +DML + DQL+ TCL
+
 ## DDL (Data Definition Language)
 - `CREATE`: Se usa para crear una base de datos, tabla, vistas, etc.
 - `ALTER`:  Se utiliza para modificar la estructura, por ejemplo añadir o borrar columnas de una tabla.
