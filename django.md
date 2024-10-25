@@ -94,13 +94,13 @@ Crear las vistas en forma de Funcion o Clases
 
 ## Instalación y verificación
 ### Instalar django
-  pip install django=="numero de version"
+    pip install django=="numero de version"
 ### Verificar el estado de la instalacion
-  python -m django version
+    python -m django version
 ### Ver comando disponibles en Django
-  python -m django help
-  
------### ---------------------------------------------------------------------------------------------------------
+    python -m django help
+
+--------------------------------------------------------------------------------------------------------------
 
 ### Gestión de dependencias
 ● pip install -r requirements.txt -> para instalar las dependencias desde un archivo  
@@ -146,38 +146,44 @@ El comando migrate se encarga de aplicar las migraciones a la base de datos. Eje
 #### Ejecutar nuestro proyecto de manera local
 	python manage.py runserver
 
-#### Este comando permite observar el SQL antes de aplicar una determinada migración,
+#### Permite observar el SQL antes de aplicar una determinada migración,
 	python manage.py sqlmigrate app migration_name: 
 
-#### Este comando inicia una sesión interactiva de Django shell. Proporciona una interfaz de línea de comandos para interactuar con tu proyecto Django. Puedes ejecutar consultas de base de datos, crear, modificar o eliminar objetos, realizar pruebas, entre otras tareas.
+#### Iniciar una sesión interactiva de Django shell.
 	python manage.py shell
 	Ejemplos:
 	import mysite.settings as S
 	print(S.__file__)
 	print(S.BASE_DIR)
 
-#### Este comando inicia una consola interactiva de la base de datos. Te permite acceder directamente a la línea de comandos de tu base de datos, lo que puede ser útil para ejecutar consultas SQL personalizadas o realizar tareas específicas directamente en la base de datos.
+Proporciona una interfaz de línea de comandos para interactuar con tu proyecto Django. Puedes ejecutar consultas de base de datos, crear, modificar o eliminar objetos, realizar pruebas, entre otras tareas.
+
+#### Inicia una consola interactiva de la base de datos. 
 	python manage.py dbshell
 
-#### Este comando exporta los datos de la base de datos en formato JSON o YAML. Puedes especificar qué modelos o aplicaciones deseas incluir en la exportación. Es útil para realizar copias de seguridad de los datos o para transferirlos entre diferentes entornos.
-	python manage.py dumpdata: 
-	
-#### Este comando ejecuta las pruebas unitarias en tu proyecto. Ejecuta todas las pruebas definidas en los archivos tests.py de tus aplicaciones y muestra los resultados en la consola.
-	 python manage.py test: 
+Te permite acceder directamente a la línea de comandos de tu base de datos, lo que puede ser útil para ejecutar consultas SQL personalizadas o realizar tareas específicas directamente en la base de datos.
+
+#### Exporta los datos de la base de datos en formato JSON o YAML. 
+	python manage.py dumpdata 
+Puedes especificar qué modelos o aplicaciones deseas incluir en la exportación. Es útil para realizar copias de seguridad de los datos o para transferirlos entre diferentes entornos.
+
+#### Ejecuta las pruebas unitarias en tu proyecto. Ejecuta todas las pruebas definidas en los archivos tests.py de tus aplicaciones y muestra los resultados en la consola.
+	 python manage.py test 
 	 
-#### Este comando inicia un servidor de desarrollo con una copia de la base de datos en memoria y cargando datos de prueba. Es útil para ejecutar pruebas que requieren acceso a una base de datos y datos específicos.
-	python manage.py testserver: 
+#### Inicia un servidor de desarrollo con una copia de la base de datos en memoria y cargando datos de prueba. Es útil para ejecutar pruebas que requieren acceso a una base de datos y datos específicos.
+	python manage.py testserver 
 	
-#### Este comando muestra las diferencias entre los archivos de configuración de Django (settings.py) y la configuración actual de tu proyecto. Puedes utilizarlo para ver los cambios realizados en la configuración o para solucionar problemas relacionados con la configuración de tu proyecto.
+#### Muestra las diferencias entre los archivos de configuración de Django (settings.py) y la configuración actual de tu proyecto. 
 	python manage.py diffsettings
-	
+
+Puedes utilizarlo para ver los cambios realizados en la configuración o para solucionar problemas relacionados con la configuración de tu proyecto.
 -----------------------------------------------------------------------------------------------------------------
 
 #### Integración con una base de datos existente por medio de Django
-      python manage.py inspetdb > web/models.py
+    python manage.py inspetdb > web/models.py
 
 #### Integración con una base de datos existente por medio de pgAdmin 
-\COPY "peliculas" FROM 'C:\Users\usuario\peliculas.csv' WITH CSV;
+    \COPY "peliculas" FROM 'C:\Users\usuario\peliculas.csv' WITH CSV;
 
 #### python manage.py migrate > log.txt
     > log.txt
