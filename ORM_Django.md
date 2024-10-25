@@ -174,35 +174,35 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
-Uso del ORM de Django
+# Uso del ORM de Django  
 El ORM (Object-Relational Mapping) de Django te permite interactuar con bases de datos relacionales utilizando objetos Python en lugar de SQL directo.
 
 ### Definir un Modelo
 ### Crea una aplicación de Django: python manage.py startapp nombre_app
 ### Define tu modelo en el archivo models.py dentro de tu aplicación:
-from django.db import models
+    from django.db import models
 
-class Producto(models.Model):
-    nombre = models.CharField(max_length=100)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
+    class Producto(models.Model):
+        nombre = models.CharField(max_length=100)
+        precio = models.DecimalField(max_digits=10, decimal_places=2)
+        categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
 
-class Categoria(models.Model):
-    nombre = models.CharField(max_length=50)
-    
+    class Categoria(models.Model):
+        nombre = models.CharField(max_length=50)
+
 ### realizar migraciones
     python manage.py makemigrations
     python manage.py migrate
     python manage.py sqlmigrate aplicacion 0001
 
 ### Crear un registro
-producto = Producto(nombre="Producto 1", precio=29.99, categoria=categoria_objeto)
-producto.save()
+    producto = Producto(nombre="Producto 1", precio=29.99, categoria=categoria_objeto)
+    producto.save()
 
 ### Actualizar un registro
-producto = Producto.objects.get(pk=1)
-producto.nombre = "Nuevo Nombre"
-producto.save()
+    producto = Producto.objects.get(pk=1)
+    producto.nombre = "Nuevo Nombre"
+    producto.save()
 
 ### Eliminar un registro
     producto = Producto.objects.get(pk=1)
@@ -241,22 +241,22 @@ producto.save()
 	Modelo.objects.filter (**kwargs)
 #### No cumplen filtros
 	Modelo.objects.exclude (**kwargs)
-Amobos métodos pueden encadenarse
+Ambos métodos pueden encadenarse
 
 #### Rango de registros
 	Modelo.objects.metodo() [i:j:k]
 
 -----------------------------------------------------------------------------------------------------------------
-Consultas Avanzadas
+## Consultas Avanzadas
 
-## Consulta usando JOIN (relaciones)
+### Consulta usando JOIN (relaciones)
     productos_categoria = Producto.objects.filter(categoria__nombre="Electrónicos")
     
-## Consulta con OR y AND
+### Consulta con OR y AND
     from django.db.models import Q
     productos_filtrados = Producto.objects.filter(Q(precio__gt=10) | Q(categoria__nombre="Ropa"))
 
-## Consulta con JOIN y condiciones complejas
+### Consulta con JOIN y condiciones complejas
     productos_interesantes = Producto.objects.filter(Q(precio__lt=50) & Q(categoria__nombre="Electrónicos"))
     Relaciones
     ForeignKey: Para relaciones uno a muchos.
@@ -266,8 +266,8 @@ Consultas Avanzadas
     cliente = models.ForeignKey('Cliente', on_delete=models.CASCADE)
     productos = models.ManyToManyField(Producto)
 
-class Cliente(models.Model):
-    nombre = models.CharField(max_length=100)
+    class Cliente(models.Model):
+        nombre = models.CharField(max_length=100)
     
 Estos son solo ejemplos básicos del uso del ORM de Django. Puedes consultar la documentación oficial de Django para más detalles y ejemplos avanzados.
 
@@ -276,102 +276,102 @@ Estos son solo ejemplos básicos del uso del ORM de Django. Puedes consultar la 
 -----------------------------------------------------------------------------------------------------------------
 ## Iniciar Sesion
 
-def iniciar_sesion(request):
-    if request.method == 'POST':  # si el request es de tipo post
-        username = request.POST['username']  # captura username del request
-        password = request.POST['password']  # captura password del request
-        user = authenticate(request, username=username, password=password)  # se captura el usuario encontrado
-        if user is not None:  # si el usuario autenticado no viene vacio, quiere decir es validas sus credenciales
-            login(request, user)
-            return redirect('lista_vehiculos')
-        else:
-            messages.error(request, 'Usuario o password inválidas')
-            return render(request, 'login.html')
-    return render(request, 'login.html')  # tipo get
-
-</li>
-<li class="float-right">
-<a class="nav-link text-primary fs-5" href="#"> Hola, {{user.username}}</a>
-</li>
-
-
-{% if perms.vehiculo.add_vehiculo %}
-
-{% load bootstrap5 %}
-{% load static %}
-{% block content %}
-
-<nav class="navbar navbar-bg-dark navbar-expand-lg ">
-  <div class="container-fluid">
-    <a class="navbar-brand text-primary" href="{% url 'index' %}">
-      <img src="{% static 'vehiculo/img/autoCHICO.jpg' %}" alt="autoCHICO">
-    </a>
-    <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link text-primary" aria-current="page" href="{% url 'index' %}">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-primary" href="{% url 'lista_vehiculos' %}">Listar</a>
-        </li>
-        {% if perms.vehiculo.add_vehiculo %}
-        <li class="nav-item">
-          <a class="nav-link text-primary" href="{% url 'add' %}" >Agregar</a>
-        </li>
-
-        {% elif user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link text-warning" href="#" >Sin permiso para agregar vehiculos</a>
-        </li>
-         {% endif %}
-
-
-
-      </ul>
-
-      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-        {% if user.is_authenticated %}
-         <li class="nav-item">
-          <a class="nav-link text-primary fs-5" href="{% url 'logout' %}" >Cerrar Sesion</a>
-        </li>
-        <li class="float-right">
-          <a class="nav-link text-primary fs-5" href="#"> Hola, {{user.username}}</a>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link text-primary fs-5" href="{% url 'login' %}" >Iniciar Sesion</a>
-        </li>
-        {% endif %}
-      </ul>
-
-    </div>
-  </div>
-</nav>
-{% endblock %}}
+    def iniciar_sesion(request):
+        if request.method == 'POST':  # si el request es de tipo post
+            username = request.POST['username']  # captura username del request
+            password = request.POST['password']  # captura password del request
+            user = authenticate(request, username=username, password=password)  # se captura el usuario encontrado
+            if user is not None:  # si el usuario autenticado no viene vacio, quiere decir es validas sus credenciales
+                login(request, user)
+                return redirect('lista_vehiculos')
+            else:
+                messages.error(request, 'Usuario o password inválidas')
+                return render(request, 'login.html')
+        return render(request, 'login.html')  # tipo get
+    
+    </li>
+    <li class="float-right">
+    <a class="nav-link text-primary fs-5" href="#"> Hola, {{user.username}}</a>
+    </li>
+    
+    
+    {% if perms.vehiculo.add_vehiculo %}
+    
+    {% load bootstrap5 %}
+    {% load static %}
+    {% block content %}
+    
+    <nav class="navbar navbar-bg-dark navbar-expand-lg ">
+      <div class="container-fluid">
+        <a class="navbar-brand text-primary" href="{% url 'index' %}">
+          <img src="{% static 'vehiculo/img/autoCHICO.jpg' %}" alt="autoCHICO">
+        </a>
+        <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-primary" aria-current="page" href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="{% url 'lista_vehiculos' %}">Listar</a>
+            </li>
+            {% if perms.vehiculo.add_vehiculo %}
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="{% url 'add' %}" >Agregar</a>
+            </li>
+    
+            {% elif user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#" >Sin permiso para agregar vehiculos</a>
+            </li>
+             {% endif %}
+    
+    
+    
+          </ul>
+    
+          <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+            {% if user.is_authenticated %}
+             <li class="nav-item">
+              <a class="nav-link text-primary fs-5" href="{% url 'logout' %}" >Cerrar Sesion</a>
+            </li>
+            <li class="float-right">
+              <a class="nav-link text-primary fs-5" href="#"> Hola, {{user.username}}</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link text-primary fs-5" href="{% url 'login' %}" >Iniciar Sesion</a>
+            </li>
+            {% endif %}
+          </ul>
+    
+        </div>
+      </div>
+    </nav>
+    {% endblock %}
 
 -----------------------------------------------------------------------------------------------------------------
 ### permisos por usuario
 
-from django.contrib.auth.models import User, Permission
+    from django.contrib.auth.models import User, Permission
 
-usuario = User.objects.get(username='usuariotest')
+    usuario = User.objects.get(username='usuariotest')
 
-usuario.get_all_permissions()
+    usuario.get_all_permissions()
 
 
-#permisos para un modelo en especifico
+### permisos para un modelo en especifico
 
-from book.models import Book
-
-from django.contrib.contenttypes.models import ContentType
-
-from django.contrib.auth.models import Permission
-
-content_type=ContentType.objects.get_for_model(Book)
-
-book_permissions=Permission.objects.filter(content_type=content_type)
-
-[permiso.codename for permiso in book_permissions]
+    from book.models import Book
+    
+    from django.contrib.contenttypes.models import ContentType
+    
+    from django.contrib.auth.models import Permission
+    
+    content_type=ContentType.objects.get_for_model(Book)
+    
+    book_permissions=Permission.objects.filter(content_type=content_type)
+    
+    [permiso.codename for permiso in book_permissions]
