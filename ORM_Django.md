@@ -63,24 +63,25 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
    ```
 
 ### crear modelos para la aplicación, en el archivo models.py dentro de tu aplicación:
-from django.db import models
+
+    from django.db import models
 
     class Producto(models.Model):
         nombre = models.CharField(max_length=100)
         precio = models.DecimalField(max_digits=10, decimal_places=2)
         categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
-    
+
     class Categoria(models.Model):
         nombre = models.CharField(max_length=50)
 
 
-2. Genera los archivos de migración:
+1. Genera los archivos de migración:
 
    ```bash
    python manage.py makemigrations
    ```
 
-3. Aplica las migraciones:
+2. Aplica las migraciones:
 
    ```bash
    python manage.py migrate
@@ -94,8 +95,7 @@ from django.db import models
 
 2. Crea una carpeta `templates` dentro de la aplicación `producto/templates`.
 
-3. Crea archivos HTML para listar, agregar, editar y eliminar productos.
-Crear una plantilla base, se debe crear un archivo llamado base.html en la carpeta web/templates que contenga la estructura general de la web a mostrar, usando blocks y marcando con fondos de colores (background) cada sección para mostrar de manera más explícita la separación entre éstas (opcional).
+3. Crea archivos HTML para listar, agregar, editar y eliminar productos. Crear una plantilla base, se debe crear un archivo llamado base.html en la carpeta web/templates que contenga la estructura general de la web a mostrar, usando blocks y marcando con fondos de colores (background) cada sección para mostrar de manera más explícita la separación entre éstas (opcional).
     
 	base.html -> estructura base
 		include: navbar.html -> barra de navegación
@@ -114,6 +114,7 @@ Crear una plantilla base, se debe crear un archivo llamado base.html en la carpe
 
 	editar_libro.html -> página de edición
 		extends: layout.html -> template a reutilizar
+
 4. Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuestas HTTP
     def recetas(request):
     return render(request, 'recetas.html', {})
@@ -133,20 +134,19 @@ Crear una plantilla base, se debe crear un archivo llamado base.html en la carpe
 
 2. Define los formularios necesarios en `forms.py`.
 
-
-# crear forms.py en la aplicacion creada y define los formularios necesarios en 'forms.py'
+### crear forms.py en la aplicacion creada y define los formularios necesarios en 'forms.py'
 	producto/forms.py
 	form django import forms
 	class ProductoForm(forms.ModelForm)
     
-# instalar librerias para formularios y bootstrap
+### instalar librerias para formularios y bootstrap
 	pip install crispy-bootstrap5
 	pip install django-bootstrap-v5
 	pip install django-crispy-forms
     
-# configurar librerias
+### configurar librerias, las librerias deben ser colocadas antes que nuestra aplicación
 	config/settigs.py
-Las librerias deben ser colocadas antes que nuestra aplicación
+
 	INSTALLED_APPS:
 	'bootstrap5',  # bootstrap 5
     	'crispy_forms',  # crispy forms 
@@ -155,15 +155,15 @@ Las librerias deben ser colocadas antes que nuestra aplicación
 	CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 	CRISPY_TEMPLATE_PACK = 'bootstrap5'
 	
-## Para poder mostrar un contenido estático (como imágenes, videos,etc) se debe crear la carpeta web/static
-	Agregar  class=“container” a todos los templates de tu proyecto, para que Bootstrap pueda funcionar.
+### Para poder mostrar un contenido estático (como imágenes, videos,etc) se debe crear la carpeta web/static
+    	Agregar  class=“container” a todos los templates de tu proyecto, para que Bootstrap pueda funcionar.
 
-Manejo de contenido estático
-static
-Para agregar contenido desde un archivo colocar al inicio del html:
-    {% load static %}
-Despues se modifica cada ruta de los archivos que se quiere agregar, colocando:
-    {% static "más nombre del archivo con extension" %}
+    Manejo de contenido estático
+    static
+    Para agregar contenido desde un archivo colocar al inicio del html:
+        {% load static %}
+    Despues se modifica cada ruta de los archivos que se quiere agregar, colocando:
+        {% static "más nombre del archivo con extension" %}
 
-# levantar el proyecto
+### levantar el proyecto
 	python manage.py runserver
