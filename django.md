@@ -13,9 +13,9 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 
 'nombre_dado.apps.Nombre_dadoConfig',
 
-  2.1.- Si tengo una base de datos ya creada ocupar:
-  python manage.py inspectdb >web\models.py
-  Para obtener el modelo de la base y copiarlo en el archivo models.py
+### Si tengo una base de datos ya creada ocupar:
+    python manage.py inspectdb >web\models.py
+Para obtener el modelo de la base y copiarlo en el archivo models.py
 
 
 ###  Crear views para listar y agregar.
