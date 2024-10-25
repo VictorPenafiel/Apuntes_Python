@@ -88,8 +88,8 @@ La forma de llamar un metodo se llama notacion de punto
 	objeto.metodo(argumentos)
 
 ## Metodos basicos de string
-
-    count
+< count> 
+< count
     "Contar" Cuenta el numero de veces que aparece un caracter
     upper
         "Mayusculas" Transforma el string a mayusculas
