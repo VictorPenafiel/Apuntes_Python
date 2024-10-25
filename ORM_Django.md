@@ -27,11 +27,11 @@
    GRANT ALL PRIVILEGES ON DATABASE db_practica_orm TO user_db;
    ```
 
-# crear el proyecto
+### crear el proyecto
     pip install django
     django-admin startproject config
 
-# crear la aplicación
+### crear la aplicación
     cd config
     django-admin startapp producto
 Agregar esta app a la lista de aplicaciones instaladas, debemos abrir el archivo settings.py presente en el directorio de
@@ -62,16 +62,16 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
    }
    ```
 
-1. crear modelos para la aplicación, en el archivo models.py dentro de tu aplicación:
+### crear modelos para la aplicación, en el archivo models.py dentro de tu aplicación:
 from django.db import models
 
-class Producto(models.Model):
-    nombre = models.CharField(max_length=100)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
-
-class Categoria(models.Model):
-    nombre = models.CharField(max_length=50)
+    class Producto(models.Model):
+        nombre = models.CharField(max_length=100)
+        precio = models.DecimalField(max_digits=10, decimal_places=2)
+        categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
+    
+    class Categoria(models.Model):
+        nombre = models.CharField(max_length=50)
 
 
 2. Genera los archivos de migración:
