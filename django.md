@@ -2,11 +2,11 @@
 ### Crear el proyecto.
 	pip install django
 	django-admin startproject nombre_dado
-  1.1- Levantar servidor Django:
-  Entrar al directorio del proyecto
-    cd nombre_dado
-    python manage.py migrate
-    python manage.py startapp web
+### Levantar servidor Django:
+    Entrar al directorio del proyecto
+        cd nombre_dado
+        python manage.py migrate
+        python manage.py startapp web
 
 ###  Agregar esta app a la lista de aplicaciones instaladas, debemos abrir el archivo settings.py presente en el directorio de
 la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
@@ -104,11 +104,11 @@ Despues se modifica cada ruta de los archivos que se quiere agregar, colocando:
 -----### ---------------------------------------------------------------------------------------------------------
 
 ### Gestión de dependencias
-● pip install -r requirements.txt -> para instalar las dependencias desde un archivo
+● pip install -r requirements.txt -> para instalar las dependencias desde un archivo  
 ● pip freeze > requirements.txt -> para generar un respaldo de los paquetes instalados creando un
-archivo requirements.txt
+archivo requirements.txt  
 ● pip install astral==2.2 -> para instalar una versión específica de un paquete que necesitemos, en
-este ejemplo astral 2.2
+este ejemplo astral 2.2  
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -121,21 +121,21 @@ este ejemplo astral 2.2
 	py manage.py help nombre_subcomando
  
 #### Crear proyecto
-  python -m django startproject "nombre proyecto"
+    python -m django startproject "nombre proyecto"
 
 #### Acceder a la carpeta creada. Crear aplicacion
-  python manage.py startapp "nombre proyecto"-----manage.py "archivo para activar la iniciacion del proyecto"
+    python manage.py startapp "nombre proyecto"-----manage.py "archivo para activar la iniciacion del proyecto"
 
 #### Generar archivos de migracion. 
-  python manage.py makemigrations
-  Este comando es utilizado para crear archivos de migración en Django. Las migraciones son archivos que contienen cambios en el esquema de la base de datos, como la creación de nuevas tablas o la modificación de las existentes. El comando makemigrations analiza los modelos definidos en tu proyecto y genera los archivos de migración correspondientes que luego podrán ser aplicados a la base de datos.
-  
+    python manage.py makemigrations
+Este comando es utilizado para crear archivos de migración en Django. Las migraciones son archivos que contienen cambios en el esquema de la base de datos, como la creación de nuevas tablas o la modificación de las existentes. El comando makemigrations analiza los modelos definidos en tu proyecto y genera los archivos de migración correspondientes que luego podrán ser aplicados a la base de datos.
+
 #### Este comando muestra el estado de las migraciones en tu proyecto. Indica qué migraciones han sido aplicadas y cuáles están pendientes de aplicación. Puedes utilizarlo para verificar el estado de las migraciones y asegurarte de que todo esté sincronizado correctamente.
 	python manage.py showmigrations
 	
 #### Aplicar los cambios creados por makemigrations
 	python manage.py migrate
-	El comando migrate se encarga de aplicar las migraciones a la base de datos. Ejecuta los archivos de migración pendientes en el orden adecuado para asegurar que la estructura de la base de datos esté sincronizada con los modelos definidos en tu proyecto.
+El comando migrate se encarga de aplicar las migraciones a la base de datos. Ejecuta los archivos de migración pendientes en el orden adecuado para asegurar que la estructura de la base de datos esté sincronizada con los modelos definidos en tu proyecto.
 
 #### Crear super usuario
 	python manage.py createsuperuser
@@ -180,32 +180,32 @@ este ejemplo astral 2.2
 \COPY "peliculas" FROM 'C:\Users\usuario\peliculas.csv' WITH CSV;
 
 #### python manage.py migrate > log.txt
- > log.txt
-El operador > es un redireccionamiento de flujo en Unix/Linux.
-En este caso, redirige la salida estándar (normalmente mostrada en la consola) hacia un archivo llamado log.txt. La salida de estos procesos (información, advertencias, errores) se captura en el archivo log.txt.
+    > log.txt
+    El operador > es un redireccionamiento de flujo en Unix/Linux.
+    En este caso, redirige la salida estándar (normalmente mostrada en la consola) hacia un archivo llamado log.txt. La salida de estos procesos (información, advertencias, errores) se captura en el archivo log.txt.
 
 -----------------------------------------------------------------------------------------------------------------
 
 ## Formularios de contexto. Sirven para interactuar con el usuario.
 
-###Formulario Form
+### Formulario Form
 
-from django import forms
-class ContactFormForm(forms.Form):
-    customer_email = forms.EmailField8label='Correo')
-    customer_name = forms.CharField(max_length=64, label='Nombre')
-    message = forms.CharField(label='Mensaje')
+    from django import forms
+    class ContactFormForm(forms.Form):
+        customer_email = forms.EmailField(label='Correo')
+        customer_name = forms.CharField(max_length=64, label='Nombre')
+        message = forms.CharField(label='Mensaje')
 
-1###Formulario clase Modal Form, creación de un formulario basado en un modelo. Un modelo corresponde a una tabla de una base de datos y sus atributos corresponden a las columnas de una tabla.
+### Formulario clase Modal Form, creación de un formulario basado en un modelo. Un modelo corresponde a una tabla de una base de datos y sus atributos corresponden a las columnas de una tabla.
 
-from .models import ContacForm
-class ContactFormModelForm(forms.ModelForm):
-    class Meta:
-        model = ContactForm
-        fields = ['customer_email','customer_name', 'message']
+    from .models import ContacForm
+    class ContactFormModelForm(forms.ModelForm):
+        class Meta:
+            model = ContactForm
+            fields = ['customer_email','customer_name', 'message']
 
 ### El formulario es procesado por una vista en views.py
-class ContactFormForm(forms.Form):
-    customer_email = forms.EmailField(label='Correo')
-    customer_name = forms.CharField(max_length=64, label='Nombre')
-    message = forms.CharField(label='Mensaje')
+    class ContactFormForm(forms.Form):
+        customer_email = forms.EmailField(label='Correo')
+        customer_name = forms.CharField(max_length=64, label='Nombre')
+        message = forms.CharField(label='Mensaje')
