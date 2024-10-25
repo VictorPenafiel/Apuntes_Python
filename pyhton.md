@@ -84,7 +84,8 @@ Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir 
 ## Modulos
 
 -----------------------------------------------------------------------------------------------------------------
-### Funcion: fragmento de codigo con un nombre asociado que realiza una serie de tareas y devuelve un valor
+### Funcion
+fragmento de codigo con un nombre asociado que realiza una serie de tareas y devuelve un valor
 
 def: Se ocupa para definir funciones, seguida del nombre de la función y la lista de parametros formales entre parentesis
 
@@ -93,7 +94,7 @@ def: Se ocupa para definir funciones, seguida del nombre de la función y la lis
 -----------------------------------------------------------------------------------------------------------------
 
 
-
+# Metodos
 La forma de llamar un metodo se llama notacion de punto  
 	objeto.metodo(argumentos)
 
