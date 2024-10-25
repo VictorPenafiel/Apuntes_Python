@@ -28,10 +28,11 @@ index.html, about.html y welcome.html
 
 #### Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuestas HTTP:
 Crear las vistas en forma de Funcion o Clases
+
     def recetas(request):
     return render(request, 'recetas.html', {})
 	
-	5.1- Configurar urls.py en la aplicación creada y asociarlas a las vistas correspondientes:
+	Configurar urls.py en la aplicación creada y asociarlas a las vistas correspondientes:
 	    config/urls.py
 	    from django.urls import path, include
     urlpatterns = [
