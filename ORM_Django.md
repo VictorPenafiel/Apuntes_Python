@@ -119,7 +119,8 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
     def recetas(request):
     return render(request, 'recetas.html', {})
 
-5. Configurar urls.py en la aplicación creada y asociarlas a las vistas correspondientes:  
+### Configurar urls.py en la aplicación creada y asociarlas a las vistas correspondientes:  
+
 	    config/urls.py  
 	    from django.urls import path, include  
     urlpatterns = [  
