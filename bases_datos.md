@@ -75,7 +75,72 @@ Una vez creados los usuarios, se pueden cambiar los permisos con los siguientes 
 
 -----------------------------------------------------------------------------------------------------------------------
 
+## Normalización y Formas Normales
 
+### Primera Forma Normal (1FN)
+
+La 1FN establece que cada columna de una tabla debe contener un solo valor y no debe haber duplicación de datos.
+
+### Segunda Forma Normal (2FN)
+
+La 2FN establece que una tabla debe cumplir con la 1FN y que cada columna no clave (ni pk, ni fk) debe depender completamente de la clave primaria.
+
+### Tercera Forma Normal (3FN)
+
+La 3FN establece que una tabla debe cumplir con la 2FN y que no debe haber dependencias transitivas.
+
+## Transacciones en PostgreSQL
+
+Las transacciones en PostgreSQL garantizan la integridad y consistencia de la base de datos mediante propiedades ACID:
+
+    Atomicidad
+        Una transacción se considera atómica, lo que significa que todas las operaciones dentro de una transacción se realizan como una unidad indivisible. Si alguna operación dentro de la transacción falla, todas las operaciones se deshacen (rollback), y si todas las operaciones tienen éxito, se confirman (commit).
+    Consistencia
+        Las transacciones en PostgreSQL deben mantener la consistencia de la base de datos. Esto significa que las transacciones deben llevar la base de datos desde un estado válido a otro estado válido, sin violar las restricciones de integridad definidas en la base de datos.
+    Aislamiento
+        La propiedad de aislamiento garantiza que cada transacción se ejecute de manera aislada de otras transacciones concurrentes. Esto evita que las transacciones interfieran entre sí y garantiza la coherencia de los datos.
+    Durabilidad
+        Una vez que una transacción ha sido confirmada (commit), sus cambios se vuelven permanentes y se mantendrán incluso en caso de fallos del sistema o reinicios posteriores.
+
+-----------------------------------------------------------------------------------------------------------------------
+## DDL (Data Definition Language)
+- `CREATE`: Se usa para crear una base de datos, tabla, vistas, etc.
+- `ALTER`:  Se utiliza para modificar la estructura, por ejemplo añadir o borrar columnas de una tabla.
+- `DROP`:  Para eliminar objetos del esquema..
+- `TRUNCATE`: Para eliminar todos los registros de una tabla.
+- `COMMENT`: Para agregar comentarios al diccionario de datos.
+- `RENAME`: Para renombrar objetos existentes.
+
+## DCL (Data Control Language)
+El DCL se utiliza en PostgreSQL para controlar los permisos y privilegios en la base de datos:
+
+- `GRANT`: Concede privilegios a los usuarios o roles sobre objetos de la base de datos.
+- `REVOKE`: Revoca los privilegios previamente otorgados a los usuarios o roles sobre objetos de la base de datos.
+- `DENY`: Deniega un permiso a una entidad de seguridad. Evita que la entidad de seguridad herede permisos por su pertenencia a grupos o roles.
+
+## DML (Data Manipulation Language)
+
+- `INSERT`: Con esta instrucción podemos insertar los valores en una base de datos
+- `UPDATE`: Sirve para modificar los valores de uno o varios registros.
+- `DELETE`: Se utiliza para eliminar las filas de una tabla.
+
+## DQL (Data Query Language)
+
+- `SELECT`:  Para recuperar datos de la base de datos.
+
+## TCL (Transaction Control Language)
+
+El TCL se utiliza en PostgreSQL para controlar las transacciones y los cambios en la base de datos:
+
+- `BEGIN`: Inicia una transacción explícitamente.
+- `COMMIT`: Confirma una transacción, guardando los cambios realizados.
+- `ROLLBACK`: Deshace una transacción, revirtiendo los cambios realizados.
+- `SAVEPOINT`: Establece un punto de guardado dentro de una transacción.
+- `RELEASE SAVEPOINT`: Elimina un punto de guardado previamente establecido.
+- `ROLLBACK TO SAVEPOINT`: Deshace los cambios realizados después de un punto de guardado específico.
+
+
+-----------------------------------------------------------------------------------------------------------------------
 ## Comandos PostgreSQL
 
 - `\c database_name`: Conectarse a una base de datos específica.
@@ -187,6 +252,7 @@ SET TRANSACTION;
 -- Comprobar si AUTOCOMMIT está activado
 \echo :AUTOCOMMIT;
 ```
+-----------------------------------------------------------------------------------------------------------------------
 
 ### Exportación y Restauración
 
@@ -230,51 +296,6 @@ Después de configurar el motor de base de datos, instala el conector PostgreSQL
 ```bash
 pip install psycopg2
 ```
-
-## Normalización y Formas Normales
-
-### Primera Forma Normal (1FN)
-
-La 1FN establece que cada columna de una tabla debe contener un solo valor y no debe haber duplicación de datos.
-
-### Segunda Forma Normal (2FN)
-
-La 2FN establece que una tabla debe cumplir con la 1FN y que cada columna no clave (ni pk, ni fk) debe depender completamente de la clave primaria.
-
-### Tercera Forma Normal (3FN)
-
-La 3FN establece que una tabla debe cumplir con la 2FN y que no debe haber dependencias transitivas.
-
-## Transacciones en PostgreSQL
-
-Las transacciones en PostgreSQL garantizan la integridad y consistencia de la base de datos mediante propiedades ACID:
-
-    Atomicidad
-        Una transacción se considera atómica, lo que significa que todas las operaciones dentro de una transacción se realizan como una unidad indivisible. Si alguna operación dentro de la transacción falla, todas las operaciones se deshacen (rollback), y si todas las operaciones tienen éxito, se confirman (commit).
-    Consistencia
-        Las transacciones en PostgreSQL deben mantener la consistencia de la base de datos. Esto significa que las transacciones deben llevar la base de datos desde un estado válido a otro estado válido, sin violar las restricciones de integridad definidas en la base de datos.
-    Aislamiento
-        La propiedad de aislamiento garantiza que cada transacción se ejecute de manera aislada de otras transacciones concurrentes. Esto evita que las transacciones interfieran entre sí y garantiza la coherencia de los datos.
-    Durabilidad
-        Una vez que una transacción ha sido confirmada (commit), sus cambios se vuelven permanentes y se mantendrán incluso en caso de fallos del sistema o reinicios posteriores.
-
-## DCL (Data Control Language)
-
-El DCL se utiliza en PostgreSQL para controlar los permisos y privilegios en la base de datos:
-
-- `GRANT`: Concede privilegios a los usuarios o roles sobre objetos de la base de datos.
-- `REVOKE`: Revoca los privilegios previamente otorgados a los usuarios o roles sobre objetos de la base de datos.
-
-## TCL (Transaction Control Language)
-
-El TCL se utiliza en PostgreSQL para controlar las transacciones y los cambios en la base de datos:
-
-- `BEGIN`: Inicia una transacción explícitamente.
-- `COMMIT`: Confirma una transacción, guardando los cambios realizados.
-- `ROLLBACK`: Deshace una transacción, revirtiendo los cambios realizados.
-- `SAVEPOINT`: Establece un punto de guardado dentro de una transacción.
-- `RELEASE SAVEPOINT`: Elimina un punto de guardado previamente establecido.
-- `ROLLBACK TO SAVEPOINT`: Deshace los cambios realizados después de un punto de guardado específico.
 
 ## Operaciones JOIN en PostgreSQL
 
