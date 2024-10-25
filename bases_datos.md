@@ -78,9 +78,16 @@ Una vez creados los usuarios, se pueden cambiar los permisos con los siguientes 
 ## Normalización y Formas Normales
 
 ### Primera Forma Normal (1FN)
-
 La 1FN establece que cada columna de una tabla debe contener un solo valor y no debe haber duplicación de datos.
 
+    producto_id, nombre, categoria_id, nombre, precio
+
+    tabla categorias
+    PK categoria_id, nombre
+
+    tabla productos
+    PK producto_id, nombre, precio, FK categoria_id
+    
 ### Segunda Forma Normal (2FN)
 
 La 2FN establece que una tabla debe cumplir con la 1FN y que cada columna no clave (ni pk, ni fk) debe depender completamente de la clave primaria.
@@ -103,7 +110,7 @@ Las transacciones en PostgreSQL garantizan la integridad y consistencia de la ba
         Una vez que una transacción ha sido confirmada (commit), sus cambios se vuelven permanentes y se mantendrán incluso en caso de fallos del sistema o reinicios posteriores.
 
 -----------------------------------------------------------------------------------------------------------------------
-Structured Query Language: Es el lenguaje estándar para la administración de bases de datos relacionales.
+Structured Query Language: Es el lenguaje estándar para la administración de bases de datos relacionales.  
 SQL = DDL + DCL +DML + DQL+ TCL
 
 ## DDL (Data Definition Language)
