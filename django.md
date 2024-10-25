@@ -1,6 +1,5 @@
 # Proyecto Django
-
-1-Crear el proyecto.
+### Crear el proyecto.
 	pip install django
 	django-admin startproject nombre_dado
   1.1- Levantar servidor Django:
@@ -9,7 +8,7 @@
     python manage.py migrate
     python manage.py startapp web
 
-2.- Agregar esta app a la lista de aplicaciones instaladas, debemos abrir el archivo settings.py presente en el directorio de
+###  Agregar esta app a la lista de aplicaciones instaladas, debemos abrir el archivo settings.py presente en el directorio de
 la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 
 'nombre_dado.apps.Nombre_dadoConfig',
@@ -19,13 +18,13 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
   Para obtener el modelo de la base y copiarlo en el archivo models.py
 
 
-3.- Crear views para listar y agregar.
+###  Crear views para listar y agregar.
     producto/views.py
 	
-4.- Luego, dentro del directorio de la app web se debe crear un directorio llamada templates y a continuación dentro de ella crear los html que uno necesite ocupar.
+###  Luego, dentro del directorio de la app web se debe crear un directorio llamada templates y a continuación dentro de ella crear los html que uno necesite ocupar.
 index.html, about.html y welcome.html
 
-5.- Para habilitar las tres URLs distintas, se deben crear tres vistas en el archivo views.py dentro de la carpeta web. Cada vista debe retornar un render con los datos necesarios para desplegar cada uno de los archivos HTML creados anteriormente.
+###  Para habilitar las tres URLs distintas, se deben crear tres vistas en el archivo views.py dentro de la carpeta web. Cada vista debe retornar un render con los datos necesarios para desplegar cada uno de los archivos HTML creados anteriormente.
 
 Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuestas HTTP:
 	Crear las vistas en forma de Funcion o Clases
@@ -40,11 +39,11 @@ Crear las vistas que se encargan de recibir solicitudes HTTP y devolver respuest
         path('producto/', include('producto.urls')),
     ]
 
-6.- Crear una plantilla base, se debe crear un archivo llamado base.html en la carpeta web/templates que contenga la estructura
+###  Crear una plantilla base, se debe crear un archivo llamado base.html en la carpeta web/templates que contenga la estructura
 general de la web a mostrar, usando blocks y marcando con fondos de colores (background) cada sección para mostrar de manera más
 explícita la separación entre éstas (opcional).
 
-7.- Una vez creado el archivo base.html, debes reemplazar el contenido de tus archivos index.html, about.html y welcome.html para que, extiendan la plantilla base utilizando. 
+###  Una vez creado el archivo base.html, debes reemplazar el contenido de tus archivos index.html, about.html y welcome.html para que, extiendan la plantilla base utilizando. 
 	{% extends 'base.html' %}
 	
     Luego reemplazar el contenido (block content) por el contenido correspondiente a cada una de las vistas (mensaje).
@@ -54,18 +53,19 @@ explícita la separación entre éstas (opcional).
 	</div>
 	{% endblock  'content' %}
 
-8.- Añadir bootstrap a nuestro sitio web, debemos agregar los archivos css y JavaScript de Bootstrap.
-# crear forms.py en la aplicacion creada y define los formularios necesarios en 'forms.py'
+###  Añadir bootstrap a nuestro sitio web, debemos agregar los archivos css y JavaScript de Bootstrap.
+
+### crear forms.py en la aplicacion creada y define los formularios necesarios en 'forms.py'
 	producto/forms.py
 	form django import forms
 	class ProductoForm(forms.ModelForm)
     
-# instalar librerias para formularios y bootstrap.
+### instalar librerias para formularios y bootstrap.
 	pip install crispy-bootstrap5
 	pip install django-bootstrap-v5
 	pip install django-crispy-forms
     
-# configurar librerias.
+### configurar librerias.
 	config/settigs.py
 	INSTALLED_APPS:
 	'bootstrap5',  # bootstrap 5
@@ -75,7 +75,7 @@ explícita la separación entre éstas (opcional).
 	CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 	CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
-9.- Para poder mostrar un contenido estático (como imágenes, videos,etc) se debe crear la carpeta web/static
+### Para poder mostrar un contenido estático (como imágenes, videos,etc) se debe crear la carpeta web/static
 	9.1 Agregar  class=“container” a todos los templates de tu proyecto, para que Bootstrap pueda funcionar.
 
 Manejo de contenido estático
@@ -86,24 +86,24 @@ Para agregar contenido desde un archivo colocar al inicio del html:
 Despues se modifica cada ruta de los archivos que se quiere agregar, colocando:
     {% static "más nombre del archivo con extension" %} 
 
-10.- Levantar el proyecto.
+### Levantar el proyecto.
       python manage.py runserver
       
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
-Instalación y verificación
-1.-Instalar django
+## Instalación y verificación
+### Instalar django
   pip install django=="numero de version"
-2.-Verificar el estado de la instalacion
+### Verificar el estado de la instalacion
   python -m django version
-3.-Ver comando disponibles en Django
+### Ver comando disponibles en Django
   python -m django help
   
------------------------------------------------------------------------------------------------------------------
+-----### ---------------------------------------------------------------------------------------------------------
 
-*Gestión de dependencias
+### Gestión de dependencias
 ● pip install -r requirements.txt -> para instalar las dependencias desde un archivo
 ● pip freeze > requirements.txt -> para generar un respaldo de los paquetes instalados creando un
 archivo requirements.txt
@@ -112,83 +112,83 @@ este ejemplo astral 2.2
 
 -----------------------------------------------------------------------------------------------------------------
 
-Operaciones Comunes:
+## Operaciones Comunes:
 
-Informacion general de comandos de Django
+#### Informacion general de comandos de Django
 	python manage.py help
 
-Informacion detallada de un comando especifico de Django
+#### Informacion detallada de un comando especifico de Django
 	py manage.py help nombre_subcomando
  
-Crear proyecto
+#### Crear proyecto
   python -m django startproject "nombre proyecto"
 
-Acceder a la carpeta creada. Crear aplicacion
+#### Acceder a la carpeta creada. Crear aplicacion
   python manage.py startapp "nombre proyecto"-----manage.py "archivo para activar la iniciacion del proyecto"
 
-Generar archivos de migracion. 
+#### Generar archivos de migracion. 
   python manage.py makemigrations
   Este comando es utilizado para crear archivos de migración en Django. Las migraciones son archivos que contienen cambios en el esquema de la base de datos, como la creación de nuevas tablas o la modificación de las existentes. El comando makemigrations analiza los modelos definidos en tu proyecto y genera los archivos de migración correspondientes que luego podrán ser aplicados a la base de datos.
   
-Este comando muestra el estado de las migraciones en tu proyecto. Indica qué migraciones han sido aplicadas y cuáles están pendientes de aplicación. Puedes utilizarlo para verificar el estado de las migraciones y asegurarte de que todo esté sincronizado correctamente.
+#### Este comando muestra el estado de las migraciones en tu proyecto. Indica qué migraciones han sido aplicadas y cuáles están pendientes de aplicación. Puedes utilizarlo para verificar el estado de las migraciones y asegurarte de que todo esté sincronizado correctamente.
 	python manage.py showmigrations
 	
-Aplicar los cambios creados por makemigrations
+#### Aplicar los cambios creados por makemigrations
 	python manage.py migrate
 	El comando migrate se encarga de aplicar las migraciones a la base de datos. Ejecuta los archivos de migración pendientes en el orden adecuado para asegurar que la estructura de la base de datos esté sincronizada con los modelos definidos en tu proyecto.
 
-Crear super usuario
+#### Crear super usuario
 	python manage.py createsuperuser
 
-Restablecer la base de datos al estado en que estaba inmediatamente después de que migrate fue ejecutado.
+#### Restablecer la base de datos al estado en que estaba inmediatamente después de que migrate fue ejecutado.
 	py manage.py flush
 
-Ejecutar nuestro proyecto de manera local
+#### Ejecutar nuestro proyecto de manera local
 	python manage.py runserver
 
-Este comando permite observar el SQL antes de aplicar una determinada migración,
+#### Este comando permite observar el SQL antes de aplicar una determinada migración,
 	python manage.py sqlmigrate app migration_name: 
 
-Este comando inicia una sesión interactiva de Django shell. Proporciona una interfaz de línea de comandos para interactuar con tu proyecto Django. Puedes ejecutar consultas de base de datos, crear, modificar o eliminar objetos, realizar pruebas, entre otras tareas.
+#### Este comando inicia una sesión interactiva de Django shell. Proporciona una interfaz de línea de comandos para interactuar con tu proyecto Django. Puedes ejecutar consultas de base de datos, crear, modificar o eliminar objetos, realizar pruebas, entre otras tareas.
 	python manage.py shell
 	Ejemplos:
 	import mysite.settings as S
 	print(S.__file__)
 	print(S.BASE_DIR)
 
-Este comando inicia una consola interactiva de la base de datos. Te permite acceder directamente a la línea de comandos de tu base de datos, lo que puede ser útil para ejecutar consultas SQL personalizadas o realizar tareas específicas directamente en la base de datos.
+#### Este comando inicia una consola interactiva de la base de datos. Te permite acceder directamente a la línea de comandos de tu base de datos, lo que puede ser útil para ejecutar consultas SQL personalizadas o realizar tareas específicas directamente en la base de datos.
 	python manage.py dbshell
 
-Este comando exporta los datos de la base de datos en formato JSON o YAML. Puedes especificar qué modelos o aplicaciones deseas incluir en la exportación. Es útil para realizar copias de seguridad de los datos o para transferirlos entre diferentes entornos.
+#### Este comando exporta los datos de la base de datos en formato JSON o YAML. Puedes especificar qué modelos o aplicaciones deseas incluir en la exportación. Es útil para realizar copias de seguridad de los datos o para transferirlos entre diferentes entornos.
 	python manage.py dumpdata: 
 	
-Este comando ejecuta las pruebas unitarias en tu proyecto. Ejecuta todas las pruebas definidas en los archivos tests.py de tus aplicaciones y muestra los resultados en la consola.
+#### Este comando ejecuta las pruebas unitarias en tu proyecto. Ejecuta todas las pruebas definidas en los archivos tests.py de tus aplicaciones y muestra los resultados en la consola.
 	 python manage.py test: 
 	 
-Este comando inicia un servidor de desarrollo con una copia de la base de datos en memoria y cargando datos de prueba. Es útil para ejecutar pruebas que requieren acceso a una base de datos y datos específicos.
+#### Este comando inicia un servidor de desarrollo con una copia de la base de datos en memoria y cargando datos de prueba. Es útil para ejecutar pruebas que requieren acceso a una base de datos y datos específicos.
 	python manage.py testserver: 
 	
-Este comando muestra las diferencias entre los archivos de configuración de Django (settings.py) y la configuración actual de tu proyecto. Puedes utilizarlo para ver los cambios realizados en la configuración o para solucionar problemas relacionados con la configuración de tu proyecto.
+#### Este comando muestra las diferencias entre los archivos de configuración de Django (settings.py) y la configuración actual de tu proyecto. Puedes utilizarlo para ver los cambios realizados en la configuración o para solucionar problemas relacionados con la configuración de tu proyecto.
 	python manage.py diffsettings
 	
 -----------------------------------------------------------------------------------------------------------------
 
-Integración con una base de datos existente por medio de Django
+#### Integración con una base de datos existente por medio de Django
       python manage.py inspetdb > web/models.py
 
-Integración con una base de datos existente por medio de pgAdmin 
+#### Integración con una base de datos existente por medio de pgAdmin 
 \COPY "peliculas" FROM 'C:\Users\usuario\peliculas.csv' WITH CSV;
 
-python manage.py migrate > log.txt
+#### python manage.py migrate > log.txt
  > log.txt
 El operador > es un redireccionamiento de flujo en Unix/Linux.
 En este caso, redirige la salida estándar (normalmente mostrada en la consola) hacia un archivo llamado log.txt. La salida de estos procesos (información, advertencias, errores) se captura en el archivo log.txt.
 
 -----------------------------------------------------------------------------------------------------------------
 
-*Formularios de contexto. Sirven para interactuar con el usuario.
+## Formularios de contexto. Sirven para interactuar con el usuario.
 
-1.-Formulario Form
+###Formulario Form
 
 from django import forms
 class ContactFormForm(forms.Form):
@@ -196,7 +196,7 @@ class ContactFormForm(forms.Form):
     customer_name = forms.CharField(max_length=64, label='Nombre')
     message = forms.CharField(label='Mensaje')
 
-1.1-Formulario clase Modal Form, creación de un formulario basado en un modelo. Un modelo corresponde a una tabla de una base de datos y sus atributos corresponden a las columnas de una tabla.
+1###Formulario clase Modal Form, creación de un formulario basado en un modelo. Un modelo corresponde a una tabla de una base de datos y sus atributos corresponden a las columnas de una tabla.
 
 from .models import ContacForm
 class ContactFormModelForm(forms.ModelForm):
@@ -204,8 +204,8 @@ class ContactFormModelForm(forms.ModelForm):
         model = ContactForm
         fields = ['customer_email','customer_name', 'message']
 
-2.- El formulario es procesado por una vista en views.py
+### El formulario es procesado por una vista en views.py
 class ContactFormForm(forms.Form):
-    customer_email = forms.EmailField8label='Correo')
+    customer_email = forms.EmailField(label='Correo')
     customer_name = forms.CharField(max_length=64, label='Nombre')
     message = forms.CharField(label='Mensaje')
