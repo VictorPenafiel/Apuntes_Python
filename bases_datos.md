@@ -91,10 +91,36 @@ La 1FN establece que cada columna de una tabla debe contener un solo valor y no 
 ### Segunda Forma Normal (2FN)
 
 La 2FN establece que una tabla debe cumplir con la 1FN y que cada columna no clave (ni pk, ni fk) debe depender completamente de la clave primaria.
+    tabla categorias
+    PK categoria_id, nombre
+
+    tabla productos
+    PK producto_id, nombre, FK precio_id FK categoria_id
+
+    tabla precios
+    PK precio_id, precio, FK producto_id
 
 ### Tercera Forma Normal (3FN)
 
 La 3FN establece que una tabla debe cumplir con la 2FN y que no debe haber dependencias transitivas.
+    tabla categorias
+    PK categoria_id, nombre
+
+    tabla productos
+    PK producto_id, nombre, FK precio_id, FK categoria_id
+
+    tabla precios
+    PK precio_id, precio, FK producto_id
+
+### Desformalizacación
+
+tabla categorias
+PK categoria_id, nombre
+
+tabla productos
+PK producto_id, nombre, precio, FK categoria_id
+
+-----------------------------------------------------------------------------------------------------------
 
 ## Transacciones en PostgreSQL
 
