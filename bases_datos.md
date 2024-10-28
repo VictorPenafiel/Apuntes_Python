@@ -33,6 +33,8 @@ Una vez creados los usuarios, se pueden cambiar los permisos con los siguientes 
 - Para transformar al usuario en superusuario: `ALTER USER myuser WITH SUPERUSER;`
 - Remover el superusuario: `ALTER USER username WITH NOSUPERUSER;`
 
+---------------------------------------------------------------------------------------------------------------------------
+
 ### Tipos de Datos Más Comunes
 
 #### Enteros:

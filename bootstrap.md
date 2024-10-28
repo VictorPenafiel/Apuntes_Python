@@ -1,7 +1,10 @@
-    CSS Validation  
-        https://jigsaw.w3.org/css-validator/validator.html.es
+
     HTML Validation  
         https://validator.w3.org/nu/
+        <!-- Este es un comentario en HTML -->
+    CSS Validation  
+        https://jigsaw.w3.org/css-validator/validator.html.es
+        /* Esto es un comentario en CSS*/
     JS Validation  
       https://codepen.io/pen/
 

@@ -87,10 +87,26 @@ Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir 
 ### Funcion
 fragmento de codigo con un nombre asociado que realiza una serie de tareas y devuelve un valor
 
+
 def: Se ocupa para definir funciones, seguida del nombre de la función y la lista de parametros formales entre parentesis
 
     def mi_funcion (x,x1):
 
+- `funcion`: print()
+- `objeto.funcion`: "ejemplo".upper()
+- `clase.funcion`: LinearRegression().fit(x,y)
+- `modulo.funcion`: math.sqrt()
+
+parametro: Es un elemento que podrá ser utilizado dentro de la función para realizar sus calculos.  
+argumento: Son los valores que tomará el parametro para ser utilizado dentro de la función.
+
+*args: Permiten utilizar tantos parámetros como sean necesarios sin la necesidad que sean definidos a priori  
+*kwargs: Permite un numero indeterminado de argumentos, pero estos argumentos deben incluir un nombre, ya que el nombre del argumento pasara a la función 
+
+### Comentarios
+    # Esto es un comentario en Python   
+    """ Esto es un bloque de código
+     comentado en Python"""
 -----------------------------------------------------------------------------------------------------------------
 
 

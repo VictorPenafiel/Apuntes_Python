@@ -18,8 +18,6 @@ d[usuario{r|w|x}]
 [otro{r|w|x}]  
 ./: directorio actual  
 ../: directorio padre  
-./: directorio actual  
-./archivoOculto o directorio  
 
 5) ls | listar carpetas y archivos
 6) mkdir nombreCarpeta | crear una carpeta o directorio
