@@ -215,3 +215,4 @@ Puedes utilizarlo para ver los cambios realizados en la configuración o para so
         customer_email = forms.EmailField(label='Correo')
         customer_name = forms.CharField(max_length=64, label='Nombre')
         message = forms.CharField(label='Mensaje')
+        

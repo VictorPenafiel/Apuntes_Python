@@ -1,3 +1,7 @@
+## Api  rest (representational state transfer)
+Modelo de arquitectura web basado en protocolo HTTP, para mejorar las comunicaciones cliente-servidor
+Son un estándar sobre como crear APIs en base a recursos y acciones
+
 ## Trabajando con Templates:
 
 1) Construir el documento .html con la estructura, estilos y demás componentes deseados.

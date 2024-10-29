@@ -84,6 +84,9 @@ Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir 
 ## Modulos
 
 -----------------------------------------------------------------------------------------------------------------
+### POO (Programación orientada a objetos)
+
+Paradigma de programación que se centra en almacenar comportamientos y caracteristicas similares a objetos
 ### Funcion
 fragmento de codigo con un nombre asociado que realiza una serie de tareas y devuelve un valor
 

@@ -165,6 +165,7 @@ EN GIT BASH:
 7) git add . | añadimos todos los archivos
 8) git rm --cached index.html | retiramos el archivo
 9) git commit -m "comentario" | agregar comentario
+	git commit --amend | es una manera práctica de modificar el commit más reciente
 10) git log permite revisar todas las versiones de un proyecto  
     git log --oneline | estructura de comentarios y ramas
 11) git branch -m main | cambiar nombre

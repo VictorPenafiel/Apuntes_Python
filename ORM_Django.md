@@ -375,3 +375,4 @@ Estos son solo ejemplos básicos del uso del ORM de Django. Puedes consultar la 
     book_permissions=Permission.objects.filter(content_type=content_type)
     
     [permiso.codename for permiso in book_permissions]
+    
