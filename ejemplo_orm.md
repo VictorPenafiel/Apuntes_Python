@@ -279,7 +279,7 @@ from .models import Laboratorio
 # Controladores-vistas para CRUD
 def listar_labs(request):
     laboratorios = Laboratorio.objects.all()
-    return render(request, 'listar.html', {'laboratorios': laboratorios})
+    return render (request, 'listar.html', {'laboratorios': laboratorios})
 ```
 
 ---
