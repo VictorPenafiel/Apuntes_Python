@@ -4,7 +4,7 @@ El interprete de Pyhton funciona como un evaluador de expresiones.
 Python es un interprete de comandos (instrucciones)  
 Los archivos fuentes de Pyhton son codificados en UTF-8
 
-## Tipos de operadores
+# Tipos de operadores
 ### Operadores de asignacion
 Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir esa misma variable.
 
@@ -45,7 +45,7 @@ Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir 
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
-## Tipos de datos
+# Tipos de datos
 
 ### Números
 	Entero
@@ -91,12 +91,12 @@ Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir 
 ### Modulos
 
 -----------------------------------------------------------------------------------------------------------------
-## POO (Programación orientada a objetos)
+# POO (Programación orientada a objetos)
 
 Paradigma de programación que se centra en almacenar comportamientos y caracteristicas similares a objetos
 
-### Funcion
-fragmento de codigo (script) con un nombre asociado que realiza una serie de tareas y devuelve un valor
+## Funcion
+Abstracción y condensación de código en un objeto (script) con un nombre asociado que realiza una serie de tareas y devuelve un valor. 
 
 
 def: Se ocupa para definir funciones, seguida del nombre de la función y la lista de parametros formales entre parentesis
@@ -116,9 +116,9 @@ argumento: Son los valores que tomará el parametro para ser utilizado dentro de
 *args: Permiten utilizar tantos parámetros como sean necesarios sin la necesidad que sean definidos a priori  
 *kwargs: Permite un numero indeterminado de argumentos, pero estos argumentos deben incluir un nombre, ya que el nombre del argumento pasara a la función 
 
-### Clase
+## Clase
 Clase: Corresponde al conjunto de atributos y metodos que permiten definir un objeto
-Instancia "objeto": Corresponde al conjunto de datos y metodos definidos por la clase a la que pertenece, en una instancia especifica de ella. Crear una instancia de una clase.
+Instancia "objeto". Corresponde al conjunto de datos y metodos definidos por la clase a la que pertenece, en una instancia especifica de ella. Crear una instancia de una clase.
 
 class: se ocupa para definir clases, seguida del nombre de la clase y dos puntos (:), y luego el cuerpo de la clase. El cuerpo de la clase contiene definiciones de métodos y atributos, que pueden ser públicos o privados según su acceso.
 
@@ -131,7 +131,7 @@ class: se ocupa para definir clases, seguida del nombre de la clase y dos puntos
     x.r, x.i
 
 
-### Control de flujo
+## Control de flujo
 Sentencias condicionales: Nos permiten comprobar condiciones y hacer que nuestros programas se comporten de una forma u otra dependiendo de esta condición.
     if:
         Las ordenes se ejecutan si la condición es verdadera.
@@ -141,7 +141,7 @@ Sentencias condicionales: Nos permiten comprobar condiciones y hacer que nuestro
         Es una secuencia: 
             if
                 else
-### bucle o ciclo
+## bucle o ciclo
 Sentencias que nos permiten repetir la ejecución de una o más instrucciones un cierto numero de veces.
 
     for: 
@@ -250,3 +250,11 @@ Para acceder a uno []
     r+, w+, o a+
         Lectura y escritura simultáneas.
 
+-----------------------------------------------------------------------------------------------------------------
+
+
+## Librerias
+Extensiones del lenguaje que añaden funcionalidades
+
+- `pip freeze`: Ver que tipo de librerias posee Pyhton.
+- `pip install`: Instalar librerias por medio de pip.

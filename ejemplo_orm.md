@@ -3,26 +3,31 @@
 
 ### 1. Crear la Base de Datos
 
-1.1 Abrir PG Admin
-   - Acceder con el usuario y contraseña de administrador.
-   - Crear un nuevo usuario: 
-     ```sql
-     CREATE USER userdjango WITH PASSWORD 'userdjango';
-     ```
-   - Crear una nueva base de datos llamada 'practica_final_orm_django', asignando el usuario 'userdjango'.
+#### Iniciar sesión en una sesión interactiva de postgresql: 
+    sudo -u postgres psql
 
-1.2 Configuración del Proyecto en PyCharm
+#### Creación de la base de Datos:
+    postgres=# CREATE DATABASE db_final_orm;
 
-1.2.1 Crear un nuevo proyecto Django
+#### Creando el usuario:
+    postgres=# CREATE USER userdjango WITH PASSWORD 'userdjango';
+
+#### Asignando el usuario a la base de datos:
+    postgres=# GRANT ALL PRIVILEGES ON DATABASE db_final_orm TO userdjango;
+
+### 1.2.1 Crear un nuevo proyecto Django que debe ser construido a partir de un ambiente virtual
+    mkvirtualenv django-psql-orm
    - Ubicación: C:\PycharmProjects\practica_final_orm_django
    - Entorno virtual: Virtualenv, Python 3.11
    - Nombre de la aplicación: laboratorio
 
-1.2.2 Instalar paquetes requeridos
-   - Django (framework)
-   - psycopg2 (conector de PostgreSQL)
+### 1.2.2 Instalar paquetes requeridos
+#### Django (framework)
+        pip install django
+#### psycopg2 (conector de PostgreSQL)
+        pip install psycopg2
 
-1.2.3 Inicializar el proyecto y la aplicación
+###  1.2.3 Inicializar el proyecto y la aplicación
    ```bash
    cd C:\PycharmProjects\practica_final_orm_django
    django-admin startproject config
@@ -30,7 +35,7 @@
    django-admin startapp laboratorio
    ```
 
-1.2.4 Registrar la aplicación en `settings.py`
+###  1.2.3 Inicializar el proyecto y la aplicación
    ```python
    INSTALLED_APPS = [
        ...
@@ -38,7 +43,7 @@
    ]
    ```
 
-1.2.5 Configurar la base de datos en `settings.py`
+### 1.2.5 Configurar la base de datos en `settings.py`
    ```python
    DATABASES = {
        "default": {
@@ -46,13 +51,13 @@
            "NAME": "practica_final_orm_django",
            "USER": "userdjango",
            "PASSWORD": "userdjango",
-           "HOST": "127.0.0.1",
+           "HOST": 'localhost',
            "PORT": "5432",
        }
    }
    ```
 
-1.2.6 Realizar migraciones y crear el superusuario
+### 1.2.6 Realizar migraciones y crear el superusuario
    ```bash
    python manage.py makemigrations
    python manage.py migrate
@@ -97,38 +102,43 @@ class Producto(models.Model):
         return self.nombre
 ```
 
-2.2 Realizar migraciones y actualizar la base de datos
+### 2.2 Realizar migraciones y actualizar la base de datos
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-2.3 Registrar los modelos en `admin.py`
+### 2.3 Registrar los modelos en `admin.py`
 
 ```python
 from django.contrib import admin
+from .models import Laboratorio, DirectorGeneral, Producto
 
 class LaboratorioAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nombre')
+    fields = ['nombre']
+    list_display = ('id','nombre')
+    list_display_links = ['nombre']
 
 class DirectorGeneralAdmin(admin.ModelAdmin):
     list_display = ('id', 'nombre', 'laboratorio')
+    ordering = ('nombre',)
+    list_display_links = ['nombre','laboratorio']
+    list_per_page = 2
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nombre', 'format_date', 'p_costo', 'p_venta')
-
-    def format_date(self, obj):
-        return obj.f_fabricacion.strftime('%Y')
-
-    format_date.short_description = 'F FABRICACION'
+    fields = ['nombre', 'laboratorio', 'f_fabricacion', 'p_costo','p_venta']
+    list_display = ('id','nombre', 'laboratorio', 'f_fabricacion', 'p_costo', 'p_venta')
+    list_display_links = ['nombre', 'laboratorio']
+    ordering = ('nombre','laboratorio')
+    list_filter = ('nombre', 'laboratorio')
 
 admin.site.register(Laboratorio, LaboratorioAdmin)
 admin.site.register(DirectorGeneral, DirectorGeneralAdmin)
 admin.site.register(Producto, ProductoAdmin)
 ```
 
-2.4 Realizar migraciones y ejecutar el servidor
+### 2.4 Realizar migraciones y ejecutar el servidor
 
 ```bash
 python manage.py makemigrations
@@ -207,10 +217,7 @@ if settings.DEBUG:
 python manage.py runserver
 ```
 
-
 ---
-
-
 
 2.6 Añadir usuarios, laboratorios y productos a través del Admin
    - Realizar los cambios y guardarlos
@@ -261,6 +268,9 @@ python manage.py showmigrations
 En `config/urls.py`:
 
 ```python
+from django.contrib import admin
+from django.urls import path, include
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('laboratorio/', include('laboratorio.urls')),
@@ -273,13 +283,300 @@ urlpatterns = [
 5.4 Crear controladores en `views.py` para las vistas del CRUD
 
 ```python
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Laboratorio
 
 # Controladores-vistas para CRUD
-def listar_labs(request):
+def insertar_lab(request):
+    if request.method == "POST":
+        nombre = request.POST['lab_nombre']
+        ciudad = request.POST['lab_ciudad']
+        pais = request.POST['lab_pais']
+        laboratorio = Laboratorio(nombre=nombre, ciudad=ciudad, pais=pais)
+        laboratorio.save()
+        return redirect('mostrar-lab/')
+    else:
+        return render(request, 'insertar-lab.html')
+
+# obtener los Laboratorios
+def mostrar_lab(request):
     laboratorios = Laboratorio.objects.all()
-    return render (request, 'listar.html', {'laboratorios': laboratorios})
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+    context = {
+        'laboratorios':laboratorios,
+        'num_visits': num_visits,
+    }
+    print(laboratorios.values())
+    return render(request,'mostrar-lab.html', context)
+# Editar Laboratorio
+def editar_lab(request,pk):
+    laboratorio = Laboratorio.objects.get(id=pk)
+    # if request.method == 'POST':
+    # return redirect('/crudapp/mostrar')
+    context = {
+        'laboratorio': laboratorio,
+    }
+    return render(request=request, template_name='editar-emp.html', context=context)
+def actualizar_laboratorio(request, id):
+    lab_nombre = request.POST['lab_nombre']
+    lab_ciudad = request.POST['lab_ciudad']
+    lab_pais = request.POST['lab_pais']
+    laboratorio = Laboratorio.objects.get(id=id)
+    laboratorio.nombre= lab_nombre
+    laboratorio.ciudad = lab_ciudad
+    laboratorio.pais = lab_pais
+    laboratorio.save()
+    return redirect('/laboratorio/mostrar-lab')
+
+# Eliminar Laboratorio
+def eliminar_lab(request, pk):
+    laboratorio = Laboratorio.objects.get(id=pk)
+    if request.method == 'POST':
+    laboratorio.delete()
+    return redirect('/laboratorio/mostrar-lab')
+    context = {
+        'laboratorio': laboratorio,
+    }
+    return render(request, 'eliminar-lab.html', context)
+
+```
+### template
+laboratorio/templates/mostrar-lab-html
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Empleados</title>
+    <style>
+        table {
+            border: 8px outset;
+            border-spacing: 10px;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        th,
+        td {
+            padding: 5px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Informacion de Laboratorios</h2>
+    <table align="center" style="margin: 0px auto;">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>Pais</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for laboratorio in laboratorios %}
+            <tr>
+                <td>{{laboratorio.nombre}}</td>
+                <td>{{laboratorio.ciudad}}</td>
+                <td>{{laboratorio.pais}}</td>
+                <td>
+                    <a href="/laboratorio/editar/{{laboratorio.pk}}">Actualizar</a>
+                </td>
+                <td>
+                    <a href="/laboratorio/eliminar/{{laboratorio.pk}}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+        ¿Información de los Laboratorios?
+    </div>
+    <p>
+        <a href="{% url 'insertar-lab' %}"><-- Ir a la pagina de Inicio</a>
+    </p>
+    <p>Usted ha visitado esta página {{ num_visits }} veces.</p>
+</body>
+</html>
 ```
 
+laboratorio/templates/insertar-lab.html
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+    <style>
+        table {
+            border: 8px outset;
+            border-radius: 10px;
+            border-spacing: 10px;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Ingresar los Datos del Laboratorio</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <table style="width:50%" align="center">
+            <tr>
+                <td>Nombre:</td>
+                <td><input type="text" placeholder="Ingrese el nombre del laboratorio" name="lab_nombre"></td>
+            </tr>
+            <tr>
+                <td>Ciudad</td>
+                <td><input type="text" placeholder="Ingrese la Ciudad del Laboratorio" name="lab_ciudad"></td>
+            </tr>
+            <tr>
+                <td>Pais</td>
+                <td><input type="text" placeholder="Ingrese el Pais del Laboratorio" name="lab_pais"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success"></td>
+            </tr>
+        </table>
+        <br><br>
+        <div class="alert alert-danger" role="alert">
+            ¿Información de los Laboratorios?
+        </div>
+        <p>
+            <a href="{% url 'mostrar-lab' %}">Ir a información del los laboratorios--></a>
+        </p>
+    </form>
+</body>
+</html>
+```
+
+laboratorio/templates/editar-lab.html
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Laboratorio</title>
+    <style>
+        table {
+            border: 8px outset;
+            border-radius: 10px;
+            border-spacing: 10px;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        th, td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Actualizar Laboratorio</h2>
+    <form action="actualizar-laboratorio/{{ laboratorio.id }}" method="POST">
+        {% csrf_token %}
+        <table style="width:50%" align="center">
+            <tr>
+                <td>Nombre</td>
+                <td><input type="text" value="{{ laboratorio.nombre }}" name="lab_nombre"></td>
+            </tr>
+            <tr>
+                <td>Ciudad</td>
+                <td><input type="text" value="{{ laboratorio.ciudad }}" name="lab_ciudad"></td>
+            </tr>
+            <tr>
+                <td>Pais</td>
+                <td><input type="text" value="{{ laboratorio.pais }}" name="lab_pais"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+```
+
+laboratorio/templates/eliminar-lab.html
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar un Laboratorio</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <br><br>
+        <div class="alert alert-danger" role="alert">
+            Estas seguro que deseas eliminar el laboratorio: "{{ laboratorio.nombre }}"?
+        </div>
+        <p>
+            <a href="{% url 'mostrar-lab' %}"><-- Retornar</a>
+        </p>
+        <p>
+            <input class="btn btn-danger" type="submit" value="Confirm">
+        </p>
+    </form>
+</body>
+</html>
+```
+
+### Realice unas pruebas unitarias al modelo Laboratorio 
+laboratorio/tests.py
+
+```python
+from django.test import TestCase
+from django.test import SimpleTestCase
+from django.urls import reverse
+from .models import Laboratorio
+
+class LaboratorioTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.laboratorio = Laboratorio.objects.create(
+            nombre="Laboratorio 1",
+            ciudad='Ciudad 1',
+            pais='Pais 1'
+        )
+
+    def test_laboratorio_content(self):
+        self.assertEqual(self.laboratorio.nombre, "Laboratorio 1")
+        self.assertEqual(self.laboratorio.ciudad, "Ciudad 1")
+        self.assertEqual(self.laboratorio.pais, "Pais 1")
+
+    def test_existe_url_correcta(self):
+        response = self.client.get("/laboratorio/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_pagina(self):
+        response = self.client.get(reverse("mostrar-lab"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "mostrar-lab.html")
+        self.assertContains(response, "Informacion de Laboratorios")
+```
+### Ejecutar la prueba:
+    python manage.py test laboratorio
 ---

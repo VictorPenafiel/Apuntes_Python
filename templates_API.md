@@ -1,7 +1,21 @@
-## Api  rest (representational state transfer)
-Modelo de arquitectura web basado en protocolo HTTP, para mejorar las comunicaciones cliente-servidor
-Son un estándar sobre como crear APIs en base a recursos y acciones
+## Api (application program interface)
+Interfaz de acceso que permite comunicar programas.
 
+Librerias necesarias para trabajar con APIs
+
+- `requests`: Libreria para conectarnos a APIs.
+- `json`: (JavaScript object notation) Es un formato ligero de intercambio de datos. La libreria json es necesaria ya que permite interpretar el string entregado por request a objetos Python
+
+## Api  rest (representational state transfer)
+Interfaz estructurada que se caracteriza por tener 4 métodos para interactuar con ella. Modelo de arquitectura web basado en protocolo HTTP.
+ 
+- `GET`: Consultar un recurso.
+- `POST`: Crear un recurso.
+- `PUT`: Editar un recurso.
+- `DELETE`: Borrar un recurso.
+
+### Postman
+Aplicación que permite interactuar con APIs de manera fácil. Nos entrega el codigo necesario para conectarnos a la API
 ## Trabajando con Templates:
 
 1) Construir el documento .html con la estructura, estilos y demás componentes deseados.
