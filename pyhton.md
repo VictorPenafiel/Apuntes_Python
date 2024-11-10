@@ -96,7 +96,7 @@ Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir 
 Paradigma de programación que se centra en almacenar comportamientos y caracteristicas similares a objetos
 
 ## Funcion
-Abstracción y condensación de código en un objeto (script) con un nombre asociado que realiza una serie de tareas y devuelve un valor. 
+Abstracción y condensación de código en un objeto (script), con un nombre asociado que realiza una serie de tareas y devuelve un valor. 
 
 
 def: Se ocupa para definir funciones, seguida del nombre de la función y la lista de parametros formales entre parentesis
@@ -108,6 +108,7 @@ def: Se ocupa para definir funciones, seguida del nombre de la función y la lis
 - `clase.funcion`: LinearRegression().fit(x,y)
 - `modulo.funcion`: math.sqrt()
 
+
 variable: Espacio de memoria donde colocar datos
 constante: Espacio de memoria no modificable
 parametro: Es un elemento que podrá ser utilizado dentro de la función para realizar sus calculos.  
@@ -116,9 +117,52 @@ argumento: Son los valores que tomará el parametro para ser utilizado dentro de
 *args: Permiten utilizar tantos parámetros como sean necesarios sin la necesidad que sean definidos a priori  
 *kwargs: Permite un numero indeterminado de argumentos, pero estos argumentos deben incluir un nombre, ya que el nombre del argumento pasara a la función 
 
+
+refactorización: Proceso de reorganizacion de código, evitando redundancia y condensando código repetido en funciones. Todo esto con el proceso de tener un código más entendible y claro.
+
+docstring: Documentación interna que tienen las funciones y permiten describir sus parámetros, usos y retornos. 
+
+#### Estilo google
+
+```python
+    def function_with_types_in_docstring(param1, param2):
+    """Example function with types documented in the docstring.
+
+    `PEP 484`_ type annotations are supported. If attribute, parameter, and
+    return types are annotated according to `PEP 484`_, they do not need to be
+    included in the docstring:
+
+    Args:
+        param1 (int): The first parameter.
+        param2 (str): The second parameter.
+
+    Returns:
+        bool: The return value. True for success, False otherwise.
+    """
+
+    def elevar (base, exponente):
+    """[summary]
+
+    Args:
+        base([type]:[description])
+        exponente([type]:[description])
+
+    Returns:
+        [type]:[description]
+        """return base**exponente"""
+    """
+    
+```
+[PEP 484](https://www.python.org/dev/peps/pep-0484/)
+
+[Genera docstrings y comentarios en Python con Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generation_generate_python_docstrings__and__comments_25?hl=es-419)
+
 ## Clase
 Clase: Corresponde al conjunto de atributos y metodos que permiten definir un objeto
-Instancia "objeto". Corresponde al conjunto de datos y metodos definidos por la clase a la que pertenece, en una instancia especifica de ella. Crear una instancia de una clase.
+Instancia = objeto. 
+Instanciar: Crear un objeto a partir de una clase.
+Objeto: Corresponde al conjunto de datos "atributo" y metodos definidos por la clase a la cual pertenece, en una instancia especifica de ella. Crear una instancia de una clase.
+Atributo: Caracteristicas inherentes de una entidad, que la definen y que en su conjunto pueden representar un estado de la misma
 
 class: se ocupa para definir clases, seguida del nombre de la clase y dos puntos (:), y luego el cuerpo de la clase. El cuerpo de la clase contiene definiciones de métodos y atributos, que pueden ser públicos o privados según su acceso.
 
@@ -155,6 +199,8 @@ Sentencias que nos permiten repetir la ejecución de una o más instrucciones un
         Le indica al loop que debe de continuar iterando.  
     pass:
         Marcador de posición en situaciones en las que una sentencia es sintácticamente necesaria, pero no se requiere ninguna acción. 
+
+python comprehensions: Corresponde a un tipo de sintaxis exclusivo de Python que permite condensar de manera muy concisa algunas problemáticas específicas del cico for
 ### Comentarios
     # Esto es un comentario en Python   
     """ Esto es un bloque de código
@@ -163,12 +209,56 @@ Sentencias que nos permiten repetir la ejecución de una o más instrucciones un
 
 
 ## Metodos
+Acciones que las entidades pueden realizar, desde ellas (argumentos) o hacia ellas (operaciones). Función que pertenece a una clase especifica.
 
     La forma de llamar un metodo se llama notacion de punto  
 	    objeto.metodo(argumentos)
 
+método estático: Es aquel que se puede llamar directamente desde la clase, sin que se tenga que crear una instanciade ella.
+   ```python
+    @staticmethod 
+    #toma como argumento la función definida a continuación del decorador
+
+método constructor: Se ejecuta automáticamente al momento de crear una instancia de la clase, sin necesidad de ser llamado. Constructor de los atributos de una clase para asociar parametros a los atributos
+
+    __init__(self)
+    # Asignar valores en el cuerpo del método
+    # Asignar valores desde parametros del método
+    # Asignar valores desde parametros del método con valores por defecto
+
+    def __init__(self,_nombre, _color, _poder):
+        self.nombre = _nombre
+        self.color = _color
+        self.poder = _poder
+
+self: Para poder acceder a las caracteristicas del objeto
+nombre, color, poder: Atributos = caracteristicas
+    
+    __setattr__
+    # Dar valores a los atributos de una instancia
+    # Modificar el estado de un objeto
+
+método no estático: Son capaces de modificar el valor de los atributos de una instancia de la clase
+
+    @property
+    #Definir una propiedad de la clase, posible definir mutador.
+
+    getters "accsesadores"
+        Permiten acceder al valor de un atributo en una instancia
+
+    setters "mutadores"
+        Permiten modificar el valor de un atributo en una instancia
+    @abstractmethod
+    Abstraccion: Es necesario importar la clase ABC del módulo abc como argumento de la clase abstracta y el decorador @abstractmethod para definir al menos 1 método abstracto dentro de ella. Permite disponibilizar solamente la información esencial para definir un objeto
+
+    encapsulamiento: Oculta el estado del objeto, condicionando la forma en que se entrega o modifica
+    colaboración: Una clase debe ser instanciada dentro de otra
+    composición: Una clase tiene un atributo que es instancia de otra clase, la que posee el atributo se denomina "clase compuesta", mientras la clase a la cual pertenece el atributo de la clase compuesta "clase componente" 
+```
+
 ### Metodos basicos de string
 
+```python
     count
         "Contar" Cuenta el numero de veces que aparece un caracter
     upper
@@ -187,9 +277,10 @@ Sentencias que nos permiten repetir la ejecución de una o más instrucciones un
         "formato" Interpolacion al trabajar con un string
     :.xf 
         x indica el numero de decimales
-
+```
 ### Metodos basicos de lista
 
+```python
     append(x) 
         Agrega elementos al final de la lista
     insert(i,x) 
@@ -207,11 +298,13 @@ Sentencias que nos permiten repetir la ejecución de una o más instrucciones un
     	reverse=true Ordena de manera descendente
     index() 
         Retorna indice
+```
 
 #### Metodos basicos de diccionarios
 Para definir diccionarios {}  
 Para acceder a uno []
 
+```python
     pop 
         Eliminar una llave junto a su valor, obteniendo el valor determinado
     del 
@@ -226,6 +319,7 @@ Para acceder a uno []
         Entregara una lista con los pares clave-valor de un diccionario
     get 
         Permite entregar un mensaje en caso de no encontrar una clave valor predeterminado none
+```
 
 ### Ver que tipo de librerias posee Python
     pip freeze
@@ -250,11 +344,16 @@ Para acceder a uno []
     r+, w+, o a+
         Lectura y escritura simultáneas.
 
------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
 
 
 ## Librerias
 Extensiones del lenguaje que añaden funcionalidades
 
+    ramdom.choice()
+    "libreria.argumento"
+
 - `pip freeze`: Ver que tipo de librerias posee Pyhton.
 - `pip install`: Instalar librerias por medio de pip.
+
+```
