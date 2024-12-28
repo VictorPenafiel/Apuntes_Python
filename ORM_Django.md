@@ -23,9 +23,11 @@
 3. Asigna permisos al usuario:
 
    ```sql
-   GRANT ALL PRIVILEGES ON DATABASE db_practica_orm TO postgres;
    GRANT ALL PRIVILEGES ON DATABASE db_practica_orm TO user_db;
-   ```
+   
+   en caso que no funcione
+   GRANT postgres TO user_db
+    ```
 
 ### crear el proyecto
     pip install django
@@ -44,6 +46,7 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 1. Instala el conector para PostgreSQL:
 
    ```bash
+   pip install psycopg2
    py -m pip install psycopg[binary]
    ```
 
@@ -78,7 +81,7 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 1. Genera los archivos de migración:
 
    ```bash
-   python manage.py makemigrations
+  py -m pip install psycopg[binary]
    ```
 
 2. Aplica las migraciones:

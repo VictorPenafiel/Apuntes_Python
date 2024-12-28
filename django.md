@@ -103,7 +103,7 @@ Crear las vistas en forma de Funcion o Clases
 --------------------------------------------------------------------------------------------------------------
 
 ### Gestión de dependencias
-● pip install -r requirements.txt -> para instalar las dependencias desde un archivo  
+● cd .. -> para instalar las dependencias desde un archivo  
 ● pip freeze > requirements.txt -> para generar un respaldo de los paquetes instalados creando un
 archivo requirements.txt  
 ● pip install astral==2.2 -> para instalar una versión específica de un paquete que necesitemos, en

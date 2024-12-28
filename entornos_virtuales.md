@@ -1,10 +1,11 @@
 
 ## cmd
+Crear un directorio donde colocar el entorno virtual:
 ### Crear entorno virtual
     py -m venv nombre_entorno
 
 ### Activar entorno virtual
-    .\nombre_entorno\Scripts\activate
+    source ./nombre_entorno/Scripts/activate
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -18,7 +19,7 @@ django_env\Scripts\activate.ps1
 
 ### Unix
 source entorno/Scripts/activate
-django_env/bin/activate
+.\nombre_entorno\Scripts\activate
 
 
 ## Desactivar entorno virtual
@@ -118,7 +119,7 @@ rmvirtualenv name_of_environment — Borrar el entorno especificado.
 ## Cerrar entorno
     deactivate
 Ver entornos virtuales disponibles
-    Workon
+    workon
 ## Activar entorno 
     workon "nombre del entorno"
 ## Elimar entorno

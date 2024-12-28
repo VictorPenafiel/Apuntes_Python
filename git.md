@@ -31,6 +31,11 @@ d[usuario{r|w|x}]
     !+numero del historial | Se ejecuta dicho comando
 14) clear    |  limpiar registros de la terminal
 15) cat		|  Se utiliza para visualizar, unir y crear archivos. «cat ejemplo. txt» muestra el contenido de «ejemplo»
+16) sudo su	|	Habilitar el usuario root
+17) zip 	|	Escribir ficheros en archivos zip 
+18) unzip 	|	Extraer archivos de archivos zip 
+19) clear 	|	Limpia la ventana del terminal 
+20) wget 	|	Descargar un archivo de Internet directamente 
 -----------------------------------------------------------------------------------------------------------------------
 
 ## ¿Cómo agregar una carpeta/proyecto existente a un nuevo repositorio GIT (en GitHub) ?
