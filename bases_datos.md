@@ -12,29 +12,6 @@ C:\Program Files\PostgreSQL\15\bin
 C:\Program Files\PostgreSQL\15\lib
 ```
 
-### Comandos Más Usados
-
-- `PASSWORD`: Asigna una contraseña al usuario creado.
-- `ENCRYPTED PASSWORD`: Asigna una contraseña encriptada al usuario creado.
-- `UNENCRYPTED PASSWORD`: Asigna una contraseña no encriptada al usuario creado.
-- `VALID UNTIL`: La cuenta expirará en la fecha indicada.
-- `CREATEDB`: Permite al usuario crear bases de datos.
-- `NOCREATEDB`: No permite al usuario crear bases de datos.
-- `SUPERUSER`: Puede crear otros usuarios (veremos esto más adelante).
-- `NOSUPERUSER`: No puede crear otros usuarios.
-
-### Permisos para los Usuarios
-
-Una vez creados los usuarios, se pueden cambiar los permisos con los siguientes comandos:
-
-- Para dar acceso a todos los privilegios de una base de datos: `GRANT ALL PRIVILEGES ON DATABASE database_name TO nombre_usuario;`
-- Quitar privilegios de una base de datos: `REVOKE ALL PRIVILEGES ON DATABASE database_name FROM nombre_usuario;`
-- Para dar permiso de creación de una base de datos se usa: `ALTER USER nombre_usuario CREATEDB;`
-- Para transformar al usuario en superusuario: `ALTER USER myuser WITH SUPERUSER;`
-- Remover el superusuario: `ALTER USER username WITH NOSUPERUSER;`
-
----------------------------------------------------------------------------------------------------------------------------
-
 ### Tipos de Datos Más Comunes
 
 #### Enteros:
@@ -194,12 +171,36 @@ El TCL se utiliza en PostgreSQL para controlar las transacciones y los cambios e
 
 ### Usuarios
 
-- Crear un usuario: `CREATE USER nombre_usuario WITH PASSWORD passworrd_asignado;`
+- Crear un usuario: `CREATE USER nombre_usuario WITH PASSWORD 'passworrd_asignado';`
 - Eliminar usuarios: `DROP USER nombre_usuario;`
 - Ver los usuarios existentes en la base de datos: `\du`
 - Cambiar contraseña de usuario: `\password "nombre de usuario"`
 - Usuarios que tienen acceso a la base de datos: `SELECT nombre_usuario FROM pg_user;`
 - Limitar a un usuario: `CREATE USER nombre_usuario WITH comando_opcional;`
+
+### Comandos Más Usados
+
+- `PASSWORD`: Asigna una contraseña al usuario creado.
+- `ENCRYPTED PASSWORD`: Asigna una contraseña encriptada al usuario creado.
+- `UNENCRYPTED PASSWORD`: Asigna una contraseña no encriptada al usuario creado.
+- `VALID UNTIL`: La cuenta expirará en la fecha indicada.
+- `CREATEDB`: Permite al usuario crear bases de datos.
+- `NOCREATEDB`: No permite al usuario crear bases de datos.
+- `SUPERUSER`: Puede crear otros usuarios (veremos esto más adelante).
+- `NOSUPERUSER`: No puede crear otros usuarios.
+
+### Permisos para los Usuarios
+
+Una vez creados los usuarios, se pueden cambiar los permisos con los siguientes comandos:
+
+- Para dar acceso a todos los privilegios de una base de datos: `GRANT ALL PRIVILEGES ON DATABASE database_name TO nombre_usuario;`
+- Quitar privilegios de una base de datos: `REVOKE ALL PRIVILEGES ON DATABASE database_name FROM nombre_usuario;`
+- Para dar permiso de creación de una base de datos se usa: `ALTER USER nombre_usuario CREATEDB;`
+- Para transformar al usuario en superusuario: `ALTER USER myuser WITH SUPERUSER;`
+- Remover el superusuario: `ALTER USER username WITH NOSUPERUSER;`
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 ### Conexiones
 
