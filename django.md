@@ -139,6 +139,11 @@ Indica qué migraciones han sido aplicadas y cuáles están pendientes de aplica
 	python manage.py migrate
 Ejecuta los archivos de migración pendientes en el orden adecuado para asegurar que la estructura de la base de datos esté sincronizada con los modelos definidos en tu proyecto.
 
+Convierte tu codigo de modelo en tablas en tu base de datos.
+atributo => python
+campo => Django
+columna => Bases de datos
+
 #### Crear super usuario
 	python manage.py createsuperuser
 
