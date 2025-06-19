@@ -1,6 +1,7 @@
 # Python
 Lenguaje interpretado multiparadigma y multiplataforma.  
-El interprete de Pyhton funciona como un evaluador de expresiones.  
+El interprete de Pyhton funciona como un evaluador de expresiones.
+Ampliamente utilizado en las aplicaciones web, el desarrollo de software, la ciencia de datos y el machine learning (ML).
 Python es un interprete de comandos (instrucciones)  
 Los archivos fuentes de Pyhton son codificados en UTF-8
 
@@ -127,17 +128,11 @@ docstring: Documentación interna que tienen las funciones y permiten describir 
 #### Expresiones lambda
 
 Las expresiones lambda nos permiten crear funciones "anónimas", es decir, sin nombre. Básicamente, esto significa que podemos crear funciones ad-hoc rápidamente sin necesidad de definir correctamente una función usando def.
-
 Los objetos de función devueltos al ejecutar expresiones lambda funcionan exactamente igual que los creados y asignados por def.
-
 Existe una diferencia clave que hace que lambda sea útil en roles especializados:
-
 El cuerpo de lambda es una expresión única, no un bloque de declaraciones.
-
 Debido a que se limita a una expresión, una lambda es menos general que una def.
-
 lambda está diseñado para codificar funciones simples y def maneja las tareas más grandes y complejas.
-
 Las funciones def son reutilizables, las lambda no.
 
     lambda num: num ** 2
@@ -240,14 +235,17 @@ Sentencias que nos permiten repetir la ejecución de una o más instrucciones un
 { k:V for k,v in dictionary.items()}
 
 ### Comentarios
+
+```python
     # Esto es un comentario en Python   
     """ Esto es un bloque de código
      comentado en Python"""
-    # '''Esto es un string
+    
+    '''Esto es un string
         que ocupa varias
         lineas. 
     '''
------------------------------------------------------------------------------------------------------------------
+```
 
 ## Metodos
 Acciones que las entidades pueden realizar, desde ellas (argumentos) o hacia ellas (operaciones). Función que pertenece a una clase especifica.
@@ -258,25 +256,17 @@ Acciones que las entidades pueden realizar, desde ellas (argumentos) o hacia ell
     dir() te muestra el "contenido" de un objeto, es decir, qué atributos y métodos tiene disponibles para ser usados.
 
 método estático: Es aquel que se puede llamar directamente desde la clase, sin que se tenga que crear una instanciade ella.
-   ```python
-@staticmethod 
+```python
+    @staticmethod 
     #toma como argumento la función definida a continuación del decorador
-    '''
+    
+    Ejemplo:
+
     class HerramientasUtiles:
-    """
-    Una clase simple para agrupar algunas herramientas generales.
-    """
 
     @staticmethod
     def saludar():
-        """
-        Este es un método estático muy básico.
-        Simplemente imprime un saludo.
-        No necesita ninguna información de un objeto (instancia) de HerramientasUtiles.
-        """
         print("¡Hola desde una herramienta útil!")
-
-    # --- Cómo usarlo ---
 
     # Puedes llamar al método estático directamente desde la clase.
     # ¡No necesitas crear un objeto!
@@ -285,28 +275,27 @@ método estático: Es aquel que se puede llamar directamente desde la clase, sin
     # Esto significa que NO tienes que hacer esto:
     # mi_objeto = HerramientasUtiles()
     # mi_objeto.saludar()
-    '''
+    ```
 
-método constructor: Se ejecuta automáticamente al momento de crear una instancia de la clase, sin necesidad de ser llamado. Constructor de los atributos de una clase para asociar parametros a los atributos
+## método constructor: Se ejecuta automáticamente al momento de crear una instancia de la clase, sin necesidad de ser llamado. Constructor de los atributos de una clase para asociar parametros a los atributos
 
-'''
-__init__(self)
-    # Asignar valores en el cuerpo del método
-    # Asignar valores desde parametros del método
-    # Asignar valores desde parametros del método con valores por defecto
+    __init__(self)
+        # Asignar valores en el cuerpo del método
+        # Asignar valores desde parametros del método
+        # Asignar valores desde parametros del método con valores por defecto
 
-    def __init__(self,_nombre, _color, _poder):
-        self.nombre = _nombre
-        self.color = _color
-        self.poder = _poder
-'''
+        def __init__(self,_nombre, _color, _poder):
+            self.nombre = _nombre
+            self.color = _color
+            self.poder = _poder
+
 
     self: Para poder acceder a las caracteristicas del objeto nombre, color, poder: Atributos = caracteristicas
     
-__setattr__
-    # Dar valores a los atributos de una instancia
-    # Modificar el estado de un objeto
-'''
+    __setattr__
+        # Dar valores a los atributos de una instancia
+        # Modificar el estado de un objeto
+
     class EjemploSetAttr:
     def __init__(self):
         # Inicializamos un atributo para ver la diferencia
@@ -334,13 +323,14 @@ __setattr__
     obj.nuevo_atributo = "modificado"
     print("\nDespués de modificar nuevo_atributo:")
     print("Valor de nuevo_atributo:", obj.nuevo_atributo)
-'''
+````
 
 método no estático: Son capaces de modificar el valor de los atributos de una instancia de la clase
-
-@property
+````Python
+    @property
     #Definir una propiedad de la clase, posible definir mutador.
-'''
+
+
     getters "accsesadores"
         Permiten acceder al valor de un atributo en una instancia
 
@@ -373,17 +363,17 @@ método no estático: Son capaces de modificar el valor de los atributos de una 
 
     # Mostrar que es un atributo privado
     print(f"\nValor interno (_valor): {obj._valor}")
-'''
+````
+metodo abstracto: Es necesario importar la clase ABC del módulo abc como argumento de la clase abstracta y el decorador @abstractmethod para definir al menos 1 método abstracto dentro de ella. Permite disponibilizar solamente la información esencial para definir un objeto.
 
-@abstractmethod
+```Python
+    @abstractmethod
     El decorador @abstractmethod en Python se utiliza para definir métodos abstractos en clases abstractas.
 
-    Abstraccion: Es necesario importar la clase ABC del módulo abc como argumento de la clase abstracta y el decorador @abstractmethod para definir al menos 1 método abstracto dentro de ella. Permite disponibilizar solamente la información esencial para definir un objeto
+Encapsulamiento: Oculta el estado del objeto, condicionando la forma en que se entrega o modifica.
+Colaboración: Una clase debe ser instanciada dentro de otra
+Composición: Una clase tiene un atributo que es instancia de otra clase, la que posee el atributo se denomina clase compuesta, mientras la clase a la cual pertenece el atributo de la clase compuesta clase componente. 
 
-    encapsulamiento: Oculta el estado del objeto, condicionando la forma en que se entrega o modifica
-    colaboración: Una clase debe ser instanciada dentro de otra
-    composición: Una clase tiene un atributo que es instancia de otra clase, la que posee el atributo se denomina "clase compuesta", mientras la clase a la cual pertenece el atributo de la clase compuesta "clase componente" 
-'''
     from abc import ABC, abstractmethod
 
     class Animal(ABC):
@@ -411,43 +401,17 @@ método no estático: Son capaces de modificar el valor de los atributos de una 
         animal = Animal()
     except TypeError as e:
         print("\nError al crear Animal:", e)
-```
+
 ## Herencia en Python
-La herencia permite que una clase hija herede atributos y métodos de una clase padre existente
-cursa.app
-. En Python, esto se implementa usando paréntesis después del nombre de la clase para especificar la clase padre.
+Herencia: La herencia permite que una clase hija herede atributos y métodos de una clase padre existente. En Python, esto se implementa usando paréntesis después del nombre de la clase para especificar la clase padre.
 
 La herencia y el polimorfismo son dos conceptos fundamentales en la programación orientada a objetos (POO) que trabajan juntos para permitir la creación de código más flexible y reutilizable
 
-apuntes.de
-. Veamos cómo funcionan en Python:
-Herencia en Python
+El polimorfismo permite que objetos de diferentes clases respondan de manera diferente al mismo método.
 
-La herencia permite que una clase hija herede atributos y métodos de una clase padre existente
-
-cursa.app
-. En Python, esto se implementa usando paréntesis después del nombre de la clase para especificar la clase padre.
-Analizando el resultado del primer bloque interactivo:
-1. El código funciona perfectamente, mostrando:
-   - Acceso a atributos heredados (nombre)
-   - Acceso a atributos propios (raza)
-   - Comportamiento del método sobrescrito (hacer_sonido)
-
-Sin embargo, falta mostrar el polimorfismo, que es la segunda parte crucial de la pregunta. Necesito:
-1. Agregar un ejemplo de polimorfismo que demuestre cómo diferentes objetos responden de manera diferente al mismo método
-2. Usar el mismo contexto de animales para mantener la coherencia
-3. Mostrar un ejemplo práctico de cómo se utiliza el polimorfismo en una lista de objetos
-
-El primer ejemplo estableció bien la base de la herencia, ahora necesito completar la respuesta con el polimorfismo.
-Polimorfismo en Python
-
-El polimorfismo permite que objetos de diferentes clases respondan de manera diferente al mismo método
-. En nuestro ejemplo de animales, podemos ver cómo diferentes especies responden de forma única al método hacer_sonido:
----------------------------------------------------------------------------------------------------
 
 ### Metodos basicos de string
 
-```python
     count
         "Contar" Cuenta el numero de veces que aparece un caracter
     upper
@@ -472,10 +436,10 @@ El polimorfismo permite que objetos de diferentes clases respondan de manera dif
         Reemplaza una subcadena con otra.
     split
         Divide la cadema en una lista de palabras.
-```
+
 ### Metodos basicos de lista
 
-```python
+
     append(x) 
         Agrega elementos al final de la lista
     insert(i,x) 
@@ -493,13 +457,13 @@ El polimorfismo permite que objetos de diferentes clases respondan de manera dif
     	reverse=true Ordena de manera descendente
     index() 
         Retorna indice
-```
+
 
 #### Metodos basicos de diccionarios
 Para definir diccionarios {}  
 Para acceder a uno []
 
-```python
+
     pop 
         Eliminar una llave junto a su valor, obteniendo el valor determinado
     del 
@@ -514,7 +478,7 @@ Para acceder a uno []
         Entregara una lista con los pares clave-valor de un diccionario
     get 
         Permite entregar un mensaje en caso de no encontrar una clave valor predeterminado none
-```
+
 
 ### Ver que tipo de librerias posee Python
     pip freeze
@@ -568,4 +532,56 @@ El módulo statistics en Python proporciona funciones para cálculos estadístic
 media (mean), mediana (median), moda (mode) y desviación estándar (stdev). Facilita el análisis de
 datos sin necesidad de escribir algoritmos complejos, siendo ideal para proyectos de ciencia de
 datos y análisis estadístico.
-```
+
+------------------------------------------------------------------------------
+
+# Errores
+En Python existen dos tipos principales de errores
+
+    Errores de Sintaxis: Ocurren cuando el código no sigue las reglas de Python
+    Excepciones: Ocurren durante la ejecución del programa
+
+Para manejar errores, Python utiliza la estructura [try-except](https://docs.python.org/es/3.13/tutorial/errors.html)
+    try:
+        # Código que podría generar un error
+        numero = int(input("Ingrese un número: "))
+    except ValueError:
+        # Se ejecuta si hay un error
+        print("Por favor, ingrese un número válido")
+
+Tipos Comunes de Errores
+
+    ValueError: Error en conversión de tipos
+    TypeError: Operación con tipos incorrectos
+    FileNotFoundError: Archivo no encontrado
+    ZeroDivisionError: División por cero
+
+Componentes Principales
+
+    try: Contiene el código que podría generar un error
+    except: Maneja los errores específicos
+    else: Se ejecuta cuando no hay errores
+    finally: Siempre se ejecuta, ideal para liberar recursos
+
+    ---------------------------------------------------------------------------------
+
+raise: es una palabra clave utilizada para generar o lanzar una excepción de forma manual. Esto permite al programador interrumpir la ejecución normal del código cuando se encuentra una situación que indica un error o una condición inusual, y notificar al sistema sobre la situación
+
+    raise NombreDeLaExcepcion("Mensaje de error")
+
+
+Ejemplo:
+    def abrir_archivo(nombre):
+    try:
+        archivo = open(nombre, 'r')
+        contenido = archivo.read()
+    except FileNotFoundError:
+        print(f"No se encontró el archivo {nombre}")
+    except Exception as e:
+        print(f"Error inesperado: {e}")
+    else:
+        print("Archivo leído correctamente")
+    finally:
+        if 'archivo' in locals():
+            archivo.close()
+````

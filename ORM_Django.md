@@ -273,6 +273,7 @@ Ambos métodos pueden encadenarse
         nombre = models.CharField(max_length=100)
     
 Estos son solo ejemplos básicos del uso del ORM de Django. Puedes consultar la documentación oficial de Django para más detalles y ejemplos avanzados.
+[QuerySet ](https://docs.djangoproject.com/en/3.2/ref/models/querysets/)
 
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------

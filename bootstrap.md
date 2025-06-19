@@ -113,9 +113,7 @@ Altura: Controla la altura de un elemento
 
 Estos valores pueden usarse individualmente o combinados para controlar tanto el ancho como la altura de elementos flexibles en sistemas de diseño responsivos. 
 
-
 ---------------------------------------------------------------------------------------------------------------------------
-
 
 ## Temas y plantillas populares de Bootstrap
 

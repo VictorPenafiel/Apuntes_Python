@@ -223,3 +223,29 @@ Puedes utilizarlo para ver los cambios realizados en la configuración o para so
         customer_name = forms.CharField(max_length=64, label='Nombre')
         message = forms.CharField(label='Mensaje')
         
+
+-----------------------------------------------------------------------------------------------------------------
+## Consultas Avanzadas
+
+### Consulta usando JOIN (relaciones)
+    productos_categoria = Producto.objects.filter(categoria__nombre="Electrónicos")
+    
+### Consulta con OR y AND
+    from django.db.models import Q
+    productos_filtrados = Producto.objects.filter(Q(precio__gt=10) | Q(categoria__nombre="Ropa"))
+
+### Consulta con JOIN y condiciones complejas
+    productos_interesantes = Producto.objects.filter(Q(precio__lt=50) & Q(categoria__nombre="Electrónicos"))
+    Relaciones
+    ForeignKey: Para relaciones uno a muchos.
+    OneToOneField: Para relaciones uno a uno.
+    ManyToManyField: Para relaciones muchos a muchos.
+    class Orden(models.Model):
+    cliente = models.ForeignKey('Cliente', on_delete=models.CASCADE)
+    productos = models.ManyToManyField(Producto)
+
+    class Cliente(models.Model):
+        nombre = models.CharField(max_length=100)
+    
+Estos son solo ejemplos básicos del uso del ORM de Django. Puedes consultar la documentación oficial de Django para más detalles y ejemplos avanzados.
+[QuerySet ](https://docs.djangoproject.com/en/3.2/ref/models/querysets/)
