@@ -1,3 +1,8 @@
+(descargar_python)[https://www.python.org/downloads/]
+
+Obtener versión de Pyhton
+    pyhton -v
+
 # Python
 Lenguaje interpretado multiparadigma y multiplataforma.  
 El interprete de Pyhton funciona como un evaluador de expresiones.
