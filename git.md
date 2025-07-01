@@ -186,16 +186,16 @@ EN GIT BASH:
 20) git remote show | visualizar nombre repositorio
 21) 
     git config = Establece el nombre  del autor, el correo y demas parametros que git utiliza por defecto  
-    git config --global init.defaultBranch nombreRama | nombre rama default
-22) git remote rm nombreRepositorio | eliminar repositorio
-23) git branch | en que rama estamos ubicados
-24) git branch nombreRama | crea una rama
-25) git merge nombreRamaDatosNuevos | realizar un merge o unión de datos entre ramas
-26) git checkout -b nombreRama | crea una rama nombreRama y nos lleva hacia ella
-27) git clone 'nombre de repositorio' Clonar repositorio
-28) git diff nos muestra todas la diferencia de desde el último commit guardado
-29) git restore Nombre de archivo.extension = restaura archivos
-
+    git config --global init.defaultBranch nombreRama | Nombre rama default
+22) git remote rm nombreRepositorio | Eliminar repositorio
+23) git branch | wEn que rama estamos ubicados
+24) git branch nombreRama | Crea una rama
+25) git merge nombreRamaDatosNuevos | Realizar un merge o unión de datos entre ramas
+26) git checkout -b nombreRama | Crea una rama nombreRama y nos lleva hacia ella
+27) git clone | 'Nombre de repositorio' Clonar repositorio
+28) git diff | Nos muestra todas la diferencia de desde el último commit guardado
+29) git restore | Nombre de archivo.extension = restaura archivos
+30)  git pull origin master | Actualizacion de repositorio remoto
 
 -----------------------------------------------------------------------------------------------------------------
 ## Comandos Git para llaves SSH y GitHub
