@@ -172,14 +172,33 @@ El TCL se utiliza en PostgreSQL para controlar las transacciones y los cambios e
 - `\h`: Mostrar la lista de comandos disponibles.
 - `\conninfo`: Mostrar detalles del usuario conectado.
 
+### Conexiones
+
+- Conectarse desde cualquier consola a una base de datos: `psql -U username -W -d database_name`
+
+### Administración de la Base de Datos
+
+- `sudo su -l postgres`: Iniciar la base de datos cambiando de usuario.
+- `psql`: Entrar a la base de datos mediante la terminal.
+- `CREATE DATABASE nombre;`: Crear base de datos.
+- `\C POST` Crear título de base de datos.
+- `CREATE TABLE POST ();`: Crear tablas.
+- `SELECT * FROM post;`: Ver tabla creada.
+- `ALTER TABLE "nombre base de datos" ADD "nombre nuevo atributo" "Tipo de datos";`: Modificar tabla, agregando una columna.
+- `UPDATE "nombre base de datos" SET "nombre columna creada" = 'dato' WHERE "especificar identificador como id=1";`: Agregar datos a columna creada.
+- `DELETE FROM "nombre base" WHERE "especificar identificador como id=1";`: Eliminar usuario.
+- `DROP DATABASE "nombre";`: Eliminar base de datos. 
+- `CREATE TABLE "nombre tabla" (id_comentario SERIAL, id_post INT, fecha_creacion TIMESTAMP, contenido VARCHAR(255), FOREIGN KEY(id_post) REFERENCES post(id));`: Vincular 2 tablas de una base de datos: 
+
+
 ### Usuarios
 
-- Crear un usuario: `CREATE USER nombre_usuario WITH PASSWORD 'passworrd_asignado';`
-- Eliminar usuarios: `DROP USER nombre_usuario;`
-- Ver los usuarios existentes en la base de datos: `\du`
-- Cambiar contraseña de usuario: `\password "nombre de usuario"`
-- Usuarios que tienen acceso a la base de datos: `SELECT nombre_usuario FROM pg_user;`
-- Limitar a un usuario: `CREATE USER nombre_usuario WITH comando_opcional;`
+- `CREATE USER nombre_usuario WITH PASSWORD 'passworrd_asignado';`: Crear un usuario.
+- `DROP USER nombre_usuario;`: Eliminar usuarios 
+- `\du`: Ver los usuarios existentes en la base de datos.
+- `\password "nombre de usuario"`: Cambiar contraseña de usuario.
+- `SELECT nombre_usuario FROM pg_user;`: Usuarios que tienen acceso a la base de datos. 
+- `CREATE USER nombre_usuario WITH comando_opcional;`: Limitar a un usuario. 
 
 ### Comandos Más Usados
 
@@ -196,32 +215,14 @@ El TCL se utiliza en PostgreSQL para controlar las transacciones y los cambios e
 
 Una vez creados los usuarios, se pueden cambiar los permisos con los siguientes comandos:
 
-- Para dar acceso a todos los privilegios de una base de datos: `GRANT ALL PRIVILEGES ON DATABASE database_name TO nombre_usuario;`
-- Quitar privilegios de una base de datos: `REVOKE ALL PRIVILEGES ON DATABASE database_name FROM nombre_usuario;`
-- Para dar permiso de creación de una base de datos se usa: `ALTER USER nombre_usuario CREATEDB;`
-- Para transformar al usuario en superusuario: `ALTER USER myuser WITH SUPERUSER;`
-- Remover el superusuario: `ALTER USER username WITH NOSUPERUSER;`
+- `GRANT ALL PRIVILEGES ON DATABASE database_name TO nombre_usuario;`: Para dar acceso a todos los privilegios de una base de datos.
+- `REVOKE ALL PRIVILEGES ON DATABASE database_name FROM nombre_usuario;`: Quitar privilegios de una base de datos. 
+- `ALTER USER nombre_usuario CREATEDB;`: Para dar permiso de creación de una base de datos se usa. 
+- `ALTER USER myuser WITH SUPERUSER;`: Para transformar al usuario en superusuario.
+- `ALTER USER username WITH NOSUPERUSER;`: Remover el superusuario. 
+
 
 ---------------------------------------------------------------------------------------------------------------------------
-
-
-### Conexiones
-
-- Conectarse desde cualquier consola a una base de datos: `psql -U username -W -d database_name`
-
-### Administración de la Base de Datos
-
-- Iniciar la base de datos cambiando de usuario: `sudo su -l postgres`
-- Entrar a la base de datos mediante la terminal: `psql`
-- Crear base de datos: `CREATE DATABASE nombre;`
-- Crear título de base de datos: `\C POST`
-- Crear tablas: `CREATE TABLE POST ();`
-- Ver tabla creada: `SELECT * FROM post;`
-- Modificar tabla, agregando una columna: `ALTER TABLE "nombre base de datos" ADD "nombre nuevo atributo" "Tipo de datos";`
-- Agregar datos a columna creada: `UPDATE "nombre base de datos" SET "nombre columna creada" = 'dato' WHERE "especificar identificador como id=1";`
-- Eliminar usuario: `DELETE FROM "nombre base" WHERE "especificar identificador como id=1";`
-- Eliminar base de datos: `DROP DATABASE "nombre";`
-- Vincular 2 tablas de una base de datos: `CREATE TABLE "nombre tabla" (id_comentario SERIAL, id_post INT, fecha_creacion TIMESTAMP, contenido VARCHAR(255), FOREIGN KEY(id_post) REFERENCES post(id));`
 
 
 ## Manipulación de Datos y Administración en PostgreSQL
