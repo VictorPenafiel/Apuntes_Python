@@ -128,6 +128,8 @@ Ver entornos virtuales disponibles
 -----------------------------------------------------------------------------------------------------------------
 
 ## Gestión de dependencias
++ Actualizar pip
+	> python -m pip install --upgrade pip
 + Revisar dependencias instaladas (para comparar entornos)
 	> py -m pip list
 + Desinstalar dependencia
