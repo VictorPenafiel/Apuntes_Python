@@ -78,19 +78,15 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
         nombre = models.CharField(max_length=50)
 
 
-1. Genera los archivos de migración:
+### Genera los archivos de migración:
 
-   ```bash
-  python manage.py makemigrations
-   ```
+    python manage.py makemigrations
 
-2. Aplica las migraciones:
+### Aplica las migraciones:
 
-   ```bash
     python manage.py migrate
     python manage.py sqlmigrate aplicacion 0001
     "nombre_aplicacion" "numero de migracion" en snake case(Las migraciones en Django suelen numerarse secuencialmente (0001, 0002, etc.))
-   ```
 
 ### Creación de Vistas y Plantillas
 
