@@ -1,4 +1,10 @@
 # Proyecto Django
+### Antes de crear un nuevo proyecto Django que debe ser construido a partir de un ambiente virtual
+    py -m venv entorno
+### Activar entorno virtual
+    source ./entorno/Scripts/activate
+### Siempre actualizar a la ultima versión de pip
+    python -m pip install --upgrade pip
 ### Crear el proyecto.
 	pip install django
 	django-admin startproject nombre_dado

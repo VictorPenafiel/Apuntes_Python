@@ -26,7 +26,7 @@
    GRANT ALL PRIVILEGES ON DATABASE db_practica_orm TO user_db;
    
    en caso que no funcione
-   GRANT postgres TO user_db
+   GRANT postgres TO user_db;
     ```
 
 ### crear el proyecto
@@ -81,7 +81,7 @@ la app principal de nuestro proyecto y agregarla a la lista de, INSTALLED_APPS
 1. Genera los archivos de migración:
 
    ```bash
-  py -m pip install psycopg[binary]
+  python manage.py makemigrations
    ```
 
 2. Aplica las migraciones:

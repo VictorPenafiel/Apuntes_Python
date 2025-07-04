@@ -2,10 +2,10 @@
 ## cmd
 Crear un directorio donde colocar el entorno virtual:
 ### Crear entorno virtual
-    py -m venv nombre_entorno
+    py -m venv ev
 
 ### Activar entorno virtual
-    source ./nombre_entorno/Scripts/activate
+    source ./ev/Scripts/activate
 
 -----------------------------------------------------------------------------------------------------------------
 
