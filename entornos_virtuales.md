@@ -1,56 +1,96 @@
 
-## cmd
-Crear un directorio donde colocar el entorno virtual:
-### Crear entorno virtual
+# cmd
+Crear un directorio donde colocar el entorno virtual(ev)
+
+Crear entorno virtual
+
     py -m venv ev
 
-### Activar entorno virtual
-    source ./ev/Scripts/activate
+Activar entorno virtual
 
+    source ./ev/Scripts/activate
 -----------------------------------------------------------------------------------------------------------------
 
-## Activando el entorno virtual
+### Activando el entorno virtual
 
-### powershell
-.\django_env\Scripts\activate.ps1
+powershell
 
-### cmd
-django_env\Scripts\activate.ps1
+	.\django_env\Scripts\activate.ps1
 
-### Unix
-source entorno/Scripts/activate
-.\nombre_entorno\Scripts\activate
+cmd
+
+	django_env\Scripts\activate.ps1
+
+Unix
+
+	source entorno/Scripts/activate
+	.\nombre_entorno\Scripts\activate
 
 
-## Desactivar entorno virtual
-deactivate
+Desactivar entorno virtual
 
-### Para obtener la ruta(PATH) DEL EJECUTABLE PY
+	deactivate
+
+Para obtener la ruta(PATH) DEL EJECUTABLE PY
+
     where py
 
+## Configurar variables de entorno (Windows)
+En inicio buscar editar variables de entorno  
+Opciones avanzadas -> Variables de entorno -> Nuevo  
+	Nombre de la -> WORKON_HOME  
+	VAlor de la -> %USERPROFILE%\Envs  
+* Asegurarse que la subcarpeta Scripts de Python este en tu variable de entorno. Variable de usuario ->PATH
+	
+-----------------------------------------------------------------------------------------------------------------
+
+Si aparece el siguiente error, ejecutar los siguientes pasos
+
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	.\django_env\Scripts\activate.ps1 : File H:\Other computers\My computer\Edutecno Capacitacion\BOOTCAMP 0064 - FULL STACK PYTHON - VESPERTINO - 
+	workspace\M6-Django\2-S2\rebound\django_env\Scripts\activate.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+	https:/go.microsoft.com/fwlink/?LinkID=135170.
+	At line:1 char:1
+	.\django_env\Scripts\activate.ps1
+    CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    FullyQualifiedErrorId : UnauthorizedAccess
+
+Obtener poliza de seguridad
+	
+	Get-ExecutionPolicy
+
+Desactivar la poliza de seguridad
+
+	Set-ExecutionPolicy RemoteSigned
 -----------------------------------------------------------------------------------------------------------------
 
 ## Creación de ambiente virtual embebido en Python- Linux:
 ## Instalacion de virtualenv
-    pip install virtualenv
+    
 1) pip install virtualenv
 
+		pip install virtualenv
+
 2) Creación del ambiente. Ubicarse en la carpeta de preferencia y ejecutar el siguiente comando:
-	python3 -m venv Nombre_Ambiente
 	
-	Ejemplo: python3 -m venv nombre_entorno
+		python3 -m venv Nombre_Ambiente
+	
+		Ejemplo: python3 -m venv nombre_entorno
 
 3) Para activar dicho ambiente, ubicarse en la carpeta donde se ubicó en el paso 2 y ejecutar:
-	source Nombre_Ambiente/bin/activate
-	> .\nombre_entorno\Scripts\activate
+
+		source Nombre_Ambiente/bin/activate
+		> .\nombre_entorno\Scripts\activate
 
 4) Para verificar que está activo, deberá notar el nombre del ambiente que activó como prefijo del prompt de la cónsola.
 
-### Verificar cuál intérprete de python se está ejecutando (si el del entorno virtual o el global)
+Verificar cuál intérprete de python se está ejecutando (si el del entorno virtual o el global)
+
 	> py -c "import sys; print(sys.executable)"
 	
 5) Para desactivar ambiente, ejecute:
-	deactivate
+
+		deactivate
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -77,32 +117,6 @@ pip install virtualenvwrapper
 ## crear un entorno virtual
 	virtualenv nombre_entorno
 	virtualenv django_env
-
-## Configurar variables de entorno (Windows)
-En inicio buscar editar variables de entorno  
-Opciones avanzadas -> Variables de entorno -> Nuevo  
-	Nombre de la -> WORKON_HOME  
-	VAlor de la -> %USERPROFILE%\Envs  
-* Asegurarse que la subcarpeta Scripts de Python este en tu variable de entorno. Variable de usuario ->PATH
-	
------------------------------------------------------------------------------------------------------------------
-
-## si aparece el siguiente error, ejecutar los siguientes pasos
-
-.\django_env\Scripts\activate.ps1 : File H:\Other computers\My computer\Edutecno Capacitacion\BOOTCAMP 0064 - FULL STACK PYTHON - VESPERTINO - 
-workspace\M6-Django\2-S2\rebound\django_env\Scripts\activate.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at 
-https:/go.microsoft.com/fwlink/?LinkID=135170.
-At line:1 char:1
-+ .\django_env\Scripts\activate.ps1
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
-    + FullyQualifiedErrorId : UnauthorizedAccess
-
-### obtener poliza de seguridad
-Get-ExecutionPolicy
-
-### desactivar la poliza de seguridad
-Set-ExecutionPolicy RemoteSigned
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -135,8 +149,11 @@ Ver entornos virtuales disponibles
 + Desinstalar dependencia
 	pip uninstall nombre
 	> py -m pip uninstall Django==5.1.1
-+ pip install -r requirements.txt -> para instalar las dependencias desde un archivo
-+ pip freeze > requirements.txt -> para generar un respaldo de los paquetes instalados creando un
-archivo requirements.txt
-+ pip install astral==2.2 -> para instalar una versión específica de un paquete que necesitemos, en
++ Para instalar las dependencias desde un archivo
+	> pip install -r requirements.txt
++ Para generar un respaldo de los paquetes instalados creando un
+archivo requirements.txt 
+	> pip freeze > requirements.txt -> 
++ Para instalar una versión específica de un paquete que necesitemos, en
 este ejemplo astral 2.2
+	> pip install astral==2.2
