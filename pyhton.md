@@ -1,27 +1,33 @@
-(descargar_python)[https://www.python.org/downloads/]
+[descargar_python](https://www.python.org/downloads/)
 
 Obtener versión de Pyhton
+
     pyhton -v
 
 # Python
+
 Lenguaje interpretado multiparadigma y multiplataforma.  
 El interprete de Pyhton funciona como un evaluador de expresiones.
 Ampliamente utilizado en las aplicaciones web, el desarrollo de software, la ciencia de datos y el machine learning (ML).
 Python es un interprete de comandos (instrucciones)  
 Los archivos fuentes de Pyhton son codificados en UTF-8
 
+-----------------------------------------------------------------------------------------------------------------
+
 # Tipos de operadores
+
 ### Operadores de asignacion
 Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir esa misma variable.
 
     = Asignacion
     += Incremento y asignacion
-    	+=1 Aumenta de 1 en 1
+    +=1 Aumenta de 1 en 1
     -= Decremento y asignacion
     *= Multiplicacion y asignacion
     /= Division y asignacion
 
-## Operador aritmetico
+### Operador aritmetico
+
     + Suma
     - Resta
     - Negacion
@@ -47,8 +53,6 @@ Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir 
     << Desplazamiento izquierda
     >> Desplazamiento derecha 
 
-
------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
 # Tipos de datos
@@ -97,6 +101,7 @@ Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir 
 	Clases
 
 ### Modulos
+Un módulo es un fichero conteniendo definiciones y declaraciones de Python. El nombre de archivo es el nombre del módulo con el sufijo .py agregado. Dentro de un módulo, el nombre del mismo módulo (como cadena) está disponible en el valor de la variable global __name__.
 
 -----------------------------------------------------------------------------------------------------------------
 # POO (Programación orientada a objetos)
@@ -214,17 +219,12 @@ Sentencias condicionales: Nos permiten comprobar condiciones y hacer que nuestro
 ## bucle o ciclo
 Sentencias que nos permiten repetir la ejecución de una o más instrucciones un cierto numero de veces.
 
-    for: 
-        Itera sobre un rango de valores.  
-    while: 
-        Ejecuta una o más operaciones mientras se cumpla una condicion. Itera sobre todos los valores.
+* `for`: Itera sobre un rango de valores. 
+* `while`: Ejecuta una o más operaciones mientras se cumpla una condición. Itera sobre todos los valores.
+* `break`: Permite salir de un ciclo for.
+* `continue`: Le indica al loop que debe de continuar iterando.
+* `pass`: Marcador de posición en situaciones en las que una sentencia es sintácticamente necesaria, pero no se requiere ninguna acción.
 
-    break: 
-        Permite salir de un ciclo for.  
-    continue: 
-        Le indica al loop que debe de continuar iterando.  
-    pass:
-        Marcador de posición en situaciones en las que una sentencia es sintácticamente necesaria, pero no se requiere ninguna acción. 
 
 ### Python comprehensions: Corresponde a un tipo de sintaxis exclusivo de Python que permite condensar de manera muy concisa algunas problemáticas específicas del ciclo for.
 
@@ -239,7 +239,7 @@ Sentencias que nos permiten repetir la ejecución de una o más instrucciones un
 
 { k:V for k,v in dictionary.items()}
 
-### Comentarios
+## Comentarios
 
 ```python
     # Esto es un comentario en Python   
@@ -260,7 +260,9 @@ Acciones que las entidades pueden realizar, desde ellas (argumentos) o hacia ell
 
     dir() te muestra el "contenido" de un objeto, es decir, qué atributos y métodos tiene disponibles para ser usados.
 
-método estático: Es aquel que se puede llamar directamente desde la clase, sin que se tenga que crear una instanciade ella.
+### método estático: 
+Es aquel que se puede llamar directamente desde la clase, sin que se tenga que crear una instanciade ella.
+
 ```python
     @staticmethod 
     #toma como argumento la función definida a continuación del decorador
@@ -280,27 +282,25 @@ método estático: Es aquel que se puede llamar directamente desde la clase, sin
     # Esto significa que NO tienes que hacer esto:
     # mi_objeto = HerramientasUtiles()
     # mi_objeto.saludar()
-    ```
+```
 
-## método constructor: Se ejecuta automáticamente al momento de crear una instancia de la clase, sin necesidad de ser llamado. Constructor de los atributos de una clase para asociar parametros a los atributos
+### método constructor: 
+Se ejecuta automáticamente al momento de crear una instancia de la clase, sin necesidad de ser llamado. Constructor de los atributos de una clase para asociar parametros a los atributos
 
+```python
     __init__(self)
         # Asignar valores en el cuerpo del método
         # Asignar valores desde parametros del método
         # Asignar valores desde parametros del método con valores por defecto
-
         def __init__(self,_nombre, _color, _poder):
             self.nombre = _nombre
             self.color = _color
             self.poder = _poder
-
-
     self: Para poder acceder a las caracteristicas del objeto nombre, color, poder: Atributos = caracteristicas
     
     __setattr__
         # Dar valores a los atributos de una instancia
         # Modificar el estado de un objeto
-
     class EjemploSetAttr:
     def __init__(self):
         # Inicializamos un atributo para ver la diferencia
@@ -328,10 +328,12 @@ método estático: Es aquel que se puede llamar directamente desde la clase, sin
     obj.nuevo_atributo = "modificado"
     print("\nDespués de modificar nuevo_atributo:")
     print("Valor de nuevo_atributo:", obj.nuevo_atributo)
-````
+```
 
-método no estático: Son capaces de modificar el valor de los atributos de una instancia de la clase
-````Python
+### método no estático: 
+Son capaces de modificar el valor de los atributos de una instancia de la clase.
+
+```python
     @property
     #Definir una propiedad de la clase, posible definir mutador.
 
@@ -368,17 +370,23 @@ método no estático: Son capaces de modificar el valor de los atributos de una 
 
     # Mostrar que es un atributo privado
     print(f"\nValor interno (_valor): {obj._valor}")
-````
-metodo abstracto: Es necesario importar la clase ABC del módulo abc como argumento de la clase abstracta y el decorador @abstractmethod para definir al menos 1 método abstracto dentro de ella. Permite disponibilizar solamente la información esencial para definir un objeto.
+```
+
+### metodo abstracto: 
+Es necesario importar la clase ABC del módulo abc como argumento de la clase abstracta y el decorador @abstractmethod para definir al menos 1 método abstracto dentro de ella. Permite disponibilizar solamente la información esencial para definir un objeto.
 
 ```Python
     @abstractmethod
     El decorador @abstractmethod en Python se utiliza para definir métodos abstractos en clases abstractas.
+```
 
-Encapsulamiento: Oculta el estado del objeto, condicionando la forma en que se entrega o modifica.
-Colaboración: Una clase debe ser instanciada dentro de otra
-Composición: Una clase tiene un atributo que es instancia de otra clase, la que posee el atributo se denomina clase compuesta, mientras la clase a la cual pertenece el atributo de la clase compuesta clase componente. 
+#### Encapsulamiento: Oculta el estado del objeto, condicionando la forma en que se entrega o modifica.
 
+#### Colaboración: Una clase debe ser instanciada dentro de otra
+
+#### Composición: Una clase tiene un atributo que es instancia de otra clase, la que posee el atributo se denomina clase compuesta, mientras la clase a la cual pertenece el atributo de la clase compuesta clase componente. 
+
+```Python
     from abc import ABC, abstractmethod
 
     class Animal(ABC):
@@ -406,83 +414,59 @@ Composición: Una clase tiene un atributo que es instancia de otra clase, la que
         animal = Animal()
     except TypeError as e:
         print("\nError al crear Animal:", e)
+```
 
 ## Herencia en Python
-Herencia: La herencia permite que una clase hija herede atributos y métodos de una clase padre existente. En Python, esto se implementa usando paréntesis después del nombre de la clase para especificar la clase padre.
+#### Herencia: La herencia permite que una clase hija herede atributos y métodos de una clase padre existente. En Python, esto se implementa usando paréntesis después del nombre de la clase para especificar la clase padre.
 
-La herencia y el polimorfismo son dos conceptos fundamentales en la programación orientada a objetos (POO) que trabajan juntos para permitir la creación de código más flexible y reutilizable
+#### La herencia y el polimorfismo son dos conceptos fundamentales en la programación orientada a objetos (POO) que trabajan juntos para permitir la creación de código más flexible y reutilizable
 
-El polimorfismo permite que objetos de diferentes clases respondan de manera diferente al mismo método.
-
-
-### Metodos basicos de string
-
-    count
-        "Contar" Cuenta el numero de veces que aparece un caracter
-    upper
-        "Mayusculas" Transforma el string a mayusculas
-    lower 
-        "Minusculas" Transforma el string a minusculas
-    title 
-        "Titulo" Mayusculas solo a la primera letra de cada palabra
-    capitalize 
-        Poner la primera letra en mayusculas
-    length 
-        "largo" Contar el numero de caracteres de un string
-    join 
-        "Unir" Unir muchos elementos separados de un string
-    f 
-        "formato" Interpolacion al trabajar con un string
-    :.xf 
-        x indica el numero de decimales 
-    find
-        Busca una subcadena y devuelve su índice.
-    replace
-        Reemplaza una subcadena con otra.
-    split
-        Divide la cadema en una lista de palabras.
-
-### Metodos basicos de lista
+#### El polimorfismo permite que objetos de diferentes clases respondan de manera diferente al mismo método.
 
 
-    append(x) 
-        Agrega elementos al final de la lista
-    insert(i,x) 
-        Agrega el elemento x en la posicion i especificada
-    pop() 
-        Elimina el ultimo elemento de la lista y lo imprime
-    remove() 
-        Elimina un elemento especifico
-    reverse() 
-        Invertir el orden de los elementos
-    sort() 
-        Ordenar los elementos de forma ascendente
-    sorted() 
-        Ordenar los elementos de forma ascendente
-    	reverse=true Ordena de manera descendente
-    index() 
-        Retorna indice
+## Metodos basicos de string
 
 
-#### Metodos basicos de diccionarios
+* **`count`**: "Contar" Cuenta el número de veces que aparece un carácter.
+* **`upper`**: "Mayúsculas" Transforma el string a mayúsculas.
+* **`lower`**: "Minúsculas" Transforma el string a minúsculas.
+* **`title`**: "Título" Mayúsculas solo a la primera letra de cada palabra.
+* **`capitalize`**: Poner la primera letra en mayúsculas.
+* **`length`**: "Largo" Contar el número de caracteres de un string.
+* **`join`**: "Unir" Unir muchos elementos separados de un string.
+* **`f`**: "Formato" Interpolación al trabajar con un string.
+* **`:.xf`**: x indica el número de decimales.
+* **`find`**: Busca una subcadena y devuelve su índice.
+* **`replace`**: Reemplaza una subcadena con otra.
+* **`split`**: Divide la cadena en una lista de palabras.
+
+
+## Metodos basicos de lista
+
+
+* **`append(x)`**: Agrega elementos al final de la lista.
+* **`insert(i, x)`**: Agrega el elemento `x` en la posición `i` especificada.
+* **`pop()`**: Elimina el último elemento de la lista y lo imprime.
+* **`remove()`**: Elimina un elemento específico.
+* **`reverse()`**: Invierte el orden de los elementos.
+* **`sort()`**: Ordena los elementos de forma ascendente.
+* **`sorted()`**: Ordena los elementos de forma ascendente.
+    * `reverse=true`: Ordena de manera descendente.
+* **`index()`**: Retorna el índice de un elemento.
+
+
+## Metodos basicos de diccionarios
 Para definir diccionarios {}  
 Para acceder a uno []
 
 
-    pop 
-        Eliminar una llave junto a su valor, obteniendo el valor determinado
-    del 
-        Eliminar una llave junto a su valor
-    update 
-        Unir 2 diccionarios
-    keys 
-        Entregara una lista con todos las claves de un diccioanrio
-    values 
-        Entregara una lista con todos los valores de un diccioanrio
-    items 
-        Entregara una lista con los pares clave-valor de un diccionario
-    get 
-        Permite entregar un mensaje en caso de no encontrar una clave valor predeterminado none
+* **`pop()`**: Elimina una clave junto a su valor, obteniendo el valor determinado.
+* **`del`**: Elimina una clave junto a su valor.
+* **`update()`**: Une 2 diccionarios.
+* **`keys()`**: Entregará una lista con todas las claves de un diccionario.
+* **`values()`**: Entregará una lista con todos los valores de un diccionario.
+* **`items()`**: Entregará una lista con los pares clave-valor de un diccionario.
+* **`get()`**: Permite entregar un mensaje en caso de no encontrar una clave (valor predeterminado `None`).
 
 
 ### Ver que tipo de librerias posee Python
@@ -526,13 +510,13 @@ Extensiones del lenguaje que añaden funcionalidades
 
 
 
-Módulo math:
+### Módulo math:
 El módulo math en Python ofrece funciones matemáticas avanzadas para cálculos complejos.
 Incluye operaciones como raíces cuadradas (sqrt), funciones trigonométricas (sin, cos), logaritmos
 (log), constantes como pi (pi) y e (e). Es útil para proyectos que requieren precisión matemática y
 cálculos científicos
 
-Módulo statistics:
+### Módulo statistics:
 El módulo statistics en Python proporciona funciones para cálculos estadísticos comunes, como
 media (mean), mediana (median), moda (mode) y desviación estándar (stdev). Facilita el análisis de
 datos sin necesidad de escribir algoritmos complejos, siendo ideal para proyectos de ciencia de
