@@ -36,12 +36,14 @@ Para obtener la ruta(PATH) DEL EJECUTABLE PY
     where py
 
 ## Configurar variables de entorno (Windows)
-En inicio buscar editar variables de entorno  
+
+Presiona Win + R, escribe sysdm.cpl y presiona Enter.
 Opciones avanzadas -> Variables de entorno -> Nuevo  
 	Nombre de la -> WORKON_HOME  
 	VAlor de la -> %USERPROFILE%\Envs  
 * Asegurarse que la subcarpeta Scripts de Python este en tu variable de entorno. Variable de usuario ->PATH
 	
+
 -----------------------------------------------------------------------------------------------------------------
 
 Si aparece el siguiente error, ejecutar los siguientes pasos
