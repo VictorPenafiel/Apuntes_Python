@@ -1,42 +1,43 @@
-## Comandos de terminal (Unix/Linux)
 
-1) pwd | mostrar directorio donde estamos
-2) cd/nombre directorio | cambiar directorio
-3) cd .. | ir al directorio anterior
-4) ls -la | listar carpetas, permisos y archivos ocultos  
-ls - lah  | Tamaño de los archivos  
-ls -rlh   | ver directorios con permisos y tamaños  
-ls -Rh  | ver directorios y subdirectorios  
-ls -Rlh   | ver directorios con permisos y tamaños y sus subdirectorios  
-ls - l     | Ver permisos y rutas  
-	d = directory  
-	r = read  
-	w = write  
-	x = executable  
-d[usuario{r|w|x}]  
-[grupo{r|w|x}]  
-[otro{r|w|x}]  
-./: directorio actual  
-../: directorio padre  
+## Comandos de Terminal (Unix/Linux)
 
-5) ls | listar carpetas y archivos
-6) mkdir nombreCarpeta | crear una carpeta o directorio
-7) touch index.html | crea un archivo, agregar extensión
-8) cp nombreArchivo carpeta/nombreArchivoCopia
-9) rm index.html | elimina un archivo
-10) mv index.html carpetaDestino/ | mover un archivo
-11) rm -rf nombreDirectorio | elimina carpeta y archivos
-12) mv nombreArchivoActual nombreArchivoNuevo
-13) history   |  historial
-    !+numero del historial | Se ejecuta dicho comando
-14) clear    |  limpiar registros de la terminal
-15) cat		|  Se utiliza para visualizar, unir y crear archivos. «cat ejemplo. txt» muestra el contenido de «ejemplo»
-16) sudo su	|	Habilitar el usuario root
-17) zip 	|	Escribir ficheros en archivos zip 
-18) unzip 	|	Extraer archivos de archivos zip 
-19) clear 	|	Limpia la ventana del terminal 
-20) wget 	|	Descargar un archivo de Internet directamente 
------------------------------------------------------------------------------------------------------------------------
+1.  **`pwd`**: **Muestra el directorio** donde te encuentras actualmente.
+2.  **`cd /nombreDirectorio`**: **Cambia el directorio** actual al especificado.
+3.  **`cd ..`**: Te **lleva al directorio anterior** (padre).
+4.  **`ls -la`**: **Lista carpetas, permisos y archivos ocultos**.
+    * **`ls -lah`**: Muestra el **tamaño de los archivos** en un formato legible para humanos.
+    * **`ls -rlh`**: **Ver directorios con permisos y tamaños**, listados en orden inverso.
+    * **`ls -Rh`**: **Ver directorios y subdirectorios** de forma recursiva.
+    * **`ls -Rlh`**: **Ver directorios con permisos, tamaños y sus subdirectorios** de forma recursiva.
+    * **`ls -l`**: **Ver permisos y rutas** detalladamente.
+        * `d`: Indica un **directorio**.
+        * `r`: Permiso de **lectura** (read).
+        * `w`: Permiso de **escritura** (write).
+        * `x`: Permiso de **ejecución** (executable).
+        * `d[usuario{r|w|x}]`: Permisos para el **propietario** del archivo/directorio.
+        * `[grupo{r|w|x}]`: Permisos para el **grupo**.
+        * `[otro{r|w|x}]`: Permisos para **otros usuarios**.
+        * `./`: Representa el **directorio actual**.
+        * `../`: Representa el **directorio padre**.
+5.  **`ls`**: **Lista las carpetas y archivos** en el directorio actual.
+6.  **`mkdir nombreCarpeta`**: **Crea una carpeta o directorio** con el nombre especificado.
+7.  **`touch index.html`**: **Crea un archivo** vacío; puedes agregarle una extensión (`.html` en este caso).
+8.  **`cp nombreArchivo carpeta/nombreArchivoCopia`**: **Copia un archivo** a una nueva ubicación y/o con un nuevo nombre.
+9.  **`rm index.html`**: **Elimina un archivo**.
+10. **`mv index.html carpetaDestino/`**: **Mueve un archivo** a un directorio de destino.
+11. **`rm -rf nombreDirectorio`**: **Elimina una carpeta y todo su contenido** de forma recursiva y forzada (¡usar con precaución!).
+12. **`mv nombreArchivoActual nombreArchivoNuevo`**: **Renombra un archivo**.
+13. **`history`**: Muestra el **historial de comandos** ejecutados.
+    * **`! + numeroDelHistorial`**: **Ejecuta un comando específico** del historial por su número.
+14. **`clear`**: **Limpia los registros de la terminal** (la pantalla).
+15. **`cat`**: Se utiliza para **visualizar, unir y crear archivos**. Por ejemplo, `cat ejemplo.txt` muestra el contenido de `ejemplo.txt`.
+16. **`sudo su`**: **Habilita el usuario root** (superusuario), permitiendo ejecutar comandos con privilegios elevados.
+17. **`zip`**: **Comprime ficheros en archivos `.zip`**.
+18. **`unzip`**: **Extrae archivos de archivos `.zip`**.
+19. **`clear`**: (Repetido, pero funcional) **Limpia la ventana del terminal**.
+20. **`wget`**: **Descarga un archivo de Internet directamente** a la terminal.
+
+---
 
 ## ¿Cómo agregar una carpeta/proyecto existente a un nuevo repositorio GIT (en GitHub) ?
 
@@ -90,7 +91,6 @@ git push origin master
 git clone + llave HTTPS
 git pull Manter actualizaciones del reposotorio, para actualizar en caso de cambio de repositorio
 
-
 ¿Cómo hacer un clone de una carpeta/proyecto remoto existente(en GitHub) en una carpeta local en mi disco ?
 
 1) Ingresar al repositorio remoto Github a clonar. (Puede ser propio o de un tercero)	
@@ -107,7 +107,6 @@ Al agregar nuevos archivos/carpetas luego debemos hacer:
 3) Agregar el contenido al stage. Ejecute:  git add .
 4) Pasar el contenido del proyecto al head.  Ejecute:  git commit -m "Descripción de los cambios ... etc"
 5) Realizar push. Ejecute: git push origin master
-
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -155,18 +154,9 @@ EN GIT BASH:
 	
 15) Como paso opcional, puede probar la comunicación con Github. Ejecute: ssh -T git@github.com
 
------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Comandos Git
-
-Como experto programador, he aplicado un lenguaje de marcado para mejorar la legibilidad de tus comandos Git:
-
----
-
-### Comandos Esenciales de Git para Programadores
-
----
 
 * **`&&`** : Se utiliza para concatenar comandos Git.
 
@@ -207,12 +197,7 @@ Como experto programador, he aplicado un lenguaje de marcado para mejorar la leg
 
 ---
 
------------------------------------------------------------------------------------------------------------------
 ## Comandos Git para llaves SSH y GitHub
-
-
-
-### Gestión de Claves SSH para GitHub
 
 
 1.  **`ls -la ~/.ssh`**: Permite **consultar si ya existe una llave SSH** en tu equipo.
