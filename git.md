@@ -160,58 +160,75 @@ EN GIT BASH:
 
 ## Comandos Git
 
-&& Se ocupa para concatenar comandos git 
-1) git status | ver status del repositorio
-2) git config --global user.name "nombreUsuario" Configuramos el parametro de autor
-3) git config --global user.email "tucorreo@gmail.com"
-4) git config --list | listar configuración git
-5) git init | inicializar repositorio
-6) git add index.html | añadimos un archivo
-7) git add . | añadimos todos los archivos
-8) git rm --cached index.html | retiramos el archivo
-9) git commit -m "comentario" | agregar comentario
-	git commit --amend | es una manera práctica de modificar el commit más reciente
-10) git log permite revisar todas las versiones de un proyecto  
-    git log --oneline | estructura de comentarios y ramas
-11) git branch -m main | cambiar nombre
-12) git branch -m nombreRama nombreNuevo | 
-13) git checkout numeroComentario | llevarnos al comentario
-14) git checkout nombreRama | llevarnos hacia la rama
-15) git reset = Descompone el archivo, pero conserva el contenido del mismo  
-    git reset --soft HEAD~ | regresar el último comentario
-16) git remote add origin https://github.com/{usuario}/{repo}.git
-17) git remote set-url origin git@github.com:adrianedutecno/iguanapage.git
-18) git remote rename nombreActual nombreNuevo | renombrar repositorio
-19) git remote -v | visualizar repositorios remotos
-20) git remote show | visualizar nombre repositorio
-21) 
-    git config = Establece el nombre  del autor, el correo y demas parametros que git utiliza por defecto  
-    git config --global init.defaultBranch nombreRama | Nombre rama default
-22) git remote rm nombreRepositorio | Eliminar repositorio
-23) git branch | wEn que rama estamos ubicados
-24) git branch nombreRama | Crea una rama
-25) git merge nombreRamaDatosNuevos | Realizar un merge o unión de datos entre ramas
-26) git checkout -b nombreRama | Crea una rama nombreRama y nos lleva hacia ella
-27) git clone | 'Nombre de repositorio' Clonar repositorio
-28) git diff | Nos muestra todas la diferencia de desde el último commit guardado
-29) git restore | Nombre de archivo.extension = restaura archivos
-30)  git pull origin master | Actualizacion de repositorio remoto
+Como experto programador, he aplicado un lenguaje de marcado para mejorar la legibilidad de tus comandos Git:
+
+---
+
+### Comandos Esenciales de Git para Programadores
+
+---
+
+* **`&&`** : Se utiliza para concatenar comandos Git.
+
+1.  **`git status`** : Permite **ver el estado** del repositorio.
+2.  **`git config --global user.name "nombreUsuario"`** : Configura el parámetro de **autor globalmente**.
+3.  **`git config --global user.email "tucorreo@gmail.com"`** : Configura el **correo electrónico del autor globalmente**.
+4.  **`git config --list`** : **Lista la configuración** actual de Git.
+5.  **`git init`** : **Inicializa** un nuevo repositorio Git.
+6.  **`git add index.html`** : **Añade un archivo** específico (`index.html`) al área de preparación.
+7.  **`git add .`** : **Añade todos los archivos** modificados al área de preparación.
+8.  **`git rm --cached index.html`** : **Retira un archivo** del área de preparación sin borrarlo del disco.
+9.  **`git commit -m "comentario"`** : **Agrega un comentario** al commit.
+    * **`git commit --amend`** : Una manera práctica de **modificar el commit más reciente**.
+10. **`git log`** : Permite **revisar todas las versiones** de un proyecto.
+    * **`git log --oneline`** : Muestra un **formato más conciso** de comentarios y ramas del historial.
+11. **`git branch -m main`** : **Cambia el nombre** de la rama actual a `main`.
+12. **`git branch -m nombreRama nombreNuevo`** : **Renombra una rama** específica.
+13. **`git checkout numeroComentario`** : Nos **lleva a un comentario** específico (usando su hash).
+14. **`git checkout nombreRama`** : Nos **cambia a la rama** especificada.
+15. **`git reset`** : **Descompone el archivo** (lo saca del área de preparación), pero **conserva su contenido**.
+    * **`git reset --soft HEAD~`** : **Regresa el último commit** (lo deshace, pero mantiene los cambios).
+16. **`git remote add origin https://github.com/{usuario}/{repo}.git`** : **Agrega un repositorio remoto** llamado `origin`.
+17. **`git remote set-url origin git@github.com:adrianedutecno/iguanapage.git`** : **Establece una nueva URL** para el repositorio remoto `origin`.
+18. **`git remote rename nombreActual nombreNuevo`** : **Renombra un repositorio remoto**.
+19. **`git remote -v`** : **Visualiza los repositorios remotos** con sus URLs.
+20. **`git remote show`** : **Visualiza el nombre** y otros detalles del repositorio remoto.
+21. **`git config`** : **Establece el nombre del autor**, el correo y demás parámetros que Git utiliza por defecto.
+    * **`git config --global init.defaultBranch nombreRama`** : Configura el **nombre de la rama por defecto** para nuevos repositorios.
+22. **`git remote rm nombreRepositorio`** : **Elimina un repositorio remoto**.
+23. **`git branch`** : Muestra **en qué rama estamos ubicados** y lista todas las ramas locales.
+24. **`git branch nombreRama`** : **Crea una nueva rama** con el nombre especificado.
+25. **`git merge nombreRamaDatosNuevos`** : Realiza un **merge o unión de datos entre ramas**.
+26. **`git checkout -b nombreRama`** : **Crea una rama (`nombreRama`) y nos cambia** a ella inmediatamente.
+27. **`git clone 'Nombre de repositorio'`** : **Clona un repositorio** existente.
+28. **`git diff`** : Nos **muestra todas las diferencias** desde el último commit guardado.
+29. **`git restore NombreDeArchivo.extension`** : **Restaura archivos** a su estado en el último commit o en el área de preparación.
+30. **`git pull origin master`** : **Actualiza el repositorio local** con los cambios del repositorio remoto (`origin`) de la rama `master`.
+
+---
 
 -----------------------------------------------------------------------------------------------------------------
 ## Comandos Git para llaves SSH y GitHub
 
-1) ls -la ~/.ssh | consultar si existe una llave ssh en nuestro pc
-2) ssh-keygen -t rsa -b 4096 -C "tucorre@gmail.com" | crear una llave ssh
-3) se nos pedira si queremos aceptar la ruta de creación, seleccionar ruta default
-4) se nos pedira entrar una passphrase, se puede dejar vacío, o una frase sencilla
-5) eval "$(ssh-agent -s)" | consultar por el agente ssh y activarlo
-6) ssh-add ~/.ssh/id_rsa | añadimos una clave privada
-7) cat ~/.ssh/id_rsa.pub | leer la llave publica dentro de la terminal
-8) ir a github, luego ingresar a settings del perfil e ir a ssh and gpg keys
 
- 
 
----------------------------------------------------------------------------------------------------------------
+### Gestión de Claves SSH para GitHub
+
+
+1.  **`ls -la ~/.ssh`**: Permite **consultar si ya existe una llave SSH** en tu equipo.
+2.  **`ssh-keygen -t rsa -b 4096 -C "tucorreo@gmail.com"`**: **Crea una nueva llave SSH**.
+    * `-t rsa`: Especifica el tipo de cifrado RSA.
+    * `-b 4096`: Define el tamaño de la clave en bits para mayor seguridad.
+    * `-C "tucorreo@gmail.com"`: Agrega un comentario para identificar la clave, usualmente tu correo.
+3.  **Seleccionar ruta default**: Cuando se te pida la ruta de creación, simplemente **acepta la ruta por defecto** (`~/.ssh/id_rsa`).
+4.  **Entrar una passphrase**: Se te pedirá una *passphrase*. Puedes **dejarla vacía** (presionando Enter dos veces) para no tener que ingresarla cada vez que uses la clave, o ingresar una **frase sencilla** si deseas una seguridad adicional.
+5.  **`eval "$(ssh-agent -s)"`**: **Consulta por el agente SSH y lo activa**, lo que te permite usar tus claves sin tener que ingresarlas constantemente.
+6.  **`ssh-add ~/.ssh/id_rsa`**: **Añade tu clave privada** (la que acabas de crear) al agente SSH.
+7.  **`cat ~/.ssh/id_rsa.pub`**: **Lee el contenido de tu llave pública** directamente en la terminal. Necesitarás copiar este contenido.
+8.  **Ir a GitHub y configurar**: Navega a GitHub, luego ve a la **configuración de tu perfil (`Settings`)** y busca la sección **`SSH and GPG keys`**. Ahí deberás añadir el contenido de tu llave pública.
+
+---
+
 
 
     git add .

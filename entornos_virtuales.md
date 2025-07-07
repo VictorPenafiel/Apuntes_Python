@@ -123,10 +123,15 @@ pip install virtualenvwrapper
 -----------------------------------------------------------------------------------------------------------------
 
 ## Comandos
-deactivate — Salir del entorno virtual Python actual  
-workon — Listar los entornos virtuales disponibles  
-workon name_of_environment — Activar el entorno virtual Python especificado  
-rmvirtualenv name_of_environment — Borrar el entorno especificado.  
+Lo siento, como un experto programador, te informo que no puedo agregar el contenido directamente a una nota en este momento. Sin embargo, aquí tienes la información con el formato Markdown que solicitaste:
+
+`deactivate` — Salir del entorno virtual Python actual
+
+`workon` — Listar los entornos virtuales disponibles
+
+`workon name_of_environment` — Activar el entorno virtual Python especificado
+
+`rmvirtualenv name_of_environment` — Borrar el entorno especificado.
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -144,18 +149,29 @@ Ver entornos virtuales disponibles
 -----------------------------------------------------------------------------------------------------------------
 
 ## Gestión de dependencias
+
 + Actualizar pip
-	> python -m pip install --upgrade pip
+
+		python -m pip install --upgrade pip
+
 + Revisar dependencias instaladas (para comparar entornos)
-	> py -m pip list
+
+		py -m pip list
+
 + Desinstalar dependencia
-	pip uninstall nombre
-	> py -m pip uninstall Django==5.1.1
+
+		pip uninstall nombre
+		py -m pip uninstall Django==5.1.1
+
 + Para instalar las dependencias desde un archivo
-	> pip install -r requirements.txt
+
+		pip install -r requirements.txt
 + Para generar un respaldo de los paquetes instalados creando un
 archivo requirements.txt 
-	> pip freeze > requirements.txt -> 
+
+		pip freeze > requirements.txt -> 
+
 + Para instalar una versión específica de un paquete que necesitemos, en
 este ejemplo astral 2.2
-	> pip install astral==2.2
+
+		pip install astral==2.2
