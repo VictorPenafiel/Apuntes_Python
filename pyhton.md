@@ -439,6 +439,7 @@ Es necesario importar la clase ABC del módulo abc como argumento de la clase ab
 * **`find`**: Busca una subcadena y devuelve su índice.
 * **`replace`**: Reemplaza una subcadena con otra.
 * **`split`**: Divide la cadena en una lista de palabras.
+* **`format`**: Formatear cadenas de texto.
 
 
 ## Metodos basicos de lista

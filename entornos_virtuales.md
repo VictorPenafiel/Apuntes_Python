@@ -2,13 +2,17 @@
 # cmd
 Crear un directorio donde colocar el entorno virtual(ev)
 
+Actualizar pip
+
+	python -m pip install --upgrade pip
+
 Crear entorno virtual
 
-    py -m venv ev
+	py -m venv venv
 
 Activar entorno virtual
 
-    source ./ev/Scripts/activate
+    source ./venv/Scripts/activate
 -----------------------------------------------------------------------------------------------------------------
 
 ### Activando el entorno virtual
