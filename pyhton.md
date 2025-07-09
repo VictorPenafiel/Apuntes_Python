@@ -561,6 +561,7 @@ raise: es una palabra clave utilizada para generar o lanzar una excepción de fo
 
 
 Ejemplo:
+
     def abrir_archivo(nombre):
     try:
         archivo = open(nombre, 'r')
