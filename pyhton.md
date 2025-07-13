@@ -189,9 +189,11 @@ Instanciar: Crear un objeto a partir de una clase.
 Objeto: Corresponde al conjunto de datos "atributo" y metodos definidos por la clase a la cual pertenece, en una instancia especifica de ella. Crear una instancia de una clase.
 Atributo: Caracteristicas inherentes de una entidad, que la definen y que en su conjunto pueden representar un estado de la misma.
 
-atributo => python
-campo => Django
-columna => Bases de datos
+`atributo` => python
+
+`campo` => Django
+
+`columna` => Bases de datos
 
 class: se ocupa para definir clases, seguida del nombre de la clase y dos puntos (:), y luego el cuerpo de la clase. El cuerpo de la clase contiene definiciones de métodos y atributos, que pueden ser públicos o privados según su acceso.
 
@@ -242,13 +244,20 @@ Sentencias que nos permiten repetir la ejecución de una o más instrucciones un
 ## Comentarios
 
 ```python
-    # Esto es un comentario en Python   
-    """ Esto es un bloque de código
-     comentado en Python"""
+    # Esto es un comentario en Python  
+
+    """ 
+    Docstrings. Comúnmente usado
+    como comentario. Es un string 
+    que ocupa varias lineas.
     
-    '''Esto es un string
-        que ocupa varias
-        lineas. 
+    """
+    
+    '''
+    Esto es un string que ocupa 
+    varias lineas. Funcionalmente, 
+    es idéntico a usar comillas 
+    dobles triples 
     '''
 ```
 

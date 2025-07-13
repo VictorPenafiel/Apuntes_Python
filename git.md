@@ -88,8 +88,13 @@ git push origin master
 -----------------------------------------------------------------------------------------------------------------------
 
 ## Clonar
-git clone + llave HTTPS
-git pull Manter actualizaciones del reposotorio, para actualizar en caso de cambio de repositorio
+Clonar repositorio
+
+    git clone + llave HTTPS
+
+Manter actualizaciones del reposotorio, para actualizar en caso de cambio de repositorio
+
+    git pull 
 
 ¿Cómo hacer un clone de una carpeta/proyecto remoto existente(en GitHub) en una carpeta local en mi disco ?
 
