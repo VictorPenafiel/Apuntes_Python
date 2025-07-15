@@ -19,41 +19,44 @@ Los archivos fuentes de Pyhton son codificados en UTF-8
 ### Operadores de asignacion
 Permiten realizar una operacion sobre una variable, pero a la vez sobreescribir esa misma variable.
 
-    = Asignacion
-    += Incremento y asignacion
-    +=1 Aumenta de 1 en 1
-    -= Decremento y asignacion
-    *= Multiplicacion y asignacion
-    /= Division y asignacion
+* `=` Asignación
+* `+=` Incremento y asignación
+* `+=1` Aumenta de 1 en 1
+* `-=` Decremento y asignación
+* `*=` Multiplicación y asignación
+* `/=` División y asignación
 
 ### Operador aritmetico
 
-    + Suma
-    - Resta
-    - Negacion
-    * Multiplicacion
-    ** Exponente o potencia
-    / Division: Numero real
-    // Divison entera: Solo numero entero
-    % Modulo: Resto del numero entero
+* `+` Suma
+* `-` Resta
+* `-` Negación
+* `*` Multiplicación
+* `**` Exponente o potencia
+* `/` División: Número real
+* `//` División entera: Solo número entero
+* `%` Módulo: Resto del número entero
 
-### Operador Booleano (Comparar valores)
-    == Igual a
-    != Distinto a
-    < Menor que
-    > Mayor que
-    <= Menor o igual que
-    >= Mayor o igual que
+### Operadores de comparación
 
-### Operador Binario
-    & and
-    | or
-    ^ Xor
-    ~ Not
-    << Desplazamiento izquierda
-    >> Desplazamiento derecha 
+* `==` Igual a
+* `!=` Distinto a
+* `<` Menor que
+* `>` Mayor que
+* `<=` Menor o igual que
+* `>=` Mayor o igual que
 
------------------------------------------------------------------------------------------------------------------
+
+### Operador Binario (Bitwise Operators)
+
+* `&` AND (Bit a bit)
+* `|` OR (Bit a bit)
+* `^` XOR (Bit a bit)
+* `~` NOT (Bit a bit)
+* `<<` Desplazamiento a la izquierda
+* `>>` Desplazamiento a la derecha
+
+---
 
 # Tipos de datos
 
