@@ -99,6 +99,8 @@ Verificar cuál intérprete de python se está ejecutando (si el del entorno vir
 
 		deactivate
 
+Muestra el contenido de la variable de entorno PATH
+	echo $PATH
 -----------------------------------------------------------------------------------------------------------------
 
 ##  Instalacion de virtualenvwrapper
@@ -163,6 +165,9 @@ Ver entornos virtuales disponibles
 
 		py -m pip list
 
++ Verificar la instalacion de libreria "requests"
+	pip show requests
+
 + Desinstalar dependencia
 
 		pip uninstall nombre
@@ -171,6 +176,7 @@ Ver entornos virtuales disponibles
 + Para instalar las dependencias desde un archivo
 
 		pip install -r requirements.txt
+
 + Para generar un respaldo de los paquetes instalados creando un
 archivo requirements.txt 
 
@@ -180,3 +186,6 @@ archivo requirements.txt
 este ejemplo astral 2.2
 
 		pip install astral==2.2
+
++ Limpiar cache
+	pip cache purge
